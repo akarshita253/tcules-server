@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_profiles",
+  "info": {
+    "displayName": "Profile"
+  },
+  "options": {},
+  "attributes": {
+    "profilePicture": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

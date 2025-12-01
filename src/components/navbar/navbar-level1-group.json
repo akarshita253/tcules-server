@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_navbar_navbar_level1_groups",
+  "info": {
+    "displayName": "Navbar Level1 Group"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "isSubMenuAvailable": {
+      "type": "boolean",
+      "default": true
+    },
+    "navLevelTwoGroup": {
+      "type": "component",
+      "component": "navbar.navbar-level2-group",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

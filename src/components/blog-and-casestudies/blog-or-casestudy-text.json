@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_blog_and_casestudies_blog_or_casestudy_texts",
+  "info": {
+    "displayName": "Blog or Casestudy text"
+  },
+  "options": {},
+  "attributes": {
+    "blogContent": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultMarkdown"
+      }
+    }
+  },
+  "config": {}
+}

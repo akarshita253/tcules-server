@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blog_and_casestudies_tldr_sections",
+  "info": {
+    "displayName": "Tldr Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "tdlrDescription": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

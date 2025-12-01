@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blog_and_casestudies_code_sections",
+  "info": {
+    "displayName": "Code Section"
+  },
+  "options": {},
+  "attributes": {
+    "codeSnippet": {
+      "type": "richtext"
+    }
+  },
+  "config": {}
+}

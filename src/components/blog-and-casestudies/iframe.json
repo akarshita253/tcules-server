@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_blog_and_casestudies_iframes",
+  "info": {
+    "displayName": "Iframe"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "embedCode": {
+      "type": "text"
+    },
+    "url": {
+      "type": "text"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "width": {
+      "type": "integer"
+    },
+    "height": {
+      "type": "integer"
+    }
+  },
+  "config": {}
+}

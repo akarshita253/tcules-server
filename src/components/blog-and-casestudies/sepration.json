@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_blog_and_casestudies_seprations",
+  "info": {
+    "displayName": "Sepration"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "styles": {
+      "type": "enumeration",
+      "default": "solid",
+      "enum": [
+        "dashed",
+        "dotted",
+        "thick",
+        "solid"
+      ]
+    },
+    "color": {
+      "type": "string"
+    },
+    "thickness": {
+      "type": "decimal"
+    },
+    "marginTop": {
+      "type": "integer"
+    },
+    "marginBottom": {
+      "type": "integer"
+    }
+  },
+  "config": {}
+}
