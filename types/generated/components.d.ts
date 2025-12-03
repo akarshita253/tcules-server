@@ -17,6 +17,15 @@ export interface BlogAndCasestudiesBlogOrCasestudyText
   };
 }
 
+export interface BlogAndCasestudiesCaseStudyPositioning
+  extends Struct.ComponentSchema {
+  collectionName: 'components_blog_and_casestudies_case_study_positionings';
+  info: {
+    displayName: 'Case Study Positioning';
+  };
+  attributes: {};
+}
+
 export interface BlogAndCasestudiesCodeSection extends Struct.ComponentSchema {
   collectionName: 'components_blog_and_casestudies_code_sections';
   info: {
@@ -24,6 +33,18 @@ export interface BlogAndCasestudiesCodeSection extends Struct.ComponentSchema {
   };
   attributes: {
     codeSnippet: Schema.Attribute.RichText;
+  };
+}
+
+export interface BlogAndCasestudiesCompanyProfile
+  extends Struct.ComponentSchema {
+  collectionName: 'components_blog_and_casestudies_company_profiles';
+  info: {
+    displayName: 'Company Profile';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
   };
 }
 
@@ -40,6 +61,18 @@ export interface BlogAndCasestudiesIframe extends Struct.ComponentSchema {
     title: Schema.Attribute.String;
     url: Schema.Attribute.Text;
     width: Schema.Attribute.Integer;
+  };
+}
+
+export interface BlogAndCasestudiesProblemAndSolution
+  extends Struct.ComponentSchema {
+  collectionName: 'components_blog_and_casestudies_problem_and_solutions';
+  info: {
+    displayName: 'Problem and Solution';
+  };
+  attributes: {
+    desc: Schema.Attribute.Text;
+    type: Schema.Attribute.String;
   };
 }
 
@@ -251,8 +284,11 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'blog-and-casestudies.blog-or-casestudy-text': BlogAndCasestudiesBlogOrCasestudyText;
+      'blog-and-casestudies.case-study-positioning': BlogAndCasestudiesCaseStudyPositioning;
       'blog-and-casestudies.code-section': BlogAndCasestudiesCodeSection;
+      'blog-and-casestudies.company-profile': BlogAndCasestudiesCompanyProfile;
       'blog-and-casestudies.iframe': BlogAndCasestudiesIframe;
+      'blog-and-casestudies.problem-and-solution': BlogAndCasestudiesProblemAndSolution;
       'blog-and-casestudies.section-image': BlogAndCasestudiesSectionImage;
       'blog-and-casestudies.sepration': BlogAndCasestudiesSepration;
       'blog-and-casestudies.tldr-section': BlogAndCasestudiesTldrSection;

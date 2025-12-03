@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "case_studies",
+  "info": {
+    "singularName": "case-study",
+    "pluralName": "case-studies",
+    "displayName": "Case Studies"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "profile": {
+      "type": "component",
+      "component": "blog-and-casestudies.company-profile",
+      "repeatable": true
+    },
+    "statement": {
+      "type": "component",
+      "component": "blog-and-casestudies.problem-and-solution",
+      "repeatable": true
+    },
+    "caseStudyContents": {
+      "type": "dynamiczone",
+      "components": [
+        "blog-and-casestudies.sepration",
+        "blog-and-casestudies.code-section",
+        "blog-and-casestudies.blog-or-casestudy-text",
+        "blog-and-casestudies.iframe",
+        "blog-and-casestudies.section-image",
+        "blog-and-casestudies.video",
+        "elements.link",
+        "shared.seo",
+        "shared.quote"
+      ]
+    }
+  }
+}

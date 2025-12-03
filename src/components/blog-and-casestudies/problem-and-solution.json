@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blog_and_casestudies_problem_and_solutions",
+  "info": {
+    "displayName": "Problem and Solution"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
