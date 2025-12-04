@@ -86,6 +86,10 @@ export interface BlogAndCasestudiesSectionImage extends Struct.ComponentSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
+    layout: Schema.Attribute.Enumeration<
+      ['default', 'twoLeftFocus', 'twoRightFocus', 'bento']
+    > &
+      Schema.Attribute.DefaultTo<'default'>;
   };
 }
 
