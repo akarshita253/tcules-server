@@ -1,17 +1,30 @@
 module.exports = ({ env }) => ({
+ upload: {
+    config: {
+      provider: 'cloudinary',
+      providerOptions: {
+        cloud_name: env('CLOUDINARY_NAME'),
+        api_key: env('CLOUDINARY_KEY'),
+        api_secret: env('CLOUDINARY_SECRET'),
+      },
+      actionOptions: {
+        upload: {},
+        delete: {},
+      },
+    },
+  },
   graphql: {
     enabled: true,
     config: {
-      endpoint: '/graphql',          // Change the endpoint URL if needed
-      shadowCRUD: true,              // Auto-generate queries/mutations (recommended)
-      playgroundAlways: false,      // Enable playground in production (default: false)
-      depthLimit: 10,                // Prevent overly deep queries
-      amountLimit: 100,              // Max items per query (default: 100)
-      maxLimit: 500,                 // Absolute max (use -1 for unlimited)
+      endpoint: '/graphql',         
+      shadowCRUD: true, 
+      playgroundAlways: false, 
+      depthLimit: 10,
+      amountLimit: 100,
+      maxLimit: 500,
       apolloServer: {
-        introspection: true,        // Allow schema introspection
+        introspection: true,
         tracing: false,
-        // Add any other Apollo Server options here
       },
     },
   },
