@@ -12,6 +12,7 @@ module.exports = ({ env }) => ({
           responsiveDimensions: true,
         },
         delete: {},
+        uploadStream: {},
       },
     },
   },
