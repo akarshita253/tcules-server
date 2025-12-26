@@ -1,0 +1,51 @@
+{
+  "collectionName": "components_shared_cards",
+  "info": {
+    "displayName": "Card"
+  },
+  "options": {},
+  "attributes": {
+    "cardImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "isIconVisible": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "cardTiles": {
+      "type": "component",
+      "component": "shared.tiles",
+      "repeatable": true
+    },
+    "list": {
+      "type": "component",
+      "component": "elements.points",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

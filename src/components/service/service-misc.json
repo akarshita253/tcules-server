@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_service_service_miscs",
+  "info": {
+    "displayName": "ServiceMisc"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "component",
+      "component": "elements.buttons",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

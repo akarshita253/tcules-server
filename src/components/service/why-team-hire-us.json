@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_service_why_team_hireuses",
+  "info": {
+    "displayName": "WhyTeamHireUs"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "whyHireUsCards": {
+      "type": "component",
+      "component": "shared.card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

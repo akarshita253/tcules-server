@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_service_hero_sections",
+  "info": {
+    "displayName": "HeroSection"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "label": {
+      "type": "component",
+      "component": "elements.points",
+      "repeatable": true
+    },
+    "heroSectionButton": {
+      "type": "component",
+      "component": "elements.buttons",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

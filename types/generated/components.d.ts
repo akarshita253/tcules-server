@@ -176,6 +176,16 @@ export interface ElementsLink extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsPoints extends Struct.ComponentSchema {
+  collectionName: 'components_elements_points';
+  info: {
+    displayName: 'Points';
+  };
+  attributes: {
+    listText: Schema.Attribute.String;
+  };
+}
+
 export interface NavbarNavbarLevel1Group extends Struct.ComponentSchema {
   collectionName: 'components_navbar_navbar_level1_groups';
   info: {
@@ -204,6 +214,107 @@ export interface NavbarNavbarLevel2Group extends Struct.ComponentSchema {
     href: Schema.Attribute.String;
     levelTwoLinks: Schema.Attribute.Component<'elements.link', true>;
     name: Schema.Attribute.String;
+  };
+}
+
+export interface ServiceExploreRecentWork extends Struct.ComponentSchema {
+  collectionName: 'components_service_explore_recent_works';
+  info: {
+    displayName: 'ExploreRecentWork';
+  };
+  attributes: {
+    exploreCards: Schema.Attribute.Component<'shared.card', true>;
+    exploreLink: Schema.Attribute.Component<'elements.link', false>;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface ServiceHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_service_hero_sections';
+  info: {
+    displayName: 'HeroSection';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    heroSectionButton: Schema.Attribute.Component<'elements.buttons', true>;
+    label: Schema.Attribute.Component<'elements.points', true>;
+  };
+}
+
+export interface ServiceHowWeWork extends Struct.ComponentSchema {
+  collectionName: 'components_service_how_we_works';
+  info: {
+    displayName: 'HowWeWork';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    howWeWorkCards: Schema.Attribute.Component<'shared.card', true>;
+    labels: Schema.Attribute.Component<'elements.points', true>;
+    link: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
+export interface ServiceOurOperatingPhilosophy extends Struct.ComponentSchema {
+  collectionName: 'components_service_our_operating_philosophies';
+  info: {
+    displayName: 'OurOperatingPhilosophy';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    operatingPhilosophyCards: Schema.Attribute.Component<'shared.card', true>;
+  };
+}
+
+export interface ServiceServiceMisc extends Struct.ComponentSchema {
+  collectionName: 'components_service_service_miscs';
+  info: {
+    displayName: 'ServiceMisc';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'elements.buttons', false>;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+  };
+}
+
+export interface ServiceWhatWeDesign extends Struct.ComponentSchema {
+  collectionName: 'components_service_what_we_designs';
+  info: {
+    displayName: 'WhatWeDesign';
+  };
+  attributes: {
+    bottomDetails: Schema.Attribute.Component<'shared.card', false>;
+    heading: Schema.Attribute.String;
+    whatWeDesignCards: Schema.Attribute.Component<'shared.card', true>;
+  };
+}
+
+export interface ServiceWhyTeamHireUs extends Struct.ComponentSchema {
+  collectionName: 'components_service_why_team_hireuses';
+  info: {
+    displayName: 'WhyTeamHireUs';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    whyHireUsCards: Schema.Attribute.Component<'shared.card', true>;
+  };
+}
+
+export interface SharedCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_cards';
+  info: {
+    displayName: 'Card';
+  };
+  attributes: {
+    cardImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    cardTiles: Schema.Attribute.Component<'shared.tiles', true>;
+    description: Schema.Attribute.Blocks;
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    isIconVisible: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    list: Schema.Attribute.Component<'elements.points', true>;
   };
 }
 
@@ -284,6 +395,17 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTiles extends Struct.ComponentSchema {
+  collectionName: 'components_shared_tiles';
+  info: {
+    displayName: 'tiles';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -300,14 +422,24 @@ declare module '@strapi/strapi' {
       'elements.buttons': ElementsButtons;
       'elements.elements': ElementsElements;
       'elements.link': ElementsLink;
+      'elements.points': ElementsPoints;
       'navbar.navbar-level1-group': NavbarNavbarLevel1Group;
       'navbar.navbar-level2-group': NavbarNavbarLevel2Group;
+      'service.explore-recent-work': ServiceExploreRecentWork;
+      'service.hero-section': ServiceHeroSection;
+      'service.how-we-work': ServiceHowWeWork;
+      'service.our-operating-philosophy': ServiceOurOperatingPhilosophy;
+      'service.service-misc': ServiceServiceMisc;
+      'service.what-we-design': ServiceWhatWeDesign;
+      'service.why-team-hire-us': ServiceWhyTeamHireUs;
+      'shared.card': SharedCard;
       'shared.media': SharedMedia;
       'shared.profile': SharedProfile;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.tiles': SharedTiles;
     }
   }
 }

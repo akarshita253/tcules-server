@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_service_our_operating_philosophies",
+  "info": {
+    "displayName": "OurOperatingPhilosophy"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "operatingPhilosophyCards": {
+      "type": "component",
+      "component": "shared.card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

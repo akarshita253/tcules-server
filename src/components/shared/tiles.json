@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_tiles",
+  "info": {
+    "displayName": "tiles"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

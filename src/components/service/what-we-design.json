@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_service_what_we_designs",
+  "info": {
+    "displayName": "WhatWeDesign"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "whatWeDesignCards": {
+      "type": "component",
+      "component": "shared.card",
+      "repeatable": true
+    },
+    "bottomDetails": {
+      "type": "component",
+      "component": "shared.card",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

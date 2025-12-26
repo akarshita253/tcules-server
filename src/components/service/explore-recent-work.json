@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_service_explore_recent_works",
+  "info": {
+    "displayName": "ExploreRecentWork"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "exploreLink": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    },
+    "exploreCards": {
+      "type": "component",
+      "component": "shared.card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

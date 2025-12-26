@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_service_how_we_works",
+  "info": {
+    "displayName": "HowWeWork"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "labels": {
+      "type": "component",
+      "component": "elements.points",
+      "repeatable": true
+    },
+    "howWeWorkCards": {
+      "type": "component",
+      "component": "shared.card",
+      "repeatable": true
+    },
+    "link": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}
