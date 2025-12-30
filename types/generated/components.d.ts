@@ -186,6 +186,23 @@ export interface ElementsPoints extends Struct.ComponentSchema {
   };
 }
 
+export interface LegalDetails extends Struct.ComponentSchema {
+  collectionName: 'components_legal_details';
+  info: {
+    displayName: 'Details';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultMarkdown';
+        }
+      >;
+    heading: Schema.Attribute.String;
+  };
+}
+
 export interface NavbarNavbarLevel1Group extends Struct.ComponentSchema {
   collectionName: 'components_navbar_navbar_level1_groups';
   info: {
@@ -450,6 +467,7 @@ declare module '@strapi/strapi' {
       'elements.elements': ElementsElements;
       'elements.link': ElementsLink;
       'elements.points': ElementsPoints;
+      'legal.details': LegalDetails;
       'navbar.navbar-level1-group': NavbarNavbarLevel1Group;
       'navbar.navbar-level2-group': NavbarNavbarLevel2Group;
       'service.explore-recent-work': ServiceExploreRecentWork;
