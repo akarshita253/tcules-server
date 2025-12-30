@@ -64,6 +64,18 @@
         "shared.seo",
         "shared.quote"
       ]
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "case_studies_categories"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "mappedBy": "case_studies"
     }
   }
 }
