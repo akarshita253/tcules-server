@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_single_type_case_study_page_miscellaneous",
+  "info": {
+    "displayName": "Miscellaneous"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "component",
+      "component": "elements.buttons",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

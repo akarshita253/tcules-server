@@ -539,6 +539,42 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCaseStudyLandingPageCaseStudyLandingPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'case_study_landing_pages';
+  info: {
+    displayName: 'Case Study Landing Page';
+    pluralName: 'case-study-landing-pages';
+    singularName: 'case-study-landing-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heroSection: Schema.Attribute.Component<
+      'single-type-case-study-page.hero-section',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::case-study-landing-page.case-study-landing-page'
+    > &
+      Schema.Attribute.Private;
+    misc: Schema.Attribute.Component<
+      'single-type-case-study-page.miscellaneous',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
   collectionName: 'case_studies';
   info: {
@@ -1317,6 +1353,7 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::author.author': ApiAuthorAuthor;
       'api::blog.blog': ApiBlogBlog;
+      'api::case-study-landing-page.case-study-landing-page': ApiCaseStudyLandingPageCaseStudyLandingPage;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;

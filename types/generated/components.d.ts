@@ -406,6 +406,33 @@ export interface SharedTiles extends Struct.ComponentSchema {
   };
 }
 
+export interface SingleTypeCaseStudyPageHeroSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_single_type_case_study_page_hero_sections';
+  info: {
+    displayName: 'HeroSection';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'elements.buttons', false>;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface SingleTypeCaseStudyPageMiscellaneous
+  extends Struct.ComponentSchema {
+  collectionName: 'components_single_type_case_study_page_miscellaneous';
+  info: {
+    displayName: 'Miscellaneous';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'elements.buttons', false>;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -440,6 +467,8 @@ declare module '@strapi/strapi' {
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
       'shared.tiles': SharedTiles;
+      'single-type-case-study-page.hero-section': SingleTypeCaseStudyPageHeroSection;
+      'single-type-case-study-page.miscellaneous': SingleTypeCaseStudyPageMiscellaneous;
     }
   }
 }

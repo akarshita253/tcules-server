@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "case_study_landing_pages",
+  "info": {
+    "singularName": "case-study-landing-page",
+    "pluralName": "case-study-landing-pages",
+    "displayName": "Case Study Landing Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroSection": {
+      "type": "component",
+      "component": "single-type-case-study-page.hero-section",
+      "repeatable": false
+    },
+    "misc": {
+      "type": "component",
+      "component": "single-type-case-study-page.miscellaneous",
+      "repeatable": false
+    }
+  }
+}
