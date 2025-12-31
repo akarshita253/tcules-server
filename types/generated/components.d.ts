@@ -251,6 +251,17 @@ export interface HowWeWorkRightStartingPoint extends Struct.ComponentSchema {
   };
 }
 
+export interface LabsCardSection extends Struct.ComponentSchema {
+  collectionName: 'components_labs_card_sections';
+  info: {
+    displayName: 'cardSection';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'shared.card', true>;
+    heading: Schema.Attribute.String;
+  };
+}
+
 export interface LegalDetails extends Struct.ComponentSchema {
   collectionName: 'components_legal_details';
   info: {
@@ -402,6 +413,19 @@ export interface SharedCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_hero_sections';
+  info: {
+    displayName: 'Hero Section';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'elements.link', true>;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    highlightedDescription: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -540,6 +564,7 @@ declare module '@strapi/strapi' {
       'how-we-work.low-friction-ways': HowWeWorkLowFrictionWays;
       'how-we-work.right-details': HowWeWorkRightDetails;
       'how-we-work.right-starting-point': HowWeWorkRightStartingPoint;
+      'labs.card-section': LabsCardSection;
       'legal.details': LegalDetails;
       'navbar.navbar-level1-group': NavbarNavbarLevel1Group;
       'navbar.navbar-level2-group': NavbarNavbarLevel2Group;
@@ -551,6 +576,7 @@ declare module '@strapi/strapi' {
       'service.what-we-design': ServiceWhatWeDesign;
       'service.why-team-hire-us': ServiceWhyTeamHireUs;
       'shared.card': SharedCard;
+      'shared.hero-section': SharedHeroSection;
       'shared.media': SharedMedia;
       'shared.profile': SharedProfile;
       'shared.quote': SharedQuote;

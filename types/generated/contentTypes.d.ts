@@ -771,6 +771,36 @@ export interface ApiHowWeWorkHowWeWork extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiLabSingleTypeLabSingleType extends Struct.SingleTypeSchema {
+  collectionName: 'lab_single_types';
+  info: {
+    displayName: 'Lab Single Type';
+    pluralName: 'lab-single-types';
+    singularName: 'lab-single-type';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    detailSection: Schema.Attribute.DynamicZone<['labs.card-section']>;
+    heroSection: Schema.Attribute.Component<'shared.hero-section', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::lab-single-type.lab-single-type'
+    > &
+      Schema.Attribute.Private;
+    miscSection: Schema.Attribute.Component<'service.service-misc', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
   collectionName: 'navbars';
   info: {
@@ -1462,6 +1492,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::how-we-work.how-we-work': ApiHowWeWorkHowWeWork;
+      'api::lab-single-type.lab-single-type': ApiLabSingleTypeLabSingleType;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::service.service': ApiServiceService;

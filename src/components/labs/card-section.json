@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_labs_card_sections",
+  "info": {
+    "displayName": "cardSection"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "cards": {
+      "type": "component",
+      "component": "shared.card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_hero_sections",
+  "info": {
+    "displayName": "Hero Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    },
+    "highlightedDescription": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
