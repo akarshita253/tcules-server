@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "how_we_works",
+  "info": {
+    "singularName": "how-we-work",
+    "pluralName": "how-we-works",
+    "displayName": "How we work"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroSection": {
+      "type": "component",
+      "component": "how-we-work.how-we-work-hero-section",
+      "repeatable": false
+    },
+    "secondSection": {
+      "type": "component",
+      "component": "how-we-work.right-starting-point",
+      "repeatable": false
+    },
+    "thirdSection": {
+      "type": "component",
+      "component": "how-we-work.low-friction-ways",
+      "repeatable": false
+    },
+    "miscSection": {
+      "type": "component",
+      "component": "single-type-case-study-page.miscellaneous",
+      "repeatable": false
+    }
+  }
+}

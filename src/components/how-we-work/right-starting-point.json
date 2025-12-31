@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_how_we_work_right_starting_points",
+  "info": {
+    "displayName": "Right Starting Point"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "leftCard": {
+      "type": "component",
+      "component": "shared.card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

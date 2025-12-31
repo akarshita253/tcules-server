@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_how_we_work_cards",
+  "info": {
+    "displayName": "cards"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "points": {
+      "type": "component",
+      "component": "elements.points",
+      "repeatable": true
+    },
+    "button": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

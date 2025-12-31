@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_how_we_work_how_we_work_hero_sections",
+  "info": {
+    "displayName": "How We Work Hero Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "component",
+      "component": "elements.buttons",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

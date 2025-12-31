@@ -186,6 +186,71 @@ export interface ElementsPoints extends Struct.ComponentSchema {
   };
 }
 
+export interface HowWeWorkCardDetails extends Struct.ComponentSchema {
+  collectionName: 'components_how_we_work_card_details';
+  info: {
+    displayName: 'cardDetails';
+  };
+  attributes: {};
+}
+
+export interface HowWeWorkCards extends Struct.ComponentSchema {
+  collectionName: 'components_how_we_work_cards';
+  info: {
+    displayName: 'cards';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'elements.link', false>;
+    heading: Schema.Attribute.String;
+    points: Schema.Attribute.Component<'elements.points', true>;
+  };
+}
+
+export interface HowWeWorkHowWeWorkHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_how_we_work_how_we_work_hero_sections';
+  info: {
+    displayName: 'How We Work Hero Section';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'elements.buttons', true>;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface HowWeWorkLowFrictionWays extends Struct.ComponentSchema {
+  collectionName: 'components_how_we_work_low_friction_ways';
+  info: {
+    displayName: 'Low Friction Ways';
+  };
+  attributes: {
+    details: Schema.Attribute.Component<'how-we-work.cards', true>;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface HowWeWorkRightDetails extends Struct.ComponentSchema {
+  collectionName: 'components_how_we_work_right_details';
+  info: {
+    displayName: 'rightDetails';
+  };
+  attributes: {
+    description: Schema.Attribute.Component<'elements.points', true>;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface HowWeWorkRightStartingPoint extends Struct.ComponentSchema {
+  collectionName: 'components_how_we_work_right_starting_points';
+  info: {
+    displayName: 'Right Starting Point';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    leftCard: Schema.Attribute.Component<'shared.card', true>;
+  };
+}
+
 export interface LegalDetails extends Struct.ComponentSchema {
   collectionName: 'components_legal_details';
   info: {
@@ -325,9 +390,11 @@ export interface SharedCard extends Struct.ComponentSchema {
     displayName: 'Card';
   };
   attributes: {
+    button: Schema.Attribute.Component<'elements.buttons', false>;
     cardImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     cardTiles: Schema.Attribute.Component<'shared.tiles', true>;
     description: Schema.Attribute.Blocks;
+    details: Schema.Attribute.Component<'how-we-work.right-details', true>;
     heading: Schema.Attribute.String;
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     isIconVisible: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
@@ -467,6 +534,12 @@ declare module '@strapi/strapi' {
       'elements.elements': ElementsElements;
       'elements.link': ElementsLink;
       'elements.points': ElementsPoints;
+      'how-we-work.card-details': HowWeWorkCardDetails;
+      'how-we-work.cards': HowWeWorkCards;
+      'how-we-work.how-we-work-hero-section': HowWeWorkHowWeWorkHeroSection;
+      'how-we-work.low-friction-ways': HowWeWorkLowFrictionWays;
+      'how-we-work.right-details': HowWeWorkRightDetails;
+      'how-we-work.right-starting-point': HowWeWorkRightStartingPoint;
       'legal.details': LegalDetails;
       'navbar.navbar-level1-group': NavbarNavbarLevel1Group;
       'navbar.navbar-level2-group': NavbarNavbarLevel2Group;

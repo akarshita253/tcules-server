@@ -728,6 +728,49 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiHowWeWorkHowWeWork extends Struct.SingleTypeSchema {
+  collectionName: 'how_we_works';
+  info: {
+    displayName: 'How we work';
+    pluralName: 'how-we-works';
+    singularName: 'how-we-work';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heroSection: Schema.Attribute.Component<
+      'how-we-work.how-we-work-hero-section',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::how-we-work.how-we-work'
+    > &
+      Schema.Attribute.Private;
+    miscSection: Schema.Attribute.Component<
+      'single-type-case-study-page.miscellaneous',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    secondSection: Schema.Attribute.Component<
+      'how-we-work.right-starting-point',
+      false
+    >;
+    thirdSection: Schema.Attribute.Component<
+      'how-we-work.low-friction-ways',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
   collectionName: 'navbars';
   info: {
@@ -1418,6 +1461,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
       'api::homepage.homepage': ApiHomepageHomepage;
+      'api::how-we-work.how-we-work': ApiHowWeWorkHowWeWork;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::service.service': ApiServiceService;

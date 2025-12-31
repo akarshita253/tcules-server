@@ -45,6 +45,16 @@
       "type": "component",
       "component": "elements.points",
       "repeatable": true
+    },
+    "details": {
+      "type": "component",
+      "component": "how-we-work.right-details",
+      "repeatable": true
+    },
+    "button": {
+      "type": "component",
+      "component": "elements.buttons",
+      "repeatable": false
     }
   },
   "config": {}
