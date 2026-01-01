@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_homepage_homepage_contact_and_testimonials",
+  "info": {
+    "displayName": "Homepage Contact And Testimonials"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "client_detail": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::author.author"
+    },
+    "testimonial": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::testimonial.testimonial"
+    }
+  },
+  "config": {}
+}

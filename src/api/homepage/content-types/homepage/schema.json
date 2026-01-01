@@ -10,5 +10,36 @@
     "draftAndPublish": true
   },
   "pluginOptions": {},
-  "attributes": {}
+  "attributes": {
+    "heroSection": {
+      "type": "component",
+      "component": "homepage.homepage-hero-section",
+      "repeatable": false
+    },
+    "secondSection": {
+      "type": "component",
+      "component": "homepage.homepage-second-section",
+      "repeatable": false
+    },
+    "thirdSection": {
+      "type": "component",
+      "component": "homepage.homepage-third-section",
+      "repeatable": false
+    },
+    "fourthSection": {
+      "type": "component",
+      "component": "homepage.homepage-fourth-section",
+      "repeatable": false
+    },
+    "fifthSection": {
+      "type": "component",
+      "component": "homepage.homepage-fifth-section",
+      "repeatable": false
+    },
+    "contactSection": {
+      "type": "component",
+      "component": "homepage.homepage-contact-and-testimonials",
+      "repeatable": false
+    }
+  }
 }

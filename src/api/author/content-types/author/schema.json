@@ -4,7 +4,7 @@
   "info": {
     "singularName": "author",
     "pluralName": "authors",
-    "displayName": "Author",
+    "displayName": "Client Detail",
     "description": "Create authors for your content"
   },
   "options": {
@@ -15,18 +15,17 @@
     "name": {
       "type": "string"
     },
-    "avatar": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ]
-    },
     "email": {
       "type": "string"
+    },
+    "companyName": {
+      "type": "string"
+    },
+    "contactNumber": {
+      "type": "string"
+    },
+    "ideaAboutProject": {
+      "type": "text"
     }
   }
 }

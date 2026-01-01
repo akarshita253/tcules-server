@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_homepage_homepage_hero_sections",
+  "info": {
+    "displayName": "Homepage Hero Section"
+  },
+  "options": {},
+  "attributes": {
+    "headingOne": {
+      "type": "string"
+    },
+    "headingTwo": {
+      "type": "string"
+    },
+    "descriptionOne": {
+      "type": "text"
+    },
+    "descriptionTwo": {
+      "type": "text"
+    },
+    "button": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    },
+    "bottomTags": {
+      "type": "component",
+      "component": "elements.points",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

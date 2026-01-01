@@ -186,6 +186,129 @@ export interface ElementsPoints extends Struct.ComponentSchema {
   };
 }
 
+export interface HomepageBranchCards extends Struct.ComponentSchema {
+  collectionName: 'components_homepage_branch_cards';
+  info: {
+    displayName: 'Branch Cards';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface HomepageFourthSectionCards extends Struct.ComponentSchema {
+  collectionName: 'components_homepage_fourth_section_cards';
+  info: {
+    displayName: 'Fourth Section Cards';
+  };
+  attributes: {
+    cardImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface HomepageHomepageContactAndTestimonials
+  extends Struct.ComponentSchema {
+  collectionName: 'components_homepage_homepage_contact_and_testimonials';
+  info: {
+    displayName: 'Homepage Contact And Testimonials';
+  };
+  attributes: {
+    client_detail: Schema.Attribute.Relation<'oneToOne', 'api::author.author'>;
+    heading: Schema.Attribute.String;
+    testimonial: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::testimonial.testimonial'
+    >;
+  };
+}
+
+export interface HomepageHomepageFifthSection extends Struct.ComponentSchema {
+  collectionName: 'components_homepage_homepage_fifth_sections';
+  info: {
+    displayName: 'Homepage Fifth Section';
+  };
+  attributes: {
+    case_studies: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::case-study.case-study'
+    >;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface HomepageHomepageFourthSection extends Struct.ComponentSchema {
+  collectionName: 'components_homepage_homepage_fourth_sections';
+  info: {
+    displayName: 'Homepage Fourth Section';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'elements.link', false>;
+    cards: Schema.Attribute.Component<'homepage.fourth-section-cards', true>;
+    description: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface HomepageHomepageHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_homepage_homepage_hero_sections';
+  info: {
+    displayName: 'Homepage Hero Section';
+  };
+  attributes: {
+    bottomTags: Schema.Attribute.Component<'elements.points', true>;
+    button: Schema.Attribute.Component<'elements.link', true>;
+    descriptionOne: Schema.Attribute.Text;
+    descriptionTwo: Schema.Attribute.Text;
+    headingOne: Schema.Attribute.String;
+    headingTwo: Schema.Attribute.String;
+  };
+}
+
+export interface HomepageHomepageSecondSection extends Struct.ComponentSchema {
+  collectionName: 'components_homepage_homepage_second_sections';
+  info: {
+    displayName: 'Homepage Second Section';
+  };
+  attributes: {
+    bgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    secondSection: Schema.Attribute.Component<
+      'homepage.homepage-second-section-points',
+      true
+    >;
+  };
+}
+
+export interface HomepageHomepageSecondSectionPoints
+  extends Struct.ComponentSchema {
+  collectionName: 'components_homepage_homepage_second_section_points';
+  info: {
+    displayName: 'Homepage Second Section Points';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    topDescription: Schema.Attribute.Text;
+  };
+}
+
+export interface HomepageHomepageThirdSection extends Struct.ComponentSchema {
+  collectionName: 'components_homepage_homepage_third_sections';
+  info: {
+    displayName: 'Homepage Third Section';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'homepage.branch-cards', true>;
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface HowWeWorkCardDetails extends Struct.ComponentSchema {
   collectionName: 'components_how_we_work_card_details';
   info: {
@@ -558,6 +681,15 @@ declare module '@strapi/strapi' {
       'elements.elements': ElementsElements;
       'elements.link': ElementsLink;
       'elements.points': ElementsPoints;
+      'homepage.branch-cards': HomepageBranchCards;
+      'homepage.fourth-section-cards': HomepageFourthSectionCards;
+      'homepage.homepage-contact-and-testimonials': HomepageHomepageContactAndTestimonials;
+      'homepage.homepage-fifth-section': HomepageHomepageFifthSection;
+      'homepage.homepage-fourth-section': HomepageHomepageFourthSection;
+      'homepage.homepage-hero-section': HomepageHomepageHeroSection;
+      'homepage.homepage-second-section': HomepageHomepageSecondSection;
+      'homepage.homepage-second-section-points': HomepageHomepageSecondSectionPoints;
+      'homepage.homepage-third-section': HomepageHomepageThirdSection;
       'how-we-work.card-details': HowWeWorkCardDetails;
       'how-we-work.cards': HowWeWorkCards;
       'how-we-work.how-we-work-hero-section': HowWeWorkHowWeWorkHeroSection;

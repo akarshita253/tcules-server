@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_homepage_homepage_fourth_sections",
+  "info": {
+    "displayName": "Homepage Fourth Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "button": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    },
+    "cards": {
+      "type": "component",
+      "component": "homepage.fourth-section-cards",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

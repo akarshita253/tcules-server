@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_homepage_fourth_section_cards",
+  "info": {
+    "displayName": "Fourth Section Cards"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "cardImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_homepage_homepage_third_sections",
+  "info": {
+    "displayName": "Homepage Third Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "cards": {
+      "type": "component",
+      "component": "homepage.branch-cards",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
