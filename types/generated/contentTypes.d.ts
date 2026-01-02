@@ -671,6 +671,42 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiClientContactClientContact
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'client_contacts';
+  info: {
+    displayName: 'Client Contact';
+    pluralName: 'client-contacts';
+    singularName: 'client-contact';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    clientComments: Schema.Attribute.Text;
+    clientCompany: Schema.Attribute.String;
+    clientContact: Schema.Attribute.String;
+    clientEmail: Schema.Attribute.String;
+    clientName: Schema.Attribute.String;
+    clientProfilePicture: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::client-contact.client-contact'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -1549,6 +1585,7 @@ declare module '@strapi/strapi' {
       'api::case-study-landing-page.case-study-landing-page': ApiCaseStudyLandingPageCaseStudyLandingPage;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::category.category': ApiCategoryCategory;
+      'api::client-contact.client-contact': ApiClientContactClientContact;
       'api::global.global': ApiGlobalGlobal;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::how-we-work.how-we-work': ApiHowWeWorkHowWeWork;

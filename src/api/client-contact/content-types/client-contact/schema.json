@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "client_contacts",
+  "info": {
+    "singularName": "client-contact",
+    "pluralName": "client-contacts",
+    "displayName": "Client Contact"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "clientName": {
+      "type": "string"
+    },
+    "clientCompany": {
+      "type": "string"
+    },
+    "clientEmail": {
+      "type": "string"
+    },
+    "clientComments": {
+      "type": "text"
+    },
+    "clientProfilePicture": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "clientContact": {
+      "type": "string"
+    }
+  }
+}
