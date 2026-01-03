@@ -1,0 +1,55 @@
+{
+  "kind": "singleType",
+  "collectionName": "labs_fil_landing_pages",
+  "info": {
+    "singularName": "labs-fil-landing-page",
+    "pluralName": "labs-fil-landing-pages",
+    "displayName": "Labs Fil Landing Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroSection": {
+      "type": "component",
+      "component": "labs-fil.labs-fil-hero-section",
+      "repeatable": false
+    },
+    "secondSection": {
+      "type": "component",
+      "component": "labs-fil.labs-fil-second-section",
+      "repeatable": false
+    },
+    "thirdSection": {
+      "type": "component",
+      "component": "labs-fil.labs-fil-third-section",
+      "repeatable": false
+    },
+    "fourthSection": {
+      "type": "component",
+      "component": "labs-fil.labs-fil-fourth-section",
+      "repeatable": false
+    },
+    "fifthSection": {
+      "type": "component",
+      "component": "labs-fil.labs-fil-fifth-section",
+      "repeatable": false
+    },
+    "sixthSection": {
+      "type": "component",
+      "component": "labs-fil.labs-fil-sixth-section",
+      "repeatable": false
+    },
+    "seventhSection": {
+      "type": "component",
+      "component": "labs-fil.labs-fil-seventh-section",
+      "repeatable": false
+    },
+    "eighthSection": {
+      "type": "component",
+      "component": "labs-fil.labs-fil-eighth-section",
+      "repeatable": false
+    }
+  }
+}

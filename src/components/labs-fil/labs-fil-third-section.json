@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_labs_fil_labs_fil_third_sections",
+  "info": {
+    "displayName": "Labs FIL Third Section"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "heading": {
+      "type": "string"
+    },
+    "cards": {
+      "type": "component",
+      "component": "labs-fil.third-section-cards",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_labs_fil_labs_fil_seventh_sections",
+  "info": {
+    "displayName": "Labs FIL Seventh Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "faqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq"
+    }
+  },
+  "config": {}
+}

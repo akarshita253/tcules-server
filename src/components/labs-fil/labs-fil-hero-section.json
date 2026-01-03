@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_labs_fil_labs_fil_hero_sections",
+  "info": {
+    "displayName": "Labs FIL Hero Section"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

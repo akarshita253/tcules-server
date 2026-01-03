@@ -374,6 +374,168 @@ export interface HowWeWorkRightStartingPoint extends Struct.ComponentSchema {
   };
 }
 
+export interface LabsFilCardDetails extends Struct.ComponentSchema {
+  collectionName: 'components_labs_fil_card_details';
+  info: {
+    displayName: 'cardDetails';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
+export interface LabsFilLabsFilEighthSection extends Struct.ComponentSchema {
+  collectionName: 'components_labs_fil_labs_fil_eighth_sections';
+  info: {
+    displayName: 'Labs FIL Eighth Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface LabsFilLabsFilFifthSection extends Struct.ComponentSchema {
+  collectionName: 'components_labs_fil_labs_fil_fifth_sections';
+  info: {
+    displayName: 'Labs FIL Fifth Section';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'labs-fil.card-details', true>;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface LabsFilLabsFilFourthSection extends Struct.ComponentSchema {
+  collectionName: 'components_labs_fil_labs_fil_fourth_sections';
+  info: {
+    displayName: 'Labs FIL Fourth Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    fourthSection: Schema.Attribute.Component<
+      'labs-fil.labs-fil-second-section',
+      false
+    >;
+  };
+}
+
+export interface LabsFilLabsFilHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_labs_fil_labs_fil_hero_sections';
+  info: {
+    displayName: 'Labs FIL Hero Section';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'elements.link', true>;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+  };
+}
+
+export interface LabsFilLabsFilSecondSection extends Struct.ComponentSchema {
+  collectionName: 'components_labs_fil_labs_fil_second_sections';
+  info: {
+    displayName: 'Labs FIL Second Section';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'labs-fil.card-details', true>;
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface LabsFilLabsFilSeventhSection extends Struct.ComponentSchema {
+  collectionName: 'components_labs_fil_labs_fil_seventh_sections';
+  info: {
+    displayName: 'Labs FIL Seventh Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface LabsFilLabsFilSixthSection extends Struct.ComponentSchema {
+  collectionName: 'components_labs_fil_labs_fil_sixth_sections';
+  info: {
+    displayName: 'Labs FIL Sixth Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    leftCard: Schema.Attribute.Component<
+      'labs-fil.sixth-section-left-card',
+      false
+    >;
+    rightCard: Schema.Attribute.Component<
+      'labs-fil.sixth-section-right-card',
+      true
+    >;
+  };
+}
+
+export interface LabsFilLabsFilThirdSection extends Struct.ComponentSchema {
+  collectionName: 'components_labs_fil_labs_fil_third_sections';
+  info: {
+    displayName: 'Labs FIL Third Section';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'labs-fil.third-section-cards', true>;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface LabsFilSixthSectionLeftCard extends Struct.ComponentSchema {
+  collectionName: 'components_labs_fil_sixth_section_left_cards';
+  info: {
+    displayName: 'Sixth Section Left Card';
+  };
+  attributes: {
+    bottomText: Schema.Attribute.String;
+    description: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultMarkdown';
+        }
+      >;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface LabsFilSixthSectionRightCard extends Struct.ComponentSchema {
+  collectionName: 'components_labs_fil_sixth_section_right_cards';
+  info: {
+    displayName: 'Sixth Section Right Card';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface LabsFilThirdSectionCards extends Struct.ComponentSchema {
+  collectionName: 'components_labs_fil_third_section_cards';
+  info: {
+    displayName: 'thirdSectionCards';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
 export interface LabsCardSection extends Struct.ComponentSchema {
   collectionName: 'components_labs_card_sections';
   info: {
@@ -696,6 +858,18 @@ declare module '@strapi/strapi' {
       'how-we-work.low-friction-ways': HowWeWorkLowFrictionWays;
       'how-we-work.right-details': HowWeWorkRightDetails;
       'how-we-work.right-starting-point': HowWeWorkRightStartingPoint;
+      'labs-fil.card-details': LabsFilCardDetails;
+      'labs-fil.labs-fil-eighth-section': LabsFilLabsFilEighthSection;
+      'labs-fil.labs-fil-fifth-section': LabsFilLabsFilFifthSection;
+      'labs-fil.labs-fil-fourth-section': LabsFilLabsFilFourthSection;
+      'labs-fil.labs-fil-hero-section': LabsFilLabsFilHeroSection;
+      'labs-fil.labs-fil-second-section': LabsFilLabsFilSecondSection;
+      'labs-fil.labs-fil-seventh-section': LabsFilLabsFilSeventhSection;
+      'labs-fil.labs-fil-sixth-section': LabsFilLabsFilSixthSection;
+      'labs-fil.labs-fil-third-section': LabsFilLabsFilThirdSection;
+      'labs-fil.sixth-section-left-card': LabsFilSixthSectionLeftCard;
+      'labs-fil.sixth-section-right-card': LabsFilSixthSectionRightCard;
+      'labs-fil.third-section-cards': LabsFilThirdSectionCards;
       'labs.card-section': LabsCardSection;
       'legal.details': LegalDetails;
       'navbar.navbar-level1-group': NavbarNavbarLevel1Group;

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_labs_fil_labs_fil_fourth_sections",
+  "info": {
+    "displayName": "Labs FIL Fourth Section"
+  },
+  "options": {},
+  "attributes": {
+    "fourthSection": {
+      "type": "component",
+      "component": "labs-fil.labs-fil-second-section",
+      "repeatable": false
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

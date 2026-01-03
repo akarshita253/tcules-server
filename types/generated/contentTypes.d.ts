@@ -707,6 +707,34 @@ export interface ApiClientContactClientContact
   };
 }
 
+export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
+  collectionName: 'faqs';
+  info: {
+    displayName: 'FAQ';
+    pluralName: 'faqs';
+    singularName: 'faq';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    answer: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    isActive: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    question: Schema.Attribute.String;
+    slug: Schema.Attribute.UID<'question'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -857,6 +885,66 @@ export interface ApiLabSingleTypeLabSingleType extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     miscSection: Schema.Attribute.Component<'service.service-misc', false>;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLabsFilLandingPageLabsFilLandingPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'labs_fil_landing_pages';
+  info: {
+    displayName: 'Labs Fil Landing Page';
+    pluralName: 'labs-fil-landing-pages';
+    singularName: 'labs-fil-landing-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    eighthSection: Schema.Attribute.Component<
+      'labs-fil.labs-fil-eighth-section',
+      false
+    >;
+    fifthSection: Schema.Attribute.Component<
+      'labs-fil.labs-fil-fifth-section',
+      false
+    >;
+    fourthSection: Schema.Attribute.Component<
+      'labs-fil.labs-fil-fourth-section',
+      false
+    >;
+    heroSection: Schema.Attribute.Component<
+      'labs-fil.labs-fil-hero-section',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::labs-fil-landing-page.labs-fil-landing-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    secondSection: Schema.Attribute.Component<
+      'labs-fil.labs-fil-second-section',
+      false
+    >;
+    seventhSection: Schema.Attribute.Component<
+      'labs-fil.labs-fil-seventh-section',
+      false
+    >;
+    sixthSection: Schema.Attribute.Component<
+      'labs-fil.labs-fil-sixth-section',
+      false
+    >;
+    thirdSection: Schema.Attribute.Component<
+      'labs-fil.labs-fil-third-section',
+      false
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1586,10 +1674,12 @@ declare module '@strapi/strapi' {
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::category.category': ApiCategoryCategory;
       'api::client-contact.client-contact': ApiClientContactClientContact;
+      'api::faq.faq': ApiFaqFaq;
       'api::global.global': ApiGlobalGlobal;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::how-we-work.how-we-work': ApiHowWeWorkHowWeWork;
       'api::lab-single-type.lab-single-type': ApiLabSingleTypeLabSingleType;
+      'api::labs-fil-landing-page.labs-fil-landing-page': ApiLabsFilLandingPageLabsFilLandingPage;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::service.service': ApiServiceService;
