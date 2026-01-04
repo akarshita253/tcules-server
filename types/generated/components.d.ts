@@ -140,6 +140,25 @@ export interface BlogAndCasestudiesVideo extends Struct.ComponentSchema {
   };
 }
 
+export interface ContactUsContactUsBottomCards extends Struct.ComponentSchema {
+  collectionName: 'components_contact_us_contact_us_bottom_cards';
+  info: {
+    displayName: 'Contact Us Bottom Cards';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    link: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
+export interface ContactUsSocialMediaLinks extends Struct.ComponentSchema {
+  collectionName: 'components_contact_us_social_media_links';
+  info: {
+    displayName: 'Social Media Links';
+  };
+  attributes: {};
+}
+
 export interface ElementsButtons extends Struct.ComponentSchema {
   collectionName: 'components_elements_buttons';
   info: {
@@ -839,6 +858,8 @@ declare module '@strapi/strapi' {
       'blog-and-casestudies.sepration': BlogAndCasestudiesSepration;
       'blog-and-casestudies.tldr-section': BlogAndCasestudiesTldrSection;
       'blog-and-casestudies.video': BlogAndCasestudiesVideo;
+      'contact-us.contact-us-bottom-cards': ContactUsContactUsBottomCards;
+      'contact-us.social-media-links': ContactUsSocialMediaLinks;
       'elements.buttons': ElementsButtons;
       'elements.elements': ElementsElements;
       'elements.link': ElementsLink;

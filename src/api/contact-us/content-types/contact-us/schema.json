@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_uses",
+  "info": {
+    "singularName": "contact-us",
+    "pluralName": "contact-uses",
+    "displayName": "Contact Us"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "cards": {
+      "type": "component",
+      "component": "contact-us.contact-us-bottom-cards",
+      "repeatable": true
+    },
+    "socialMedia": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    }
+  }
+}

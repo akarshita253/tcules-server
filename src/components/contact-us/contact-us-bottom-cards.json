@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_contact_us_contact_us_bottom_cards",
+  "info": {
+    "displayName": "Contact Us Bottom Cards"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "link": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}
