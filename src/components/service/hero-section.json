@@ -11,6 +11,9 @@
     "description": {
       "type": "text"
     },
+    "descriptionTwo": {
+      "type": "text"
+    },
     "label": {
       "type": "component",
       "component": "elements.points",

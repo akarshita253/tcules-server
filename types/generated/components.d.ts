@@ -676,6 +676,7 @@ export interface ServiceHeroSection extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
+    descriptionTwo: Schema.Attribute.Text;
     heading: Schema.Attribute.String;
     heroSectionButton: Schema.Attribute.Component<'elements.buttons', true>;
     label: Schema.Attribute.Component<'elements.points', true>;
