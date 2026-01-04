@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "featureImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "events"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "events"
+    },
+    "eventWhereAbout": {
+      "type": "component",
+      "component": "events.event-details",
+      "repeatable": true
+    },
+    "mainSection": {
+      "type": "dynamiczone",
+      "components": [
+        "blog-and-casestudies.tldr-section",
+        "blog-and-casestudies.sepration",
+        "blog-and-casestudies.section-image",
+        "blog-and-casestudies.code-section",
+        "blog-and-casestudies.blog-or-casestudy-text",
+        "shared.seo",
+        "shared.rich-text",
+        "shared.quote",
+        "blog-and-casestudies.video",
+        "blog-and-casestudies.iframe"
+      ]
+    }
+  }
+}

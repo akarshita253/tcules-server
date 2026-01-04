@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_events_event_details",
+  "info": {
+    "displayName": "Event Details"
+  },
+  "options": {},
+  "attributes": {
+    "descOne": {
+      "type": "string"
+    },
+    "descTwo": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

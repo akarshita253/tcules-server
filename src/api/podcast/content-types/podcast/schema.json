@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "blogs",
+  "collectionName": "podcasts",
   "info": {
-    "singularName": "blog",
-    "pluralName": "blogs",
-    "displayName": "Blog"
+    "singularName": "podcast",
+    "pluralName": "podcasts",
+    "displayName": "Podcast"
   },
   "options": {
     "draftAndPublish": true
@@ -14,19 +14,34 @@
     "title": {
       "type": "string"
     },
+    "description": {
+      "type": "text"
+    },
     "slug": {
       "type": "uid",
       "targetField": "title"
     },
     "featureImage": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
       ]
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "podcasts"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog.blog",
+      "inversedBy": "podcasts"
     },
     "mainSection": {
       "type": "dynamiczone",
@@ -39,31 +54,9 @@
         "shared.rich-text",
         "blog-and-casestudies.video",
         "blog-and-casestudies.iframe",
-        "blog-and-casestudies.code-section"
+        "blog-and-casestudies.code-section",
+        "shared.quote"
       ]
-    },
-    "blogProfileSection": {
-      "type": "component",
-      "component": "shared.profile",
-      "repeatable": true
-    },
-    "tags": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::tag.tag",
-      "inversedBy": "blogs"
-    },
-    "categories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::category.category",
-      "inversedBy": "blogs"
-    },
-    "podcasts": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::podcast.podcast",
-      "mappedBy": "categories"
     }
   }
 }

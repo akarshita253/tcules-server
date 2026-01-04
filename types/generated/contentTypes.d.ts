@@ -531,10 +531,45 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
         'blog-and-casestudies.code-section',
       ]
     >;
+    podcasts: Schema.Attribute.Relation<'manyToMany', 'api::podcast.podcast'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
     tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
     title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCapablityCapablity extends Struct.SingleTypeSchema {
+  collectionName: 'capablities';
+  info: {
+    displayName: 'Capablity';
+    pluralName: 'capablities';
+    singularName: 'capablity';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    capablitiesSingleType: Schema.Attribute.DynamicZone<
+      [
+        'service.hero-section',
+        'capablities.capablities-card-section',
+        'shared.seo',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::capablity.capablity'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -656,6 +691,11 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
+    events: Schema.Attribute.Relation<'manyToMany', 'api::event.event'>;
+    interviews: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::interview.interview'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -735,6 +775,56 @@ export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     socialMedia: Schema.Attribute.Component<'elements.link', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiEventEvent extends Struct.CollectionTypeSchema {
+  collectionName: 'events';
+  info: {
+    displayName: 'Event';
+    pluralName: 'events';
+    singularName: 'event';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::category.category'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    eventWhereAbout: Schema.Attribute.Component<'events.event-details', true>;
+    featureImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'> &
+      Schema.Attribute.Private;
+    mainSection: Schema.Attribute.DynamicZone<
+      [
+        'blog-and-casestudies.tldr-section',
+        'blog-and-casestudies.sepration',
+        'blog-and-casestudies.section-image',
+        'blog-and-casestudies.code-section',
+        'blog-and-casestudies.blog-or-casestudy-text',
+        'shared.seo',
+        'shared.rich-text',
+        'shared.quote',
+        'blog-and-casestudies.video',
+        'blog-and-casestudies.iframe',
+      ]
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -895,6 +985,58 @@ export interface ApiHowWeWorkHowWeWork extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiInterviewInterview extends Struct.CollectionTypeSchema {
+  collectionName: 'interviews';
+  info: {
+    displayName: 'Interview';
+    pluralName: 'interviews';
+    singularName: 'interview';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::category.category'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    featureImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::interview.interview'
+    > &
+      Schema.Attribute.Private;
+    mainSection: Schema.Attribute.DynamicZone<
+      [
+        'blog-and-casestudies.video',
+        'blog-and-casestudies.tldr-section',
+        'blog-and-casestudies.sepration',
+        'blog-and-casestudies.section-image',
+        'blog-and-casestudies.iframe',
+        'blog-and-casestudies.code-section',
+        'blog-and-casestudies.blog-or-casestudy-text',
+        'shared.seo',
+        'shared.rich-text',
+        'shared.quote',
+      ]
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiLabSingleTypeLabSingleType extends Struct.SingleTypeSchema {
   collectionName: 'lab_single_types';
   info: {
@@ -1020,6 +1162,55 @@ export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPodcastPodcast extends Struct.CollectionTypeSchema {
+  collectionName: 'podcasts';
+  info: {
+    displayName: 'Podcast';
+    pluralName: 'podcasts';
+    singularName: 'podcast';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    categories: Schema.Attribute.Relation<'manyToMany', 'api::blog.blog'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    featureImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::podcast.podcast'
+    > &
+      Schema.Attribute.Private;
+    mainSection: Schema.Attribute.DynamicZone<
+      [
+        'blog-and-casestudies.tldr-section',
+        'blog-and-casestudies.sepration',
+        'blog-and-casestudies.blog-or-casestudy-text',
+        'blog-and-casestudies.section-image',
+        'shared.seo',
+        'shared.rich-text',
+        'blog-and-casestudies.video',
+        'blog-and-casestudies.iframe',
+        'blog-and-casestudies.code-section',
+        'shared.quote',
+      ]
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPrivacyPolicyPrivacyPolicy extends Struct.SingleTypeSchema {
   collectionName: 'privacy_policies';
   info: {
@@ -1116,10 +1307,16 @@ export interface ApiTagTag extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
+    events: Schema.Attribute.Relation<'manyToMany', 'api::event.event'>;
+    interviews: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::interview.interview'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'> &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
+    podcasts: Schema.Attribute.Relation<'manyToMany', 'api::podcast.podcast'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1704,18 +1901,22 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::author.author': ApiAuthorAuthor;
       'api::blog.blog': ApiBlogBlog;
+      'api::capablity.capablity': ApiCapablityCapablity;
       'api::case-study-landing-page.case-study-landing-page': ApiCaseStudyLandingPageCaseStudyLandingPage;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::category.category': ApiCategoryCategory;
       'api::client-contact.client-contact': ApiClientContactClientContact;
       'api::contact-us.contact-us': ApiContactUsContactUs;
+      'api::event.event': ApiEventEvent;
       'api::faq.faq': ApiFaqFaq;
       'api::global.global': ApiGlobalGlobal;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::how-we-work.how-we-work': ApiHowWeWorkHowWeWork;
+      'api::interview.interview': ApiInterviewInterview;
       'api::lab-single-type.lab-single-type': ApiLabSingleTypeLabSingleType;
       'api::labs-fil-landing-page.labs-fil-landing-page': ApiLabsFilLandingPageLabsFilLandingPage;
       'api::navbar.navbar': ApiNavbarNavbar;
+      'api::podcast.podcast': ApiPodcastPodcast;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::service.service': ApiServiceService;
       'api::tag.tag': ApiTagTag;

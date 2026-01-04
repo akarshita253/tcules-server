@@ -140,6 +140,38 @@ export interface BlogAndCasestudiesVideo extends Struct.ComponentSchema {
   };
 }
 
+export interface CapablitiesCapablitiesCardSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_capablities_capablities_card_sections';
+  info: {
+    displayName: 'Capablities Card Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    sectionCards: Schema.Attribute.Component<
+      'capablities.capablities-cards',
+      true
+    >;
+    subRouteLink: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
+export interface CapablitiesCapablitiesCards extends Struct.ComponentSchema {
+  collectionName: 'components_capablities_capablities_cards';
+  info: {
+    displayName: 'Capablities Cards';
+  };
+  attributes: {
+    cardPoints: Schema.Attribute.Component<'elements.points', true>;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
 export interface ContactUsContactUsBottomCards extends Struct.ComponentSchema {
   collectionName: 'components_contact_us_contact_us_bottom_cards';
   info: {
@@ -202,6 +234,17 @@ export interface ElementsPoints extends Struct.ComponentSchema {
   };
   attributes: {
     listText: Schema.Attribute.String;
+  };
+}
+
+export interface EventsEventDetails extends Struct.ComponentSchema {
+  collectionName: 'components_events_event_details';
+  info: {
+    displayName: 'Event Details';
+  };
+  attributes: {
+    descOne: Schema.Attribute.String;
+    descTwo: Schema.Attribute.String;
   };
 }
 
@@ -858,12 +901,15 @@ declare module '@strapi/strapi' {
       'blog-and-casestudies.sepration': BlogAndCasestudiesSepration;
       'blog-and-casestudies.tldr-section': BlogAndCasestudiesTldrSection;
       'blog-and-casestudies.video': BlogAndCasestudiesVideo;
+      'capablities.capablities-card-section': CapablitiesCapablitiesCardSection;
+      'capablities.capablities-cards': CapablitiesCapablitiesCards;
       'contact-us.contact-us-bottom-cards': ContactUsContactUsBottomCards;
       'contact-us.social-media-links': ContactUsSocialMediaLinks;
       'elements.buttons': ElementsButtons;
       'elements.elements': ElementsElements;
       'elements.link': ElementsLink;
       'elements.points': ElementsPoints;
+      'events.event-details': EventsEventDetails;
       'homepage.branch-cards': HomepageBranchCards;
       'homepage.fourth-section-cards': HomepageFourthSectionCards;
       'homepage.homepage-contact-and-testimonials': HomepageHomepageContactAndTestimonials;

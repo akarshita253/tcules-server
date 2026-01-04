@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "interviews",
+  "info": {
+    "singularName": "interview",
+    "pluralName": "interviews",
+    "displayName": "Interview"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "featureImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "interviews"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "interviews"
+    },
+    "mainSection": {
+      "type": "dynamiczone",
+      "components": [
+        "blog-and-casestudies.video",
+        "blog-and-casestudies.tldr-section",
+        "blog-and-casestudies.sepration",
+        "blog-and-casestudies.section-image",
+        "blog-and-casestudies.iframe",
+        "blog-and-casestudies.code-section",
+        "blog-and-casestudies.blog-or-casestudy-text",
+        "shared.seo",
+        "shared.rich-text",
+        "shared.quote"
+      ]
+    }
+  }
+}

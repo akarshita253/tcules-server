@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_capablities_capablities_cards",
+  "info": {
+    "displayName": "Capablities Cards"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "link": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "cardPoints": {
+      "type": "component",
+      "component": "elements.points",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

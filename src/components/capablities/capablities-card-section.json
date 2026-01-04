@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_capablities_capablities_card_sections",
+  "info": {
+    "displayName": "Capablities Card Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "subRouteLink": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    },
+    "sectionCards": {
+      "type": "component",
+      "component": "capablities.capablities-cards",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

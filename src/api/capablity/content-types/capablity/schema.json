@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "capablities",
+  "info": {
+    "singularName": "capablity",
+    "pluralName": "capablities",
+    "displayName": "Capablity"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "capablitiesSingleType": {
+      "type": "dynamiczone",
+      "components": [
+        "service.hero-section",
+        "capablities.capablities-card-section",
+        "shared.seo"
+      ]
+    }
+  }
+}
