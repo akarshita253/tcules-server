@@ -809,16 +809,12 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     mainSection: Schema.Attribute.DynamicZone<
       [
+        'blog-and-casestudies.blog-or-casestudy-text',
+        'blog-and-casestudies.video',
+        'podcaste-events-interviews.shadow-card',
         'blog-and-casestudies.tldr-section',
         'blog-and-casestudies.sepration',
         'blog-and-casestudies.section-image',
-        'blog-and-casestudies.code-section',
-        'blog-and-casestudies.blog-or-casestudy-text',
-        'shared.seo',
-        'shared.rich-text',
-        'shared.quote',
-        'blog-and-casestudies.video',
-        'blog-and-casestudies.iframe',
       ]
     >;
     publishedAt: Schema.Attribute.DateTime;
@@ -1015,16 +1011,12 @@ export interface ApiInterviewInterview extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     mainSection: Schema.Attribute.DynamicZone<
       [
+        'podcaste-events-interviews.shadow-card',
         'blog-and-casestudies.video',
         'blog-and-casestudies.tldr-section',
         'blog-and-casestudies.sepration',
         'blog-and-casestudies.section-image',
-        'blog-and-casestudies.iframe',
-        'blog-and-casestudies.code-section',
         'blog-and-casestudies.blog-or-casestudy-text',
-        'shared.seo',
-        'shared.rich-text',
-        'shared.quote',
       ]
     >;
     publishedAt: Schema.Attribute.DateTime;
@@ -1189,16 +1181,12 @@ export interface ApiPodcastPodcast extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     mainSection: Schema.Attribute.DynamicZone<
       [
+        'podcaste-events-interviews.shadow-card',
+        'blog-and-casestudies.video',
         'blog-and-casestudies.tldr-section',
         'blog-and-casestudies.sepration',
-        'blog-and-casestudies.blog-or-casestudy-text',
         'blog-and-casestudies.section-image',
-        'shared.seo',
-        'shared.rich-text',
-        'blog-and-casestudies.video',
-        'blog-and-casestudies.iframe',
-        'blog-and-casestudies.code-section',
-        'shared.quote',
+        'blog-and-casestudies.blog-or-casestudy-text',
       ]
     >;
     publishedAt: Schema.Attribute.DateTime;

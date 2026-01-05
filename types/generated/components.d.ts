@@ -660,6 +660,21 @@ export interface NavbarNavbarLevel2Group extends Struct.ComponentSchema {
   };
 }
 
+export interface PodcasteEventsInterviewsShadowCard
+  extends Struct.ComponentSchema {
+  collectionName: 'components_podcaste_events_interviews_shadow_cards';
+  info: {
+    displayName: 'Shadow Card';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    heading: Schema.Attribute.String;
+    isBackgroundAvailable: Schema.Attribute.Boolean;
+    isShadowVisible: Schema.Attribute.Boolean;
+    link: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
 export interface ServiceExploreRecentWork extends Struct.ComponentSchema {
   collectionName: 'components_service_explore_recent_works';
   info: {
@@ -945,6 +960,7 @@ declare module '@strapi/strapi' {
       'legal.details': LegalDetails;
       'navbar.navbar-level1-group': NavbarNavbarLevel1Group;
       'navbar.navbar-level2-group': NavbarNavbarLevel2Group;
+      'podcaste-events-interviews.shadow-card': PodcasteEventsInterviewsShadowCard;
       'service.explore-recent-work': ServiceExploreRecentWork;
       'service.hero-section': ServiceHeroSection;
       'service.how-we-work': ServiceHowWeWork;

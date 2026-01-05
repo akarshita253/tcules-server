@@ -46,16 +46,12 @@
     "mainSection": {
       "type": "dynamiczone",
       "components": [
+        "podcaste-events-interviews.shadow-card",
+        "blog-and-casestudies.video",
         "blog-and-casestudies.tldr-section",
         "blog-and-casestudies.sepration",
-        "blog-and-casestudies.blog-or-casestudy-text",
         "blog-and-casestudies.section-image",
-        "shared.seo",
-        "shared.rich-text",
-        "blog-and-casestudies.video",
-        "blog-and-casestudies.iframe",
-        "blog-and-casestudies.code-section",
-        "shared.quote"
+        "blog-and-casestudies.blog-or-casestudy-text"
       ]
     }
   }

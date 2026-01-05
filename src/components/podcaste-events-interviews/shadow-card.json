@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_podcaste_events_interviews_shadow_cards",
+  "info": {
+    "displayName": "Shadow Card"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "richtext"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "isShadowVisible": {
+      "type": "boolean"
+    },
+    "isBackgroundAvailable": {
+      "type": "boolean"
+    },
+    "link": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}
