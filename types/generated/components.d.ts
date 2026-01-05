@@ -154,6 +154,9 @@ export interface CapablitiesCapablitiesCardSection
       'capablities.capablities-cards',
       true
     >;
+    serviceName: Schema.Attribute.Enumeration<
+      ['HowWeWork', 'AI', 'Design', 'Engineering', 'CommonEntryPoints']
+    >;
     subRouteLink: Schema.Attribute.Component<'elements.link', false>;
   };
 }
