@@ -11,6 +11,16 @@
     "description": {
       "type": "text"
     },
+    "serviceName": {
+      "type": "enumeration",
+      "enum": [
+        "HowWeWork",
+        "AI",
+        "Design",
+        "Engineering",
+        "CommonEntryPoints"
+      ]
+    },
     "icon": {
       "type": "media",
       "multiple": false,
