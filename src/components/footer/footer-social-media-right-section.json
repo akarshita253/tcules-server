@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_footer_footer_social_media_right_sections",
+  "info": {
+    "displayName": "Footer Social Media Right Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "links": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

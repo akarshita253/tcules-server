@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_footer_footer_social_media_links",
+  "info": {
+    "displayName": "Footer Social Media Links"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "socialMedia": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    },
+    "rightSection": {
+      "type": "component",
+      "component": "footer.footer-social-media-right-section",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

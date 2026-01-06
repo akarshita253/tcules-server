@@ -251,6 +251,68 @@ export interface EventsEventDetails extends Struct.ComponentSchema {
   };
 }
 
+export interface FooterFooterLegalSection extends Struct.ComponentSchema {
+  collectionName: 'components_footer_footer_legal_sections';
+  info: {
+    displayName: 'Footer Legal Section';
+  };
+  attributes: {
+    address: Schema.Attribute.Text;
+    legalLinks: Schema.Attribute.Component<'elements.link', true>;
+  };
+}
+
+export interface FooterFooterLinks extends Struct.ComponentSchema {
+  collectionName: 'components_footer_footer_links';
+  info: {
+    displayName: 'Footer Links';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    link: Schema.Attribute.Component<'elements.link', false>;
+    links: Schema.Attribute.Component<'footer.pages-links', true>;
+  };
+}
+
+export interface FooterFooterSocialMediaLinks extends Struct.ComponentSchema {
+  collectionName: 'components_footer_footer_social_media_links';
+  info: {
+    displayName: 'Footer Social Media Links';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    rightSection: Schema.Attribute.Component<
+      'footer.footer-social-media-right-section',
+      false
+    >;
+    socialMedia: Schema.Attribute.Component<'elements.link', true>;
+  };
+}
+
+export interface FooterFooterSocialMediaRightSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_footer_footer_social_media_right_sections';
+  info: {
+    displayName: 'Footer Social Media Right Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    links: Schema.Attribute.Component<'elements.link', true>;
+  };
+}
+
+export interface FooterPagesLinks extends Struct.ComponentSchema {
+  collectionName: 'components_footer_pages_links';
+  info: {
+    displayName: 'Pages Links';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    subLinks: Schema.Attribute.Component<'elements.points', true>;
+  };
+}
+
 export interface HomepageBranchCards extends Struct.ComponentSchema {
   collectionName: 'components_homepage_branch_cards';
   info: {
@@ -929,6 +991,11 @@ declare module '@strapi/strapi' {
       'elements.link': ElementsLink;
       'elements.points': ElementsPoints;
       'events.event-details': EventsEventDetails;
+      'footer.footer-legal-section': FooterFooterLegalSection;
+      'footer.footer-links': FooterFooterLinks;
+      'footer.footer-social-media-links': FooterFooterSocialMediaLinks;
+      'footer.footer-social-media-right-section': FooterFooterSocialMediaRightSection;
+      'footer.pages-links': FooterPagesLinks;
       'homepage.branch-cards': HomepageBranchCards;
       'homepage.fourth-section-cards': HomepageFourthSectionCards;
       'homepage.homepage-contact-and-testimonials': HomepageHomepageContactAndTestimonials;

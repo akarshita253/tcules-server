@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_footer_footer_legal_sections",
+  "info": {
+    "displayName": "Footer Legal Section"
+  },
+  "options": {},
+  "attributes": {
+    "address": {
+      "type": "text"
+    },
+    "legalLinks": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

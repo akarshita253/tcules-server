@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_footer_pages_links",
+  "info": {
+    "displayName": "Pages Links"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "subLinks": {
+      "type": "component",
+      "component": "elements.points",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
