@@ -309,7 +309,7 @@ export interface FooterPagesLinks extends Struct.ComponentSchema {
   };
   attributes: {
     heading: Schema.Attribute.String;
-    subLinks: Schema.Attribute.Component<'elements.points', true>;
+    pageLinks: Schema.Attribute.Component<'elements.link', true>;
   };
 }
 

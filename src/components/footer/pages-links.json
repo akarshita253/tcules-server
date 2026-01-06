@@ -8,9 +8,9 @@
     "heading": {
       "type": "string"
     },
-    "subLinks": {
+    "pageLinks": {
       "type": "component",
-      "component": "elements.points",
+      "component": "elements.link",
       "repeatable": true
     }
   },
