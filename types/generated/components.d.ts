@@ -22,6 +22,7 @@ export interface AboutAboutFifthSectionCards extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text;
     designation: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
     isImageVisible: Schema.Attribute.Boolean;
     profilePicture: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'

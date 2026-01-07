@@ -23,6 +23,9 @@
     },
     "isImageVisible": {
       "type": "boolean"
+    },
+    "heading": {
+      "type": "string"
     }
   },
   "config": {}
