@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_matter_design_matter_design_strip_ones",
+  "info": {
+    "displayName": "Matter Design Strip One"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "bgIcon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "link": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

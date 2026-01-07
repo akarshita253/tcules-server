@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_matter_design_matter_design_fifth_sections",
+  "info": {
+    "displayName": "Matter Design Fifth Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "cards": {
+      "type": "component",
+      "component": "matter-design.matter-design-cards",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

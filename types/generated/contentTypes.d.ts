@@ -442,17 +442,42 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
-    blocks: Schema.Attribute.DynamicZone<
-      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
-    >;
+    bgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    descriptionTwo: Schema.Attribute.Text;
+    fifthSection: Schema.Attribute.Component<
+      'about.about-fifth-section',
+      false
+    >;
+    fourthSection: Schema.Attribute.Component<
+      'about.about-fourth-section',
+      false
+    >;
+    heading: Schema.Attribute.String;
+    headingTwo: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
+    secondSection: Schema.Attribute.Component<
+      'about.about-second-section',
+      false
+    >;
+    seventhSection: Schema.Attribute.Component<
+      'about.about-seventh-section',
+      false
+    >;
+    sixthSection: Schema.Attribute.Component<
+      'about.about-sixth-section',
+      false
+    >;
+    thirdSection: Schema.Attribute.Component<
+      'about.about-second-section',
+      false
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1145,6 +1170,66 @@ export interface ApiLabsFilLandingPageLabsFilLandingPage
     >;
     thirdSection: Schema.Attribute.Component<
       'labs-fil.labs-fil-third-section',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMatterDesignSystemMatterDesignSystem
+  extends Struct.SingleTypeSchema {
+  collectionName: 'matter_design_systems';
+  info: {
+    displayName: 'Matter Design System';
+    pluralName: 'matter-design-systems';
+    singularName: 'matter-design-system';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contactUs: Schema.Attribute.Component<
+      'matter-design.matter-design-contact-us',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    fifthSection: Schema.Attribute.Component<
+      'matter-design.matter-design-fifth-section',
+      false
+    >;
+    fourthSection: Schema.Attribute.Component<
+      'matter-design.matter-design-fourth-section',
+      false
+    >;
+    heroSection: Schema.Attribute.Component<
+      'matter-design.matter-design-hero-section',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::matter-design-system.matter-design-system'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    secondSection: Schema.Attribute.Component<
+      'matter-design.matter-design-second-section',
+      false
+    >;
+    stripOne: Schema.Attribute.Component<
+      'matter-design.matter-design-strip-one',
+      false
+    >;
+    stripTwo: Schema.Attribute.Component<
+      'matter-design.matter-design-strip-one',
+      false
+    >;
+    thirdSection: Schema.Attribute.Component<
+      'matter-design.matter-design-third-section',
       false
     >;
     updatedAt: Schema.Attribute.DateTime;
@@ -1938,6 +2023,7 @@ declare module '@strapi/strapi' {
       'api::interview.interview': ApiInterviewInterview;
       'api::lab-single-type.lab-single-type': ApiLabSingleTypeLabSingleType;
       'api::labs-fil-landing-page.labs-fil-landing-page': ApiLabsFilLandingPageLabsFilLandingPage;
+      'api::matter-design-system.matter-design-system': ApiMatterDesignSystemMatterDesignSystem;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::podcast.podcast': ApiPodcastPodcast;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;

@@ -1,0 +1,55 @@
+{
+  "kind": "singleType",
+  "collectionName": "matter_design_systems",
+  "info": {
+    "singularName": "matter-design-system",
+    "pluralName": "matter-design-systems",
+    "displayName": "Matter Design System"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroSection": {
+      "type": "component",
+      "component": "matter-design.matter-design-hero-section",
+      "repeatable": false
+    },
+    "secondSection": {
+      "type": "component",
+      "component": "matter-design.matter-design-second-section",
+      "repeatable": false
+    },
+    "thirdSection": {
+      "type": "component",
+      "component": "matter-design.matter-design-third-section",
+      "repeatable": false
+    },
+    "stripOne": {
+      "type": "component",
+      "component": "matter-design.matter-design-strip-one",
+      "repeatable": false
+    },
+    "fourthSection": {
+      "type": "component",
+      "component": "matter-design.matter-design-fourth-section",
+      "repeatable": false
+    },
+    "fifthSection": {
+      "type": "component",
+      "component": "matter-design.matter-design-fifth-section",
+      "repeatable": false
+    },
+    "stripTwo": {
+      "type": "component",
+      "component": "matter-design.matter-design-strip-one",
+      "repeatable": false
+    },
+    "contactUs": {
+      "type": "component",
+      "component": "matter-design.matter-design-contact-us",
+      "repeatable": false
+    }
+  }
+}

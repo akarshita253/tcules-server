@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_matter_design_matter_design_hero_sections",
+  "info": {
+    "displayName": "Matter Design Hero Section"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "headingOne": {
+      "type": "string"
+    },
+    "headingTwo": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "link": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    },
+    "featureImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

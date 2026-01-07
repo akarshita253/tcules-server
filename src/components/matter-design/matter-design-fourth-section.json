@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_matter_design_matter_design_fourth_sections",
+  "info": {
+    "displayName": "Matter Design Fourth Section"
+  },
+  "options": {},
+  "attributes": {
+    "displayCards": {
+      "type": "component",
+      "component": "matter-design.matter-design-display-cards",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

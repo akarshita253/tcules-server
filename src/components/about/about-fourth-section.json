@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_about_about_fourth_sections",
+  "info": {
+    "displayName": "About Fourth Section"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "accordianDetails": {
+      "type": "component",
+      "component": "about.about-fourth-section-details",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

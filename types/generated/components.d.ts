@@ -1,5 +1,116 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface AboutAboutFifthSection extends Struct.ComponentSchema {
+  collectionName: 'components_about_about_fifth_sections';
+  info: {
+    displayName: 'About Fifth Section';
+  };
+  attributes: {
+    cardDetails: Schema.Attribute.Component<
+      'about.about-fifth-section-cards',
+      true
+    >;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface AboutAboutFifthSectionCards extends Struct.ComponentSchema {
+  collectionName: 'components_about_about_fifth_section_cards';
+  info: {
+    displayName: 'About Fifth Section Cards';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    designation: Schema.Attribute.String;
+    isImageVisible: Schema.Attribute.Boolean;
+    profilePicture: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+  };
+}
+
+export interface AboutAboutFourthSection extends Struct.ComponentSchema {
+  collectionName: 'components_about_about_fourth_sections';
+  info: {
+    displayName: 'About Fourth Section';
+  };
+  attributes: {
+    accordianDetails: Schema.Attribute.Component<
+      'about.about-fourth-section-details',
+      true
+    >;
+    label: Schema.Attribute.String;
+  };
+}
+
+export interface AboutAboutFourthSectionDetails extends Struct.ComponentSchema {
+  collectionName: 'components_about_about_fourth_section_details';
+  info: {
+    displayName: 'About Fourth Section Details';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface AboutAboutSecondSection extends Struct.ComponentSchema {
+  collectionName: 'components_about_about_second_sections';
+  info: {
+    displayName: 'About Second Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+  };
+}
+
+export interface AboutAboutSeventhSection extends Struct.ComponentSchema {
+  collectionName: 'components_about_about_seventh_sections';
+  info: {
+    displayName: 'About Seventh Section';
+  };
+  attributes: {
+    cardDetails: Schema.Attribute.Component<
+      'about.seventh-section-cards',
+      true
+    >;
+    heading: Schema.Attribute.String;
+    link: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
+export interface AboutAboutSixthSection extends Struct.ComponentSchema {
+  collectionName: 'components_about_about_sixth_sections';
+  info: {
+    displayName: 'About Sixth Section';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    sixthSectionCards: Schema.Attribute.Component<
+      'about.about-fifth-section-cards',
+      true
+    >;
+  };
+}
+
+export interface AboutSeventhSectionCards extends Struct.ComponentSchema {
+  collectionName: 'components_about_seventh_section_cards';
+  info: {
+    displayName: 'Seventh Section Cards';
+  };
+  attributes: {
+    bgColor: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface BlogAndCasestudiesBlogOrCasestudyText
   extends Struct.ComponentSchema {
   collectionName: 'components_blog_and_casestudies_blog_or_casestudy_texts';
@@ -691,6 +802,143 @@ export interface LegalDetails extends Struct.ComponentSchema {
   };
 }
 
+export interface MatterDesignMatterDesignCards extends Struct.ComponentSchema {
+  collectionName: 'components_matter_design_matter_design_cards';
+  info: {
+    displayName: 'Matter Design Cards';
+  };
+  attributes: {
+    cardImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link: Schema.Attribute.Component<'elements.link', true>;
+  };
+}
+
+export interface MatterDesignMatterDesignContactUs
+  extends Struct.ComponentSchema {
+  collectionName: 'components_matter_design_matter_design_contact_uses';
+  info: {
+    displayName: 'Matter Design Contact Us';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    headingOne: Schema.Attribute.String;
+    headingTwo: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface MatterDesignMatterDesignDisplayCards
+  extends Struct.ComponentSchema {
+  collectionName: 'components_matter_design_matter_design_display_cards';
+  info: {
+    displayName: 'Matter Design Display Cards';
+  };
+  attributes: {
+    d: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+  };
+}
+
+export interface MatterDesignMatterDesignFifthSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_matter_design_matter_design_fifth_sections';
+  info: {
+    displayName: 'Matter Design Fifth Section';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<
+      'matter-design.matter-design-cards',
+      true
+    >;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface MatterDesignMatterDesignFourthSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_matter_design_matter_design_fourth_sections';
+  info: {
+    displayName: 'Matter Design Fourth Section';
+  };
+  attributes: {
+    displayCards: Schema.Attribute.Component<
+      'matter-design.matter-design-display-cards',
+      true
+    >;
+  };
+}
+
+export interface MatterDesignMatterDesignHeroSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_matter_design_matter_design_hero_sections';
+  info: {
+    displayName: 'Matter Design Hero Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    featureImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    headingOne: Schema.Attribute.String;
+    headingTwo: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    link: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
+export interface MatterDesignMatterDesignSecondSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_matter_design_matter_design_second_sections';
+  info: {
+    displayName: 'Matter Design Second Section';
+  };
+  attributes: {
+    cardDetails: Schema.Attribute.Component<
+      'matter-design.matter-design-cards',
+      true
+    >;
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface MatterDesignMatterDesignStripOne
+  extends Struct.ComponentSchema {
+  collectionName: 'components_matter_design_matter_design_strip_ones';
+  info: {
+    displayName: 'Matter Design Strip One';
+  };
+  attributes: {
+    bgIcon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    link: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
+export interface MatterDesignMatterDesignThirdSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_matter_design_matter_design_third_sections';
+  info: {
+    displayName: 'Matter Design Third Section';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<
+      'matter-design.matter-design-cards',
+      true
+    >;
+    heading: Schema.Attribute.String;
+  };
+}
+
 export interface NavbarNavbarLevel1Group extends Struct.ComponentSchema {
   collectionName: 'components_navbar_navbar_level1_groups';
   info: {
@@ -972,6 +1220,14 @@ export interface SingleTypeCaseStudyPageMiscellaneous
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'about.about-fifth-section': AboutAboutFifthSection;
+      'about.about-fifth-section-cards': AboutAboutFifthSectionCards;
+      'about.about-fourth-section': AboutAboutFourthSection;
+      'about.about-fourth-section-details': AboutAboutFourthSectionDetails;
+      'about.about-second-section': AboutAboutSecondSection;
+      'about.about-seventh-section': AboutAboutSeventhSection;
+      'about.about-sixth-section': AboutAboutSixthSection;
+      'about.seventh-section-cards': AboutSeventhSectionCards;
       'blog-and-casestudies.blog-or-casestudy-text': BlogAndCasestudiesBlogOrCasestudyText;
       'blog-and-casestudies.case-study-positioning': BlogAndCasestudiesCaseStudyPositioning;
       'blog-and-casestudies.code-section': BlogAndCasestudiesCodeSection;
@@ -1025,6 +1281,15 @@ declare module '@strapi/strapi' {
       'labs-fil.third-section-cards': LabsFilThirdSectionCards;
       'labs.card-section': LabsCardSection;
       'legal.details': LegalDetails;
+      'matter-design.matter-design-cards': MatterDesignMatterDesignCards;
+      'matter-design.matter-design-contact-us': MatterDesignMatterDesignContactUs;
+      'matter-design.matter-design-display-cards': MatterDesignMatterDesignDisplayCards;
+      'matter-design.matter-design-fifth-section': MatterDesignMatterDesignFifthSection;
+      'matter-design.matter-design-fourth-section': MatterDesignMatterDesignFourthSection;
+      'matter-design.matter-design-hero-section': MatterDesignMatterDesignHeroSection;
+      'matter-design.matter-design-second-section': MatterDesignMatterDesignSecondSection;
+      'matter-design.matter-design-strip-one': MatterDesignMatterDesignStripOne;
+      'matter-design.matter-design-third-section': MatterDesignMatterDesignThirdSection;
       'navbar.navbar-level1-group': NavbarNavbarLevel1Group;
       'navbar.navbar-level2-group': NavbarNavbarLevel2Group;
       'podcaste-events-interviews.shadow-card': PodcasteEventsInterviewsShadowCard;

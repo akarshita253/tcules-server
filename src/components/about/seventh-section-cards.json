@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_about_seventh_section_cards",
+  "info": {
+    "displayName": "Seventh Section Cards"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "bgColor": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

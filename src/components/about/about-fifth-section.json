@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_about_about_fifth_sections",
+  "info": {
+    "displayName": "About Fifth Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "cardDetails": {
+      "type": "component",
+      "component": "about.about-fifth-section-cards",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

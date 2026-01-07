@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_about_about_fourth_section_details",
+  "info": {
+    "displayName": "About Fourth Section Details"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

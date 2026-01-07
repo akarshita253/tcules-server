@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_about_about_seventh_sections",
+  "info": {
+    "displayName": "About Seventh Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "link": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    },
+    "cardDetails": {
+      "type": "component",
+      "component": "about.seventh-section-cards",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

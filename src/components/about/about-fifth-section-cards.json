@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_about_about_fifth_section_cards",
+  "info": {
+    "displayName": "About Fifth Section Cards"
+  },
+  "options": {},
+  "attributes": {
+    "profilePicture": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "isImageVisible": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}

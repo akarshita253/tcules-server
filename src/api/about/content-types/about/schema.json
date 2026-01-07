@@ -12,12 +12,57 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "bgImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "heading": {
       "type": "string"
     },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+    "description": {
+      "type": "text"
+    },
+    "headingTwo": {
+      "type": "string"
+    },
+    "descriptionTwo": {
+      "type": "text"
+    },
+    "secondSection": {
+      "type": "component",
+      "component": "about.about-second-section",
+      "repeatable": false
+    },
+    "thirdSection": {
+      "type": "component",
+      "component": "about.about-second-section",
+      "repeatable": false
+    },
+    "fourthSection": {
+      "type": "component",
+      "component": "about.about-fourth-section",
+      "repeatable": false
+    },
+    "fifthSection": {
+      "type": "component",
+      "component": "about.about-fifth-section",
+      "repeatable": false
+    },
+    "sixthSection": {
+      "type": "component",
+      "component": "about.about-sixth-section",
+      "repeatable": false
+    },
+    "seventhSection": {
+      "type": "component",
+      "component": "about.about-seventh-section",
+      "repeatable": false
     }
   }
 }

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_matter_design_matter_design_second_sections",
+  "info": {
+    "displayName": "Matter Design Second Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "cardDetails": {
+      "type": "component",
+      "component": "matter-design.matter-design-cards",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

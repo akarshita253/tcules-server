@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_about_about_sixth_sections",
+  "info": {
+    "displayName": "About Sixth Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "sixthSectionCards": {
+      "type": "component",
+      "component": "about.about-fifth-section-cards",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
