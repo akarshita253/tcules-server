@@ -1058,6 +1058,7 @@ export interface NavbarNavbarLevel2Group extends Struct.ComponentSchema {
     displayName: 'Navbar Level2 Group';
   };
   attributes: {
+    description: Schema.Attribute.Text;
     hasSubMenu: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     href: Schema.Attribute.String;
     levelTwoLinks: Schema.Attribute.Component<'elements.link', true>;

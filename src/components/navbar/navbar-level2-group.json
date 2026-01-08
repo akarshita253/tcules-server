@@ -19,6 +19,9 @@
       "type": "component",
       "component": "elements.link",
       "repeatable": true
+    },
+    "description": {
+      "type": "text"
     }
   },
   "config": {}
