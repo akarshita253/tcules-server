@@ -601,6 +601,51 @@ export interface ApiCapablityCapablity extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiCareerCareer extends Struct.SingleTypeSchema {
+  collectionName: 'careers';
+  info: {
+    displayName: 'Career';
+    pluralName: 'careers';
+    singularName: 'career';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    fifthSection: Schema.Attribute.Component<
+      'career.career-fifth-section',
+      false
+    >;
+    fourthSection: Schema.Attribute.Component<
+      'career.career-fourth-section',
+      false
+    >;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::career.career'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    secondSection: Schema.Attribute.Component<
+      'career.career-second-section',
+      false
+    >;
+    thirdSection: Schema.Attribute.Component<
+      'career.career-third-section',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCaseStudyLandingPageCaseStudyLandingPage
   extends Struct.SingleTypeSchema {
   collectionName: 'case_study_landing_pages';
@@ -1267,6 +1312,38 @@ export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
       true
     >;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiOpeningOpening extends Struct.CollectionTypeSchema {
+  collectionName: 'openings';
+  info: {
+    displayName: 'Opening';
+    pluralName: 'openings';
+    singularName: 'opening';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    link: Schema.Attribute.Component<'elements.link', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::opening.opening'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    roleDescription: Schema.Attribute.Text;
+    roleDomain: Schema.Attribute.String;
+    roleLocation: Schema.Attribute.String;
+    roleName: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -2009,6 +2086,7 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::blog.blog': ApiBlogBlog;
       'api::capablity.capablity': ApiCapablityCapablity;
+      'api::career.career': ApiCareerCareer;
       'api::case-study-landing-page.case-study-landing-page': ApiCaseStudyLandingPageCaseStudyLandingPage;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::category.category': ApiCategoryCategory;
@@ -2025,6 +2103,7 @@ declare module '@strapi/strapi' {
       'api::labs-fil-landing-page.labs-fil-landing-page': ApiLabsFilLandingPageLabsFilLandingPage;
       'api::matter-design-system.matter-design-system': ApiMatterDesignSystemMatterDesignSystem;
       'api::navbar.navbar': ApiNavbarNavbar;
+      'api::opening.opening': ApiOpeningOpening;
       'api::podcast.podcast': ApiPodcastPodcast;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::service.service': ApiServiceService;

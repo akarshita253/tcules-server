@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_career_career_second_sections",
+  "info": {
+    "displayName": "Career Second Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "cardDetails": {
+      "type": "component",
+      "component": "career.career-cards",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

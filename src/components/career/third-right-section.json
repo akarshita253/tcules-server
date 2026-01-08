@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_career_third_right_sections",
+  "info": {
+    "displayName": "Third Right Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "rightSectionPoints": {
+      "type": "component",
+      "component": "career.career-icon-points",
+      "repeatable": true
+    },
+    "link": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

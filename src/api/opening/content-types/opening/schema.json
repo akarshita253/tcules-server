@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "openings",
+  "info": {
+    "singularName": "opening",
+    "pluralName": "openings",
+    "displayName": "Opening"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "roleName": {
+      "type": "string"
+    },
+    "roleDomain": {
+      "type": "string"
+    },
+    "roleLocation": {
+      "type": "string"
+    },
+    "roleDescription": {
+      "type": "text"
+    },
+    "link": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    }
+  }
+}

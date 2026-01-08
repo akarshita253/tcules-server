@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_career_career_icon_points",
+  "info": {
+    "displayName": "Career Icon Points"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "points": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

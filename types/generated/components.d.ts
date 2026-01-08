@@ -287,6 +287,99 @@ export interface CapablitiesCapablitiesCards extends Struct.ComponentSchema {
   };
 }
 
+export interface CareerCareerCards extends Struct.ComponentSchema {
+  collectionName: 'components_career_career_cards';
+  info: {
+    displayName: 'Career Cards';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface CareerCareerFifthSection extends Struct.ComponentSchema {
+  collectionName: 'components_career_career_fifth_sections';
+  info: {
+    displayName: 'Career Fifth Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    link: Schema.Attribute.Component<'elements.link', false>;
+    rightSection: Schema.Attribute.Component<
+      'career.third-right-section',
+      false
+    >;
+  };
+}
+
+export interface CareerCareerFourthSection extends Struct.ComponentSchema {
+  collectionName: 'components_career_career_fourth_sections';
+  info: {
+    displayName: 'Career Fourth Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    headingTwo: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    rightSection: Schema.Attribute.Component<
+      'career.third-right-section',
+      false
+    >;
+  };
+}
+
+export interface CareerCareerIconPoints extends Struct.ComponentSchema {
+  collectionName: 'components_career_career_icon_points';
+  info: {
+    displayName: 'Career Icon Points';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    points: Schema.Attribute.Text;
+  };
+}
+
+export interface CareerCareerSecondSection extends Struct.ComponentSchema {
+  collectionName: 'components_career_career_second_sections';
+  info: {
+    displayName: 'Career Second Section';
+  };
+  attributes: {
+    cardDetails: Schema.Attribute.Component<'career.career-cards', true>;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface CareerCareerThirdSection extends Struct.ComponentSchema {
+  collectionName: 'components_career_career_third_sections';
+  info: {
+    displayName: 'Career Third Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    openings: Schema.Attribute.Relation<'oneToMany', 'api::opening.opening'>;
+  };
+}
+
+export interface CareerThirdRightSection extends Struct.ComponentSchema {
+  collectionName: 'components_career_third_right_sections';
+  info: {
+    displayName: 'Third Right Section';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    link: Schema.Attribute.Component<'elements.link', false>;
+    rightSectionPoints: Schema.Attribute.Component<
+      'career.career-icon-points',
+      true
+    >;
+  };
+}
+
 export interface ContactUsContactUsBottomCards extends Struct.ComponentSchema {
   collectionName: 'components_contact_us_contact_us_bottom_cards';
   info: {
@@ -1242,6 +1335,13 @@ declare module '@strapi/strapi' {
       'blog-and-casestudies.video': BlogAndCasestudiesVideo;
       'capablities.capablities-card-section': CapablitiesCapablitiesCardSection;
       'capablities.capablities-cards': CapablitiesCapablitiesCards;
+      'career.career-cards': CareerCareerCards;
+      'career.career-fifth-section': CareerCareerFifthSection;
+      'career.career-fourth-section': CareerCareerFourthSection;
+      'career.career-icon-points': CareerCareerIconPoints;
+      'career.career-second-section': CareerCareerSecondSection;
+      'career.career-third-section': CareerCareerThirdSection;
+      'career.third-right-section': CareerThirdRightSection;
       'contact-us.contact-us-bottom-cards': ContactUsContactUsBottomCards;
       'contact-us.social-media-links': ContactUsSocialMediaLinks;
       'elements.buttons': ElementsButtons;
