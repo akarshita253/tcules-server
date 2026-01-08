@@ -294,6 +294,7 @@ export interface ContactUsContactUsBottomCards extends Struct.ComponentSchema {
   };
   attributes: {
     heading: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     link: Schema.Attribute.Component<'elements.link', false>;
   };
 }
