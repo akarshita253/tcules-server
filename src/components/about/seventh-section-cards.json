@@ -23,6 +23,11 @@
     },
     "bgColor": {
       "type": "string"
+    },
+    "link": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
     }
   },
   "config": {}

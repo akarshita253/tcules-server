@@ -109,6 +109,7 @@ export interface AboutSeventhSectionCards extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.String;
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link: Schema.Attribute.Component<'elements.link', false>;
   };
 }
 
