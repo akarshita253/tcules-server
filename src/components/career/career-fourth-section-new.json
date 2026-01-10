@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_career_career_fourth_section_news",
+  "info": {
+    "displayName": "Career Fourth Section New"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "link": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    },
+    "cards": {
+      "type": "component",
+      "component": "career.career-new-cards",
+      "repeatable": true
+    },
+    "bottomHeading": {
+      "type": "string"
+    },
+    "bottomLink": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

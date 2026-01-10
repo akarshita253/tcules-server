@@ -616,12 +616,8 @@ export interface ApiCareerCareer extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    fifthSection: Schema.Attribute.Component<
-      'career.career-fifth-section',
-      false
-    >;
     fourthSection: Schema.Attribute.Component<
-      'career.career-fourth-section',
+      'career.career-fourth-section-new',
       false
     >;
     heading: Schema.Attribute.String;

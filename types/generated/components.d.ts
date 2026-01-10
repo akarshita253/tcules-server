@@ -332,6 +332,21 @@ export interface CareerCareerFourthSection extends Struct.ComponentSchema {
   };
 }
 
+export interface CareerCareerFourthSectionNew extends Struct.ComponentSchema {
+  collectionName: 'components_career_career_fourth_section_news';
+  info: {
+    displayName: 'Career Fourth Section New';
+  };
+  attributes: {
+    bottomHeading: Schema.Attribute.String;
+    bottomLink: Schema.Attribute.Component<'elements.link', false>;
+    cards: Schema.Attribute.Component<'career.career-new-cards', true>;
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
 export interface CareerCareerIconPoints extends Struct.ComponentSchema {
   collectionName: 'components_career_career_icon_points';
   info: {
@@ -340,6 +355,18 @@ export interface CareerCareerIconPoints extends Struct.ComponentSchema {
   attributes: {
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     points: Schema.Attribute.Text;
+  };
+}
+
+export interface CareerCareerNewCards extends Struct.ComponentSchema {
+  collectionName: 'components_career_career_new_cards';
+  info: {
+    displayName: 'Career New Cards';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link: Schema.Attribute.Component<'elements.link', false>;
   };
 }
 
@@ -1352,7 +1379,9 @@ declare module '@strapi/strapi' {
       'career.career-cards': CareerCareerCards;
       'career.career-fifth-section': CareerCareerFifthSection;
       'career.career-fourth-section': CareerCareerFourthSection;
+      'career.career-fourth-section-new': CareerCareerFourthSectionNew;
       'career.career-icon-points': CareerCareerIconPoints;
+      'career.career-new-cards': CareerCareerNewCards;
       'career.career-second-section': CareerCareerSecondSection;
       'career.career-third-section': CareerCareerThirdSection;
       'career.third-right-section': CareerThirdRightSection;

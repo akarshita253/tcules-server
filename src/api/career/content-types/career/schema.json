@@ -29,12 +29,7 @@
     },
     "fourthSection": {
       "type": "component",
-      "component": "career.career-fourth-section",
-      "repeatable": false
-    },
-    "fifthSection": {
-      "type": "component",
-      "component": "career.career-fifth-section",
+      "component": "career.career-fourth-section-new",
       "repeatable": false
     }
   }
