@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_homepage_second_section_case_study_relations",
+  "info": {
+    "displayName": "Second Section Case Study Relation"
+  },
+  "options": {},
+  "attributes": {
+    "botomImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "case_study": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::case-study.case-study"
+    }
+  },
+  "config": {}
+}

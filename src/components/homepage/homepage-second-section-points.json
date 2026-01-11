@@ -11,9 +11,6 @@
     "description": {
       "type": "text"
     },
-    "topDescription": {
-      "type": "text"
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -23,6 +20,21 @@
         "videos",
         "audios"
       ]
+    },
+    "bgImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "link": {
+      "type": "component",
+      "component": "homepage.second-section-case-study-relation",
+      "repeatable": false
     }
   },
   "config": {}

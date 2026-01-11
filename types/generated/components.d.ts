@@ -639,7 +639,6 @@ export interface HomepageHomepageSecondSection extends Struct.ComponentSchema {
     displayName: 'Homepage Second Section';
   };
   attributes: {
-    bgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     secondSection: Schema.Attribute.Component<
       'homepage.homepage-second-section-points',
       true
@@ -654,10 +653,14 @@ export interface HomepageHomepageSecondSectionPoints
     displayName: 'Homepage Second Section Points';
   };
   attributes: {
+    bgImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    topDescription: Schema.Attribute.Text;
+    link: Schema.Attribute.Component<
+      'homepage.second-section-case-study-relation',
+      false
+    >;
   };
 }
 
@@ -670,6 +673,23 @@ export interface HomepageHomepageThirdSection extends Struct.ComponentSchema {
     cards: Schema.Attribute.Component<'homepage.branch-cards', true>;
     heading: Schema.Attribute.String;
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface HomepageSecondSectionCaseStudyRelation
+  extends Struct.ComponentSchema {
+  collectionName: 'components_homepage_second_section_case_study_relations';
+  info: {
+    displayName: 'Second Section Case Study Relation';
+  };
+  attributes: {
+    botomImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    case_study: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::case-study.case-study'
+    >;
   };
 }
 
@@ -1397,6 +1417,7 @@ declare module '@strapi/strapi' {
       'homepage.homepage-second-section': HomepageHomepageSecondSection;
       'homepage.homepage-second-section-points': HomepageHomepageSecondSectionPoints;
       'homepage.homepage-third-section': HomepageHomepageThirdSection;
+      'homepage.second-section-case-study-relation': HomepageSecondSectionCaseStudyRelation;
       'how-we-work.card-details': HowWeWorkCardDetails;
       'how-we-work.cards': HowWeWorkCards;
       'how-we-work.how-we-work-hero-section': HowWeWorkHowWeWorkHeroSection;
