@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_resources_resource_third_sections",
+  "info": {
+    "displayName": "Resource Third Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "industry": {
+      "type": "enumeration",
+      "enum": [
+        "industry"
+      ]
+    },
+    "product": {
+      "type": "enumeration",
+      "enum": [
+        "product"
+      ]
+    },
+    "topic": {
+      "type": "enumeration",
+      "enum": [
+        "topic"
+      ]
+    },
+    "case_studies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::case-study.case-study"
+    }
+  },
+  "config": {}
+}

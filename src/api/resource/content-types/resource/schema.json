@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "resources",
+  "info": {
+    "singularName": "resource",
+    "pluralName": "resources",
+    "displayName": "Resource"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "cardDetails": {
+      "type": "component",
+      "component": "resources.cards",
+      "repeatable": true
+    },
+    "secondSection": {
+      "type": "component",
+      "component": "resources.second-section",
+      "repeatable": false
+    },
+    "thirdSection": {
+      "type": "component",
+      "component": "resources.resource-third-section",
+      "repeatable": false
+    },
+    "fourthSection": {
+      "type": "component",
+      "component": "resources.resource-fourth-section",
+      "repeatable": false
+    }
+  }
+}

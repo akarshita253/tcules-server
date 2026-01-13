@@ -1132,6 +1132,57 @@ export interface PodcasteEventsInterviewsShadowCard
   };
 }
 
+export interface ResourcesCards extends Struct.ComponentSchema {
+  collectionName: 'components_resources_cards';
+  info: {
+    displayName: 'cards';
+  };
+  attributes: {
+    cardImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface ResourcesResourceFourthSection extends Struct.ComponentSchema {
+  collectionName: 'components_resources_resource_fourth_sections';
+  info: {
+    displayName: 'Resource Fourth Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface ResourcesResourceThirdSection extends Struct.ComponentSchema {
+  collectionName: 'components_resources_resource_third_sections';
+  info: {
+    displayName: 'Resource Third Section';
+  };
+  attributes: {
+    case_studies: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::case-study.case-study'
+    >;
+    heading: Schema.Attribute.String;
+    industry: Schema.Attribute.Enumeration<['industry']>;
+    product: Schema.Attribute.Enumeration<['product']>;
+    topic: Schema.Attribute.Enumeration<['topic']>;
+  };
+}
+
+export interface ResourcesSecondSection extends Struct.ComponentSchema {
+  collectionName: 'components_resources_second_sections';
+  info: {
+    displayName: 'Second Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    link: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
 export interface ServiceExploreRecentWork extends Struct.ComponentSchema {
   collectionName: 'components_service_explore_recent_works';
   info: {
@@ -1450,6 +1501,10 @@ declare module '@strapi/strapi' {
       'navbar.navbar-level1-group': NavbarNavbarLevel1Group;
       'navbar.navbar-level2-group': NavbarNavbarLevel2Group;
       'podcaste-events-interviews.shadow-card': PodcasteEventsInterviewsShadowCard;
+      'resources.cards': ResourcesCards;
+      'resources.resource-fourth-section': ResourcesResourceFourthSection;
+      'resources.resource-third-section': ResourcesResourceThirdSection;
+      'resources.second-section': ResourcesSecondSection;
       'service.explore-recent-work': ServiceExploreRecentWork;
       'service.hero-section': ServiceHeroSection;
       'service.how-we-work': ServiceHowWeWork;

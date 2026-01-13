@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_resources_second_sections",
+  "info": {
+    "displayName": "Second Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "link": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

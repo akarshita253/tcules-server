@@ -1421,6 +1421,48 @@ export interface ApiPrivacyPolicyPrivacyPolicy extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiResourceResource extends Struct.SingleTypeSchema {
+  collectionName: 'resources';
+  info: {
+    displayName: 'Resource';
+    pluralName: 'resources';
+    singularName: 'resource';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cardDetails: Schema.Attribute.Component<'resources.cards', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    fourthSection: Schema.Attribute.Component<
+      'resources.resource-fourth-section',
+      false
+    >;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::resource.resource'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    secondSection: Schema.Attribute.Component<
+      'resources.second-section',
+      false
+    >;
+    thirdSection: Schema.Attribute.Component<
+      'resources.resource-third-section',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiServiceService extends Struct.SingleTypeSchema {
   collectionName: 'services';
   info: {
@@ -2102,6 +2144,7 @@ declare module '@strapi/strapi' {
       'api::opening.opening': ApiOpeningOpening;
       'api::podcast.podcast': ApiPodcastPodcast;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
+      'api::resource.resource': ApiResourceResource;
       'api::service.service': ApiServiceService;
       'api::tag.tag': ApiTagTag;
       'api::terms-of-use.terms-of-use': ApiTermsOfUseTermsOfUse;
