@@ -8,28 +8,15 @@
     "heading": {
       "type": "string"
     },
-    "industry": {
-      "type": "enumeration",
-      "enum": [
-        "industry"
-      ]
-    },
-    "product": {
-      "type": "enumeration",
-      "enum": [
-        "product"
-      ]
-    },
-    "topic": {
-      "type": "enumeration",
-      "enum": [
-        "topic"
-      ]
-    },
     "case_studies": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::case-study.case-study"
+    },
+    "filterResource": {
+      "type": "component",
+      "component": "resources.filter-section",
+      "repeatable": true
     }
   },
   "config": {}

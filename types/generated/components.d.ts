@@ -1143,6 +1143,21 @@ export interface ResourcesCards extends Struct.ComponentSchema {
   };
 }
 
+export interface ResourcesFilterSection extends Struct.ComponentSchema {
+  collectionName: 'components_resources_filter_sections';
+  info: {
+    displayName: 'Filter Section';
+  };
+  attributes: {
+    categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::category.category'
+    >;
+    label: Schema.Attribute.String;
+    tags: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'>;
+  };
+}
+
 export interface ResourcesResourceFourthSection extends Struct.ComponentSchema {
   collectionName: 'components_resources_resource_fourth_sections';
   info: {
@@ -1164,10 +1179,11 @@ export interface ResourcesResourceThirdSection extends Struct.ComponentSchema {
       'oneToMany',
       'api::case-study.case-study'
     >;
+    filterResource: Schema.Attribute.Component<
+      'resources.filter-section',
+      true
+    >;
     heading: Schema.Attribute.String;
-    industry: Schema.Attribute.Enumeration<['industry']>;
-    product: Schema.Attribute.Enumeration<['product']>;
-    topic: Schema.Attribute.Enumeration<['topic']>;
   };
 }
 
@@ -1502,6 +1518,7 @@ declare module '@strapi/strapi' {
       'navbar.navbar-level2-group': NavbarNavbarLevel2Group;
       'podcaste-events-interviews.shadow-card': PodcasteEventsInterviewsShadowCard;
       'resources.cards': ResourcesCards;
+      'resources.filter-section': ResourcesFilterSection;
       'resources.resource-fourth-section': ResourcesResourceFourthSection;
       'resources.resource-third-section': ResourcesResourceThirdSection;
       'resources.second-section': ResourcesSecondSection;

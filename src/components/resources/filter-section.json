@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_resources_filter_sections",
+  "info": {
+    "displayName": "Filter Section"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category"
+    }
+  },
+  "config": {}
+}
