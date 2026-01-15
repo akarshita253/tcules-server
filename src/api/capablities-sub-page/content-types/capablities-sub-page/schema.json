@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "capablities_sub_pages",
+  "info": {
+    "singularName": "capablities-sub-page",
+    "pluralName": "capablities-sub-pages",
+    "displayName": "Capablities Sub Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+        "subPageName": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "subPageName"
+    },
+    "hero": {
+      "type": "component",
+      "component": "service.hero-section",
+      "repeatable": false
+    },
+    "whyTeamHireSection": {
+      "type": "component",
+      "component": "service.why-team-hire-us",
+      "repeatable": false
+    },
+    "whatWeDesignSection": {
+      "type": "component",
+      "component": "service.what-we-design",
+      "repeatable": false
+    },
+    "howWeWorkSection": {
+      "type": "component",
+      "component": "service.how-we-work",
+      "repeatable": false
+    },
+    "operatingPhilosophySection": {
+      "type": "component",
+      "component": "service.our-operating-philosophy",
+      "repeatable": false
+    },
+    "recentWorkSection": {
+      "type": "component",
+      "component": "service.explore-recent-work",
+      "repeatable": false
+    },
+    "miscSection": {
+      "type": "component",
+      "component": "service.service-misc",
+      "repeatable": false
+    }
+  }
+}

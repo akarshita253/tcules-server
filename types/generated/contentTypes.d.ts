@@ -567,6 +567,55 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCapablitiesSubPageCapablitiesSubPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'capablities_sub_pages';
+  info: {
+    displayName: 'Capablities Sub Page';
+    pluralName: 'capablities-sub-pages';
+    singularName: 'capablities-sub-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero: Schema.Attribute.Component<'service.hero-section', false>;
+    howWeWorkSection: Schema.Attribute.Component<'service.how-we-work', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::capablities-sub-page.capablities-sub-page'
+    > &
+      Schema.Attribute.Private;
+    miscSection: Schema.Attribute.Component<'service.service-misc', false>;
+    operatingPhilosophySection: Schema.Attribute.Component<
+      'service.our-operating-philosophy',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    recentWorkSection: Schema.Attribute.Component<
+      'service.explore-recent-work',
+      false
+    >;
+    slug: Schema.Attribute.UID<'subPageName'>;
+    subPageName: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    whatWeDesignSection: Schema.Attribute.Component<
+      'service.what-we-design',
+      false
+    >;
+    whyTeamHireSection: Schema.Attribute.Component<
+      'service.why-team-hire-us',
+      false
+    >;
+  };
+}
+
 export interface ApiCapablityCapablity extends Struct.SingleTypeSchema {
   collectionName: 'capablities';
   info: {
@@ -2157,6 +2206,7 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::author.author': ApiAuthorAuthor;
       'api::blog.blog': ApiBlogBlog;
+      'api::capablities-sub-page.capablities-sub-page': ApiCapablitiesSubPageCapablitiesSubPage;
       'api::capablity.capablity': ApiCapablityCapablity;
       'api::career.career': ApiCareerCareer;
       'api::case-study-landing-page.case-study-landing-page': ApiCaseStudyLandingPageCaseStudyLandingPage;
