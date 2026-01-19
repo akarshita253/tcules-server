@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_psp_psp_testimonial_sections",
+  "info": {
+    "displayName": "Psp Testimonial Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "testimonials": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::testimonial.testimonial"
+    }
+  },
+  "config": {}
+}

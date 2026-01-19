@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_psp_psp_faq_sections",
+  "info": {
+    "displayName": "Psp Faq Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "faqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq"
+    }
+  },
+  "config": {}
+}

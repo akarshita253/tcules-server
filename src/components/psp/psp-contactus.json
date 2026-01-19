@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_psp_psp_contactuses",
+  "info": {
+    "displayName": "Psp Contactus"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

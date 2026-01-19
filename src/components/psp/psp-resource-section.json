@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_psp_psp_resource_sections",
+  "info": {
+    "displayName": "Psp Resource Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "link": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    },
+    "case_studies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::case-study.case-study"
+    }
+  },
+  "config": {}
+}
