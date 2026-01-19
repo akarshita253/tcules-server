@@ -50,6 +50,11 @@
       "type": "component",
       "component": "matter-design.matter-design-contact-us",
       "repeatable": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

@@ -58,6 +58,11 @@
         "blog-and-casestudies.sepration",
         "blog-and-casestudies.section-image"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

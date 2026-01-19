@@ -53,6 +53,11 @@
         "blog-and-casestudies.section-image",
         "blog-and-casestudies.blog-or-casestudy-text"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

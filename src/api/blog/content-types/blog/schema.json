@@ -64,6 +64,11 @@
       "relation": "manyToMany",
       "target": "api::podcast.podcast",
       "mappedBy": "categories"
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

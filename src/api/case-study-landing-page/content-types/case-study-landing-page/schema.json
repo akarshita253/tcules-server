@@ -20,6 +20,11 @@
       "type": "component",
       "component": "single-type-case-study-page.miscellaneous",
       "repeatable": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

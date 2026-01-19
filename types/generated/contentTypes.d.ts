@@ -466,6 +466,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
       'about.about-second-section',
       false
     >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     seventhSection: Schema.Attribute.Component<
       'about.about-seventh-section',
       false
@@ -558,6 +559,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     >;
     podcasts: Schema.Attribute.Relation<'manyToMany', 'api::podcast.podcast'>;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
     tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
     title: Schema.Attribute.String;
@@ -600,6 +602,7 @@ export interface ApiCapablitiesSubPageCapablitiesSubPage
       'service.explore-recent-work',
       false
     >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'subPageName'>;
     subPageName: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -644,6 +647,7 @@ export interface ApiCapablityCapablity extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -681,6 +685,7 @@ export interface ApiCareerCareer extends Struct.SingleTypeSchema {
       'career.career-second-section',
       false
     >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     thirdSection: Schema.Attribute.Component<
       'career.career-third-section',
       false
@@ -721,6 +726,7 @@ export interface ApiCaseStudyLandingPageCaseStudyLandingPage
       false
     >;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -771,6 +777,7 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
       true
     >;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
     statement: Schema.Attribute.Component<
       'blog-and-casestudies.problem-and-solution',
@@ -889,6 +896,7 @@ export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     socialMedia: Schema.Attribute.Component<'elements.link', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -933,6 +941,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       ]
     >;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
     tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
     title: Schema.Attribute.String;
@@ -1077,6 +1086,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
       'homepage.homepage-second-section',
       false
     >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     thirdSection: Schema.Attribute.Component<
       'homepage.homepage-third-section',
       false
@@ -1120,6 +1130,7 @@ export interface ApiHowWeWorkHowWeWork extends Struct.SingleTypeSchema {
       'how-we-work.right-starting-point',
       false
     >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     thirdSection: Schema.Attribute.Component<
       'how-we-work.low-friction-ways',
       false
@@ -1169,6 +1180,7 @@ export interface ApiInterviewInterview extends Struct.CollectionTypeSchema {
       ]
     >;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
     tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
     title: Schema.Attribute.String;
@@ -1202,6 +1214,7 @@ export interface ApiLabSingleTypeLabSingleType extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     miscSection: Schema.Attribute.Component<'service.service-misc', false>;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1250,6 +1263,7 @@ export interface ApiLabsFilLandingPageLabsFilLandingPage
       'labs-fil.labs-fil-second-section',
       false
     >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     seventhSection: Schema.Attribute.Component<
       'labs-fil.labs-fil-seventh-section',
       false
@@ -1310,6 +1324,7 @@ export interface ApiMatterDesignSystemMatterDesignSystem
       'matter-design.matter-design-second-section',
       false
     >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     stripOne: Schema.Attribute.Component<
       'matter-design.matter-design-strip-one',
       false
@@ -1431,6 +1446,7 @@ export interface ApiPodcastPodcast extends Struct.CollectionTypeSchema {
       ]
     >;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
     tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
     title: Schema.Attribute.String;
@@ -1464,6 +1480,7 @@ export interface ApiPrivacyPolicyPrivacyPolicy extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1547,6 +1564,7 @@ export interface ApiResourceResource extends Struct.SingleTypeSchema {
       'resources.second-section',
       false
     >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     thirdSection: Schema.Attribute.Component<
       'resources.resource-third-section',
       false
@@ -1698,6 +1716,7 @@ export interface ApiTermsOfUseTermsOfUse extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -18,6 +18,11 @@
         "capablities.capablities-card-section",
         "shared.seo"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

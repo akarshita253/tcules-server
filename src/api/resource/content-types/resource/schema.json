@@ -36,6 +36,11 @@
       "type": "component",
       "component": "resources.resource-fourth-section",
       "repeatable": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

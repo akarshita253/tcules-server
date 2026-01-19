@@ -50,6 +50,11 @@
       "type": "component",
       "component": "labs-fil.labs-fil-eighth-section",
       "repeatable": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

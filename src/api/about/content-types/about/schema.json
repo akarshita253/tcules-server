@@ -63,6 +63,11 @@
       "type": "component",
       "component": "about.about-seventh-section",
       "repeatable": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

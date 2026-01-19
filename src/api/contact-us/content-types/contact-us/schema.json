@@ -26,6 +26,11 @@
       "type": "component",
       "component": "elements.link",
       "repeatable": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

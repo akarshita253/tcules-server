@@ -76,6 +76,11 @@
       "relation": "manyToMany",
       "target": "api::tag.tag",
       "mappedBy": "case_studies"
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

@@ -11,7 +11,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-        "subPageName": {
+    "subPageName": {
       "type": "string"
     },
     "slug": {
@@ -51,6 +51,11 @@
     "miscSection": {
       "type": "component",
       "component": "service.service-misc",
+      "repeatable": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
       "repeatable": false
     }
   }
