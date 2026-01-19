@@ -16,11 +16,36 @@
       "type": "text",
       "required": true
     },
-    "shareImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": ["images"]
+    "slug": {
+      "type": "text"
+    },
+    "focus": {
+      "type": "component",
+      "component": "shared.seo-focus",
+      "repeatable": false
+    },
+    "canonicalURL": {
+      "type": "string"
+    },
+    "structuredData": {
+      "type": "blocks"
+    },
+    "robots": {
+      "type": "enumeration",
+      "enum": [
+        "index",
+        "noindex",
+        "follow",
+        "nofollow"
+      ]
+    },
+    "codeJson": {
+      "type": "blocks"
+    },
+    "additionalMetaTags": {
+      "type": "component",
+      "component": "shared.seo-focus",
+      "repeatable": false
     }
   }
 }

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_seo_foci",
+  "info": {
+    "displayName": "SEO Focus"
+  },
+  "options": {},
+  "attributes": {
+    "focusString": {
+      "type": "component",
+      "component": "shared.focus-string",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
