@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_psp_psp_third_sections",
+  "info": {
+    "displayName": "Psp Third Section"
+  },
+  "options": {},
+  "attributes": {
+    "headingTop": {
+      "type": "string"
+    },
+    "descriptionTop": {
+      "type": "text"
+    },
+    "headingBottom": {
+      "type": "string"
+    },
+    "descriptionBottom": {
+      "type": "text"
+    },
+    "bottomIcon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "bottomLink": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    },
+    "pspCards": {
+      "type": "component",
+      "component": "psp.psp-cards",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

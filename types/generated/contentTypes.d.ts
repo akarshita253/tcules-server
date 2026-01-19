@@ -1470,6 +1470,51 @@ export interface ApiPrivacyPolicyPrivacyPolicy extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiProgrammaticSeoPageProgrammaticSeoPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'programmatic_seo_pages';
+  info: {
+    displayName: 'Programmatic SEO Page';
+    pluralName: 'programmatic-seo-pages';
+    singularName: 'programmatic-seo-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contactUs: Schema.Attribute.Component<'psp.psp-contactus', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faqSection: Schema.Attribute.Component<'psp.psp-faq-section', false>;
+    fifthSection: Schema.Attribute.Component<'psp.psp-cards-section', false>;
+    fourthSection: Schema.Attribute.Component<'psp.psp-cards-section', false>;
+    heroSection: Schema.Attribute.Component<'service.hero-section', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::programmatic-seo-page.programmatic-seo-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    resourceSection: Schema.Attribute.Component<
+      'psp.psp-resource-section',
+      false
+    >;
+    secondSection: Schema.Attribute.Component<'psp.psp-second-section', false>;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    sixthSection: Schema.Attribute.Component<'psp.psp-sixth-section', false>;
+    testimonialSection: Schema.Attribute.Component<
+      'psp.psp-testimonial-section',
+      false
+    >;
+    thirdSection: Schema.Attribute.Component<'psp.psp-third-section', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiResourceResource extends Struct.SingleTypeSchema {
   collectionName: 'resources';
   info: {
@@ -2228,6 +2273,7 @@ declare module '@strapi/strapi' {
       'api::opening.opening': ApiOpeningOpening;
       'api::podcast.podcast': ApiPodcastPodcast;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
+      'api::programmatic-seo-page.programmatic-seo-page': ApiProgrammaticSeoPageProgrammaticSeoPage;
       'api::resource.resource': ApiResourceResource;
       'api::service.service': ApiServiceService;
       'api::subscription.subscription': ApiSubscriptionSubscription;

@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_psp_psp_cards",
+  "info": {
+    "displayName": "Psp Cards"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "points": {
+      "type": "component",
+      "component": "elements.points",
+      "repeatable": true
+    },
+    "links": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

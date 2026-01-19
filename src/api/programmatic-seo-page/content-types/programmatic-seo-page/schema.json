@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "programmatic_seo_pages",
+  "info": {
+    "singularName": "programmatic-seo-page",
+    "pluralName": "programmatic-seo-pages",
+    "displayName": "Programmatic SEO Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroSection": {
+      "type": "component",
+      "component": "service.hero-section",
+      "repeatable": false
+    },
+    "secondSection": {
+      "type": "component",
+      "component": "psp.psp-second-section",
+      "repeatable": false
+    },
+    "thirdSection": {
+      "type": "component",
+      "component": "psp.psp-third-section",
+      "repeatable": false
+    },
+    "fourthSection": {
+      "type": "component",
+      "component": "psp.psp-cards-section",
+      "repeatable": false
+    },
+    "fifthSection": {
+      "type": "component",
+      "component": "psp.psp-cards-section",
+      "repeatable": false
+    },
+    "sixthSection": {
+      "type": "component",
+      "component": "psp.psp-sixth-section",
+      "repeatable": false
+    },
+    "testimonialSection": {
+      "type": "component",
+      "component": "psp.psp-testimonial-section",
+      "repeatable": false
+    },
+    "resourceSection": {
+      "type": "component",
+      "component": "psp.psp-resource-section",
+      "repeatable": false
+    },
+    "faqSection": {
+      "type": "component",
+      "component": "psp.psp-faq-section",
+      "repeatable": false
+    },
+    "contactUs": {
+      "type": "component",
+      "component": "psp.psp-contactus",
+      "repeatable": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    }
+  }
+}

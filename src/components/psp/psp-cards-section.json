@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_psp_psp_cards_sections",
+  "info": {
+    "displayName": "Psp Cards Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "cards": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1132,6 +1132,127 @@ export interface PodcasteEventsInterviewsShadowCard
   };
 }
 
+export interface PspPspCards extends Struct.ComponentSchema {
+  collectionName: 'components_psp_psp_cards';
+  info: {
+    displayName: 'Psp Cards';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    links: Schema.Attribute.Component<'elements.link', false>;
+    points: Schema.Attribute.Component<'elements.points', true>;
+  };
+}
+
+export interface PspPspCardsSection extends Struct.ComponentSchema {
+  collectionName: 'components_psp_psp_cards_sections';
+  info: {
+    displayName: 'Psp Cards Section';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'elements.link', true>;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface PspPspContactus extends Struct.ComponentSchema {
+  collectionName: 'components_psp_psp_contactuses';
+  info: {
+    displayName: 'Psp Contactus';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface PspPspFaqSection extends Struct.ComponentSchema {
+  collectionName: 'components_psp_psp_faq_sections';
+  info: {
+    displayName: 'Psp Faq Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface PspPspResourceSection extends Struct.ComponentSchema {
+  collectionName: 'components_psp_psp_resource_sections';
+  info: {
+    displayName: 'Psp Resource Section';
+  };
+  attributes: {
+    case_studies: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::case-study.case-study'
+    >;
+    heading: Schema.Attribute.String;
+    link: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
+export interface PspPspSecondSection extends Struct.ComponentSchema {
+  collectionName: 'components_psp_psp_second_sections';
+  info: {
+    displayName: 'Psp Second Section';
+  };
+  attributes: {
+    cardImage: Schema.Attribute.Component<'shared.media', true>;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface PspPspSixthSection extends Struct.ComponentSchema {
+  collectionName: 'components_psp_psp_sixth_sections';
+  info: {
+    displayName: 'Psp Sixth Section';
+  };
+  attributes: {
+    featureImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    heading: Schema.Attribute.String;
+    link: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
+export interface PspPspTestimonialSection extends Struct.ComponentSchema {
+  collectionName: 'components_psp_psp_testimonial_sections';
+  info: {
+    displayName: 'Psp Testimonial Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    testimonials: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::testimonial.testimonial'
+    >;
+  };
+}
+
+export interface PspPspThirdSection extends Struct.ComponentSchema {
+  collectionName: 'components_psp_psp_third_sections';
+  info: {
+    displayName: 'Psp Third Section';
+  };
+  attributes: {
+    bottomIcon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    bottomLink: Schema.Attribute.Component<'elements.link', false>;
+    descriptionBottom: Schema.Attribute.Text;
+    descriptionTop: Schema.Attribute.Text;
+    headingBottom: Schema.Attribute.String;
+    headingTop: Schema.Attribute.String;
+    pspCards: Schema.Attribute.Component<'psp.psp-cards', false>;
+  };
+}
+
 export interface ResourcesCards extends Struct.ComponentSchema {
   collectionName: 'components_resources_cards';
   info: {
@@ -1303,6 +1424,14 @@ export interface SharedCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFocusString extends Struct.ComponentSchema {
+  collectionName: 'components_shared_focus_strings';
+  info: {
+    displayName: 'Focus string';
+  };
+  attributes: {};
+}
+
 export interface SharedHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_hero_sections';
   info: {
@@ -1375,9 +1504,27 @@ export interface SharedSeo extends Struct.ComponentSchema {
     name: 'Seo';
   };
   attributes: {
+    additionalMetaTags: Schema.Attribute.Component<'shared.seo-focus', false>;
+    canonicalURL: Schema.Attribute.String;
+    codeJson: Schema.Attribute.Blocks;
+    focus: Schema.Attribute.Component<'shared.seo-focus', false>;
     metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
-    shareImage: Schema.Attribute.Media<'images'>;
+    robots: Schema.Attribute.Enumeration<
+      ['index', 'noindex', 'follow', 'nofollow']
+    >;
+    slug: Schema.Attribute.Text;
+    structuredData: Schema.Attribute.Blocks;
+  };
+}
+
+export interface SharedSeoFocus extends Struct.ComponentSchema {
+  collectionName: 'components_shared_seo_foci';
+  info: {
+    displayName: 'SEO Focus';
+  };
+  attributes: {
+    focusString: Schema.Attribute.Component<'shared.focus-string', true>;
   };
 }
 
@@ -1517,6 +1664,15 @@ declare module '@strapi/strapi' {
       'navbar.navbar-level1-group': NavbarNavbarLevel1Group;
       'navbar.navbar-level2-group': NavbarNavbarLevel2Group;
       'podcaste-events-interviews.shadow-card': PodcasteEventsInterviewsShadowCard;
+      'psp.psp-cards': PspPspCards;
+      'psp.psp-cards-section': PspPspCardsSection;
+      'psp.psp-contactus': PspPspContactus;
+      'psp.psp-faq-section': PspPspFaqSection;
+      'psp.psp-resource-section': PspPspResourceSection;
+      'psp.psp-second-section': PspPspSecondSection;
+      'psp.psp-sixth-section': PspPspSixthSection;
+      'psp.psp-testimonial-section': PspPspTestimonialSection;
+      'psp.psp-third-section': PspPspThirdSection;
       'resources.cards': ResourcesCards;
       'resources.filter-section': ResourcesFilterSection;
       'resources.resource-fourth-section': ResourcesResourceFourthSection;
@@ -1530,12 +1686,14 @@ declare module '@strapi/strapi' {
       'service.what-we-design': ServiceWhatWeDesign;
       'service.why-team-hire-us': ServiceWhyTeamHireUs;
       'shared.card': SharedCard;
+      'shared.focus-string': SharedFocusString;
       'shared.hero-section': SharedHeroSection;
       'shared.media': SharedMedia;
       'shared.profile': SharedProfile;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
+      'shared.seo-focus': SharedSeoFocus;
       'shared.slider': SharedSlider;
       'shared.tiles': SharedTiles;
       'single-type-case-study-page.hero-section': SingleTypeCaseStudyPageHeroSection;
