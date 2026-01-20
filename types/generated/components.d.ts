@@ -1152,7 +1152,7 @@ export interface PspPspCardsSection extends Struct.ComponentSchema {
     displayName: 'Psp Cards Section';
   };
   attributes: {
-    cards: Schema.Attribute.Component<'elements.link', true>;
+    cards: Schema.Attribute.Component<'psp.psp-cards', true>;
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.String;
   };
