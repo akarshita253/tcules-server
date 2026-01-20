@@ -1521,11 +1521,13 @@ export interface ApiProgrammaticSeoPageProgrammaticSeoPage
     secondSection: Schema.Attribute.Component<'psp.psp-second-section', false>;
     seo: Schema.Attribute.Component<'shared.seo', false>;
     sixthSection: Schema.Attribute.Component<'psp.psp-sixth-section', false>;
+    slug: Schema.Attribute.UID<'title'>;
     testimonialSection: Schema.Attribute.Component<
       'psp.psp-testimonial-section',
       false
     >;
     thirdSection: Schema.Attribute.Component<'psp.psp-third-section', false>;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
