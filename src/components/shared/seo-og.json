@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_shared_seo_ogs",
+  "info": {
+    "displayName": "Seo OG"
+  },
+  "options": {},
+  "attributes": {
+    "og_title": {
+      "type": "string"
+    },
+    "og_description": {
+      "type": "text"
+    },
+    "og_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "twitter_card_type": {
+      "type": "enumeration",
+      "enum": [
+        "summary",
+        "summary_large_image"
+      ]
+    }
+  },
+  "config": {}
+}

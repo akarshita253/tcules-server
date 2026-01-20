@@ -1510,6 +1510,7 @@ export interface SharedSeo extends Struct.ComponentSchema {
     focus: Schema.Attribute.Component<'shared.seo-focus', false>;
     metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    og_graph: Schema.Attribute.Component<'shared.seo-og', false>;
     robots: Schema.Attribute.Enumeration<
       ['index', 'noindex', 'follow', 'nofollow']
     >;
@@ -1525,6 +1526,21 @@ export interface SharedSeoFocus extends Struct.ComponentSchema {
   };
   attributes: {
     focusString: Schema.Attribute.Component<'shared.focus-string', true>;
+  };
+}
+
+export interface SharedSeoOg extends Struct.ComponentSchema {
+  collectionName: 'components_shared_seo_ogs';
+  info: {
+    displayName: 'Seo OG';
+  };
+  attributes: {
+    og_description: Schema.Attribute.Text;
+    og_image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    og_title: Schema.Attribute.String;
+    twitter_card_type: Schema.Attribute.Enumeration<
+      ['summary', 'summary_large_image']
+    >;
   };
 }
 
@@ -1694,6 +1710,7 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.seo-focus': SharedSeoFocus;
+      'shared.seo-og': SharedSeoOg;
       'shared.slider': SharedSlider;
       'shared.tiles': SharedTiles;
       'single-type-case-study-page.hero-section': SingleTypeCaseStudyPageHeroSection;

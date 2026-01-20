@@ -46,6 +46,11 @@
       "type": "component",
       "component": "shared.seo-focus",
       "repeatable": false
+    },
+    "og_graph": {
+      "type": "component",
+      "component": "shared.seo-og",
+      "repeatable": false
     }
   }
 }
