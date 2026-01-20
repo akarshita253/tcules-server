@@ -1504,10 +1504,9 @@ export interface SharedSeo extends Struct.ComponentSchema {
     name: 'Seo';
   };
   attributes: {
-    additionalMetaTags: Schema.Attribute.Component<'shared.seo-focus', false>;
     canonicalURL: Schema.Attribute.String;
     codeJson: Schema.Attribute.Blocks;
-    focus: Schema.Attribute.Component<'shared.seo-focus', false>;
+    focusString: Schema.Attribute.String;
     metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
     og_graph: Schema.Attribute.Component<'shared.seo-og', false>;

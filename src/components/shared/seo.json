@@ -19,11 +19,6 @@
     "slug": {
       "type": "text"
     },
-    "focus": {
-      "type": "component",
-      "component": "shared.seo-focus",
-      "repeatable": false
-    },
     "canonicalURL": {
       "type": "string"
     },
@@ -42,15 +37,13 @@
     "codeJson": {
       "type": "blocks"
     },
-    "additionalMetaTags": {
-      "type": "component",
-      "component": "shared.seo-focus",
-      "repeatable": false
-    },
     "og_graph": {
       "type": "component",
       "component": "shared.seo-og",
       "repeatable": false
+    },
+    "focusString": {
+      "type": "string"
     }
   }
 }
