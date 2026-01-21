@@ -931,6 +931,31 @@ export interface LabsCardSection extends Struct.ComponentSchema {
   };
 }
 
+export interface LabsLabsInterface extends Struct.ComponentSchema {
+  collectionName: 'components_labs_labs_interface_s';
+  info: {
+    displayName: 'Labs Interface ';
+  };
+  attributes: {
+    labsInterfaceCards: Schema.Attribute.Component<
+      'labs.labs-interface-cards',
+      true
+    >;
+  };
+}
+
+export interface LabsLabsInterfaceCards extends Struct.ComponentSchema {
+  collectionName: 'components_labs_labs_interface_cards';
+  info: {
+    displayName: 'Labs Interface Cards';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
 export interface LegalDetails extends Struct.ComponentSchema {
   collectionName: 'components_legal_details';
   info: {
@@ -1666,6 +1691,8 @@ declare module '@strapi/strapi' {
       'labs-fil.sixth-section-right-card': LabsFilSixthSectionRightCard;
       'labs-fil.third-section-cards': LabsFilThirdSectionCards;
       'labs.card-section': LabsCardSection;
+      'labs.labs-interface': LabsLabsInterface;
+      'labs.labs-interface-cards': LabsLabsInterfaceCards;
       'legal.details': LegalDetails;
       'matter-design.matter-design-cards': MatterDesignMatterDesignCards;
       'matter-design.matter-design-contact-us': MatterDesignMatterDesignContactUs;

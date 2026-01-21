@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_labs_labs_interface_s",
+  "info": {
+    "displayName": "Labs Interface "
+  },
+  "options": {},
+  "attributes": {
+    "labsInterfaceCards": {
+      "type": "component",
+      "component": "labs.labs-interface-cards",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1206,6 +1206,7 @@ export interface ApiLabSingleTypeLabSingleType extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     detailSection: Schema.Attribute.DynamicZone<['labs.card-section']>;
     heroSection: Schema.Attribute.Component<'shared.hero-section', false>;
+    interfaceLabs: Schema.Attribute.Component<'labs.labs-interface', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
