@@ -44,6 +44,12 @@
       "relation": "manyToMany",
       "target": "api::event.event",
       "inversedBy": "categories"
+    },
+    "podcasts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::podcast.podcast",
+      "inversedBy": "categories"
     }
   }
 }
