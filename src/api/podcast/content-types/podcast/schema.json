@@ -47,12 +47,6 @@
       "target": "api::tag.tag",
       "inversedBy": "podcasts"
     },
-    "categories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::blog.blog",
-      "inversedBy": "podcasts"
-    },
     "mainSection": {
       "type": "dynamiczone",
       "components": [

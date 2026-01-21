@@ -18,6 +18,16 @@
       "type": "uid",
       "targetField": "title"
     },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
     "featureImage": {
       "type": "media",
       "multiple": true,
@@ -58,12 +68,6 @@
       "relation": "manyToMany",
       "target": "api::category.category",
       "inversedBy": "blogs"
-    },
-    "podcasts": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::podcast.podcast",
-      "mappedBy": "categories"
     },
     "seo": {
       "type": "component",
