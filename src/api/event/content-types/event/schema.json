@@ -21,6 +21,16 @@
       "type": "uid",
       "targetField": "title"
     },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
     "featureImage": {
       "type": "media",
       "multiple": false,
