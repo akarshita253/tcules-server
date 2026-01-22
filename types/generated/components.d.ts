@@ -592,7 +592,7 @@ export interface HomepageHomepageFifthSection extends Struct.ComponentSchema {
     displayName: 'Homepage Fifth Section';
   };
   attributes: {
-    blogs: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'>;
+    blogsDetails: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'>;
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.String;
   };

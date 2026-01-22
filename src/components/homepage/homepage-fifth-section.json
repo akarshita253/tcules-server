@@ -11,7 +11,7 @@
     "description": {
       "type": "text"
     },
-    "blogs": {
+    "blogsDetails": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::blog.blog"
