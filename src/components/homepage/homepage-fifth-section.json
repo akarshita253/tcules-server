@@ -11,10 +11,10 @@
     "description": {
       "type": "text"
     },
-    "case_studies": {
+    "blogs": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::case-study.case-study"
+      "target": "api::blog.blog"
     }
   },
   "config": {}
