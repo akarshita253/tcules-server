@@ -1537,6 +1537,7 @@ export interface ApiProgrammaticSeoPageProgrammaticSeoPage
           preset: 'defaultHtml';
         }
       >;
+    testBlock: Schema.Attribute.Blocks;
     testimonialSection: Schema.Attribute.Component<
       'psp.psp-testimonial-section',
       false
