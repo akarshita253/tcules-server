@@ -1528,9 +1528,9 @@ export interface SharedSeo extends Struct.ComponentSchema {
     canonicalURL: Schema.Attribute.String;
     codeJson: Schema.Attribute.Blocks;
     focusString: Schema.Attribute.String;
+    graphCode: Schema.Attribute.RichText;
     metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
-    og_graph: Schema.Attribute.Component<'shared.seo-og', false>;
     robots: Schema.Attribute.Enumeration<
       ['index', 'noindex', 'follow', 'nofollow']
     >;

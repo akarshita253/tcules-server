@@ -37,13 +37,11 @@
     "codeJson": {
       "type": "blocks"
     },
-    "og_graph": {
-      "type": "component",
-      "component": "shared.seo-og",
-      "repeatable": false
-    },
     "focusString": {
       "type": "string"
+    },
+    "graphCode": {
+      "type": "richtext"
     }
   }
 }
