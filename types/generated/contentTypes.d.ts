@@ -1530,6 +1530,13 @@ export interface ApiProgrammaticSeoPageProgrammaticSeoPage
     seo: Schema.Attribute.Component<'shared.seo', false>;
     sixthSection: Schema.Attribute.Component<'psp.psp-sixth-section', false>;
     slug: Schema.Attribute.UID<'title'>;
+    test: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     testimonialSection: Schema.Attribute.Component<
       'psp.psp-testimonial-section',
       false
