@@ -1511,10 +1511,11 @@ export interface ApiProgrammaticSeoPageProgrammaticSeoPage
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
     faqSection: Schema.Attribute.Component<'psp.psp-faq-section', false>;
     fifthSection: Schema.Attribute.Blocks;
     fourthSection: Schema.Attribute.Blocks;
-    heroSection: Schema.Attribute.Blocks;
+    heroSectionLink: Schema.Attribute.Component<'elements.link', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
