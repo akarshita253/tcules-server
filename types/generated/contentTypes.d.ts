@@ -1512,9 +1512,9 @@ export interface ApiProgrammaticSeoPageProgrammaticSeoPage
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     faqSection: Schema.Attribute.Component<'psp.psp-faq-section', false>;
-    fifthSection: Schema.Attribute.Component<'psp.psp-cards-section', false>;
-    fourthSection: Schema.Attribute.Component<'psp.psp-cards-section', false>;
-    heroSection: Schema.Attribute.Component<'service.hero-section', false>;
+    fifthSection: Schema.Attribute.Blocks;
+    fourthSection: Schema.Attribute.Blocks;
+    heroSection: Schema.Attribute.Blocks;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1530,19 +1530,11 @@ export interface ApiProgrammaticSeoPageProgrammaticSeoPage
     seo: Schema.Attribute.Component<'shared.seo', false>;
     sixthSection: Schema.Attribute.Component<'psp.psp-sixth-section', false>;
     slug: Schema.Attribute.UID<'title'>;
-    test: Schema.Attribute.RichText &
-      Schema.Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'defaultHtml';
-        }
-      >;
-    testBlock: Schema.Attribute.Blocks;
     testimonialSection: Schema.Attribute.Component<
       'psp.psp-testimonial-section',
       false
     >;
-    thirdSection: Schema.Attribute.Component<'psp.psp-third-section', false>;
+    thirdSection: Schema.Attribute.Blocks;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

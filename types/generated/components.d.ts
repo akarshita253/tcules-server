@@ -1274,7 +1274,6 @@ export interface PspPspThirdSection extends Struct.ComponentSchema {
     descriptionTop: Schema.Attribute.Text;
     headingBottom: Schema.Attribute.String;
     headingTop: Schema.Attribute.String;
-    pspCards: Schema.Attribute.Component<'psp.psp-cards', false>;
   };
 }
 

@@ -31,11 +31,6 @@
       "type": "component",
       "component": "elements.link",
       "repeatable": false
-    },
-    "pspCards": {
-      "type": "component",
-      "component": "psp.psp-cards",
-      "repeatable": false
     }
   },
   "config": {}

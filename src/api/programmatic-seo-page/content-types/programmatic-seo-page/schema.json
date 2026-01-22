@@ -12,9 +12,7 @@
   "pluginOptions": {},
   "attributes": {
     "heroSection": {
-      "type": "component",
-      "component": "service.hero-section",
-      "repeatable": false
+      "type": "blocks"
     },
     "secondSection": {
       "type": "component",
@@ -22,19 +20,13 @@
       "repeatable": false
     },
     "thirdSection": {
-      "type": "component",
-      "component": "psp.psp-third-section",
-      "repeatable": false
+      "type": "blocks"
     },
     "fourthSection": {
-      "type": "component",
-      "component": "psp.psp-cards-section",
-      "repeatable": false
+      "type": "blocks"
     },
     "fifthSection": {
-      "type": "component",
-      "component": "psp.psp-cards-section",
-      "repeatable": false
+      "type": "blocks"
     },
     "sixthSection": {
       "type": "component",
@@ -72,16 +64,6 @@
     "slug": {
       "type": "uid",
       "targetField": "title"
-    },
-    "test": {
-      "type": "customField",
-      "customField": "plugin::ckeditor5.CKEditor",
-      "options": {
-        "preset": "defaultHtml"
-      }
-    },
-    "testBlock": {
-      "type": "blocks"
     }
   }
 }
