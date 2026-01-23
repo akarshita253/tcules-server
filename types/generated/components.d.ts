@@ -555,6 +555,7 @@ export interface HomepageBranchCards extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.String;
+    href: Schema.Attribute.String;
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }

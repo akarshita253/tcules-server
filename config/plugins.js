@@ -16,18 +16,6 @@ module.exports = ({ env }) => ({
       },
     },
   },
-  email: {
-    config: {
-      provider: "mailersend",
-      providerOptions: {
-        apiKey: env("MAILERSEND_API_KEY"),
-      },
-      settings: {
-        defaultFrom: env("MAILERSEND_DEFAULT_FROM", "no-reply@yourdomain.com"),
-        defaultReplyTo: env("MAILERSEND_DEFAULT_REPLY", "support@yourdomain.com"),
-      },
-    },
-  },
   graphql: {
     enabled: true,
     config: {

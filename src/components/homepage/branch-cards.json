@@ -20,6 +20,9 @@
         "videos",
         "audios"
       ]
+    },
+    "href": {
+      "type": "string"
     }
   },
   "config": {}
