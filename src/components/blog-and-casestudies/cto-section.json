@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blog_and_casestudies_cto_sections",
+  "info": {
+    "displayName": "CTO Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "link": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

@@ -161,6 +161,18 @@ export interface BlogAndCasestudiesCompanyProfile
   };
 }
 
+export interface BlogAndCasestudiesCtoSection extends Struct.ComponentSchema {
+  collectionName: 'components_blog_and_casestudies_cto_sections';
+  info: {
+    displayName: 'CTO Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    link: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
 export interface BlogAndCasestudiesIframe extends Struct.ComponentSchema {
   collectionName: 'components_blog_and_casestudies_iframes';
   info: {
@@ -1630,6 +1642,7 @@ declare module '@strapi/strapi' {
       'blog-and-casestudies.case-study-positioning': BlogAndCasestudiesCaseStudyPositioning;
       'blog-and-casestudies.code-section': BlogAndCasestudiesCodeSection;
       'blog-and-casestudies.company-profile': BlogAndCasestudiesCompanyProfile;
+      'blog-and-casestudies.cto-section': BlogAndCasestudiesCtoSection;
       'blog-and-casestudies.iframe': BlogAndCasestudiesIframe;
       'blog-and-casestudies.problem-and-solution': BlogAndCasestudiesProblemAndSolution;
       'blog-and-casestudies.section-image': BlogAndCasestudiesSectionImage;

@@ -81,6 +81,11 @@
       "type": "component",
       "component": "shared.seo",
       "repeatable": false
+    },
+    "ctoSection": {
+      "type": "component",
+      "component": "blog-and-casestudies.cto-section",
+      "repeatable": false
     }
   }
 }

@@ -537,6 +537,10 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    ctoSection: Schema.Attribute.Component<
+      'blog-and-casestudies.cto-section',
+      false
+    >;
     featureImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -764,6 +768,10 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    ctoSection: Schema.Attribute.Component<
+      'blog-and-casestudies.cto-section',
+      false
+    >;
     description: Schema.Attribute.Text;
     heroImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
