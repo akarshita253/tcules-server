@@ -554,7 +554,6 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
         'blog-and-casestudies.sepration',
         'blog-and-casestudies.blog-or-casestudy-text',
         'blog-and-casestudies.section-image',
-        'shared.seo',
         'shared.rich-text',
         'blog-and-casestudies.video',
         'blog-and-casestudies.iframe',
@@ -635,11 +634,7 @@ export interface ApiCapablityCapablity extends Struct.SingleTypeSchema {
   };
   attributes: {
     capablitiesSingleType: Schema.Attribute.DynamicZone<
-      [
-        'service.hero-section',
-        'capablities.capablities-card-section',
-        'shared.seo',
-      ]
+      ['service.hero-section', 'capablities.capablities-card-section']
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

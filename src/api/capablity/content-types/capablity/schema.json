@@ -15,8 +15,7 @@
       "type": "dynamiczone",
       "components": [
         "service.hero-section",
-        "capablities.capablities-card-section",
-        "shared.seo"
+        "capablities.capablities-card-section"
       ]
     },
     "seo": {

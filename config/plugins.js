@@ -16,6 +16,24 @@ module.exports = ({ env }) => ({
       },
     },
   },
+    email: {
+    config: {
+      provider: "nodemailer",
+      providerOptions: {
+        host: env("SMTP_HOST"),
+        port: env.int("SMTP_PORT", 587),
+        secure: false,
+        auth: {
+          user: env("SMTP_USER"),
+          pass: env("SMTP_PASS"),
+        },
+      },
+      settings: {
+        defaultFrom: "no-reply@yourdomain.com",
+        defaultReplyTo: "support@yourdomain.com",
+      },
+    },
+  },
   graphql: {
     enabled: true,
     config: {
