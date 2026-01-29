@@ -637,8 +637,9 @@ export interface HomepageHomepageHeroSection extends Struct.ComponentSchema {
     descriptionTwo: Schema.Attribute.Text;
     headingOne: Schema.Attribute.String;
     headingTwo: Schema.Attribute.String;
-    rightSectionImage: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
+    scrollImages: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
     >;
   };
 }

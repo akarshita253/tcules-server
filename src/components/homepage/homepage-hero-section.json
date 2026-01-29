@@ -27,9 +27,9 @@
       "component": "elements.points",
       "repeatable": true
     },
-    "rightSectionImage": {
+    "scrollImages": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "allowedTypes": [
         "images",
         "files",
