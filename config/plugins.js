@@ -1,11 +1,11 @@
 module.exports = ({ env }) => ({
- upload: {
+  upload: {
     config: {
-      provider: 'cloudinary',
+      provider: "cloudinary",
       providerOptions: {
-        cloud_name: env('CLOUDINARY_NAME'),
-        api_key: env('CLOUDINARY_KEY'),
-        api_secret: env('CLOUDINARY_SECRET'),
+        cloud_name: env("CLOUDINARY_NAME"),
+        api_key: env("CLOUDINARY_KEY"),
+        api_secret: env("CLOUDINARY_SECRET"),
       },
       actionOptions: {
         upload: {
@@ -16,30 +16,24 @@ module.exports = ({ env }) => ({
       },
     },
   },
-    email: {
+  email: {
     config: {
-      provider: "nodemailer",
+      provider: "sendgrid",
       providerOptions: {
-        host: env("SMTP_HOST"),
-        port: env.int("SMTP_PORT", 587),
-        secure: false,
-        auth: {
-          user: env("SMTP_USER"),
-          pass: env("SMTP_PASS"),
-        },
+        apiKey: env("SENDGRID_API_KEY"),
       },
       settings: {
-        defaultFrom: "no-reply@yourdomain.com",
-        defaultReplyTo: "support@yourdomain.com",
+        defaultFrom: "hello@tcules.com",
+        defaultReplyTo: "hello@tcules.com",
       },
     },
   },
   graphql: {
     enabled: true,
     config: {
-      endpoint: '/graphql',         
-      shadowCRUD: true, 
-      playgroundAlways: false, 
+      endpoint: "/graphql",
+      shadowCRUD: true,
+      playgroundAlways: false,
       depthLimit: 10,
       amountLimit: 100,
       maxLimit: 500,

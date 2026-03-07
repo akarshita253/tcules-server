@@ -21,6 +21,7 @@
     "@strapi/plugin-graphql": "^5.31.2",
     "@strapi/plugin-users-permissions": "5.31.1",
     "@strapi/provider-email-nodemailer": "^5.33.4",
+    "@strapi/provider-email-sendgrid": "^5.38.0",
     "@strapi/provider-upload-cloudinary": "^5.31.3",
     "@strapi/strapi": "5.31.1",
     "@strapi/utils": "^5.31.2",
