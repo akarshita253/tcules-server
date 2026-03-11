@@ -607,7 +607,13 @@ export interface HomepageHomepageFifthSection extends Struct.ComponentSchema {
   attributes: {
     blogsDetails: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'>;
     description: Schema.Attribute.Text;
+    events: Schema.Attribute.Relation<'oneToMany', 'api::event.event'>;
     heading: Schema.Attribute.String;
+    interviews: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::interview.interview'
+    >;
+    podcasts: Schema.Attribute.Relation<'oneToMany', 'api::podcast.podcast'>;
   };
 }
 
@@ -1545,9 +1551,7 @@ export interface SharedSeo extends Struct.ComponentSchema {
     graphCode: Schema.Attribute.RichText;
     metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
-    robots: Schema.Attribute.Enumeration<
-      ['index', 'noindex', 'follow', 'nofollow']
-    >;
+    robot: Schema.Attribute.String;
     slug: Schema.Attribute.Text;
     structuredData: Schema.Attribute.Blocks;
   };
