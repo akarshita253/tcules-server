@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "marketingpages",
+  "info": {
+    "singularName": "marketingpage",
+    "pluralName": "marketingpages",
+    "displayName": "Marketing Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "heroSection": {
+      "type": "component",
+      "component": "matter-design.matter-design-hero-section",
+      "repeatable": false
+    },
+    "secondSection": {
+      "type": "component",
+      "component": "elements.points",
+      "repeatable": true
+    },
+    "logoWallSection": {
+      "type": "component",
+      "component": "psp.psp-second-section",
+      "repeatable": false
+    },
+    "painPointsSection": {
+      "type": "component",
+      "component": "capablities.capablities-card-section",
+      "repeatable": false
+    },
+    "servicesSection": {
+      "type": "component",
+      "component": "labs-fil.labs-fil-fifth-section",
+      "repeatable": false
+    },
+    "caseStudySection": {
+      "type": "component",
+      "component": "marketingpage.case-study-section",
+      "repeatable": false
+    },
+    "audienceSection": {
+      "type": "component",
+      "component": "how-we-work.right-starting-point",
+      "repeatable": false
+    },
+    "testimonialSection": {
+      "type": "component",
+      "component": "psp.psp-testimonial-section",
+      "repeatable": false
+    },
+    "productShowcaseSection": {
+      "type": "component",
+      "component": "labs-fil.labs-fil-eighth-section",
+      "repeatable": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    }
+  }
+}

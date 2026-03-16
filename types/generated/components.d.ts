@@ -990,6 +990,29 @@ export interface LegalDetails extends Struct.ComponentSchema {
   };
 }
 
+export interface MarketingpageCaseStudySection extends Struct.ComponentSchema {
+  collectionName: 'components_marketingpage_case_study_sections';
+  info: {
+    displayName: 'Marketing Page Case Study Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    featureImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    heading: Schema.Attribute.String;
+    leftCard: Schema.Attribute.Component<
+      'labs-fil.sixth-section-left-card',
+      false
+    >;
+    rightCard: Schema.Attribute.Component<
+      'labs-fil.sixth-section-right-card',
+      true
+    >;
+  };
+}
+
 export interface MatterDesignMatterDesignCards extends Struct.ComponentSchema {
   collectionName: 'components_matter_design_matter_design_cards';
   info: {
@@ -1709,6 +1732,7 @@ declare module '@strapi/strapi' {
       'labs.labs-interface': LabsLabsInterface;
       'labs.labs-interface-cards': LabsLabsInterfaceCards;
       'legal.details': LegalDetails;
+      'marketingpage.case-study-section': MarketingpageCaseStudySection;
       'matter-design.matter-design-cards': MatterDesignMatterDesignCards;
       'matter-design.matter-design-contact-us': MatterDesignMatterDesignContactUs;
       'matter-design.matter-design-display-cards': MatterDesignMatterDesignDisplayCards;

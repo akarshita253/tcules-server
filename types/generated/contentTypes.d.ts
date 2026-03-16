@@ -1289,6 +1289,70 @@ export interface ApiLabsFilLandingPageLabsFilLandingPage
   };
 }
 
+export interface ApiMarketingpageMarketingpage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'marketingpages';
+  info: {
+    displayName: 'Marketing Page';
+    pluralName: 'marketingpages';
+    singularName: 'marketingpage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    audienceSection: Schema.Attribute.Component<
+      'how-we-work.right-starting-point',
+      false
+    >;
+    caseStudySection: Schema.Attribute.Component<
+      'marketingpage.case-study-section',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heroSection: Schema.Attribute.Component<
+      'matter-design.matter-design-hero-section',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::marketingpage.marketingpage'
+    > &
+      Schema.Attribute.Private;
+    logoWallSection: Schema.Attribute.Component<
+      'psp.psp-second-section',
+      false
+    >;
+    painPointsSection: Schema.Attribute.Component<
+      'capablities.capablities-card-section',
+      false
+    >;
+    productShowcaseSection: Schema.Attribute.Component<
+      'labs-fil.labs-fil-eighth-section',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    secondSection: Schema.Attribute.Component<'elements.points', true>;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    servicesSection: Schema.Attribute.Component<
+      'labs-fil.labs-fil-fifth-section',
+      false
+    >;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    testimonialSection: Schema.Attribute.Component<
+      'psp.psp-testimonial-section',
+      false
+    >;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiMatterDesignSystemMatterDesignSystem
   extends Struct.SingleTypeSchema {
   collectionName: 'matter_design_systems';
@@ -2301,6 +2365,7 @@ declare module '@strapi/strapi' {
       'api::interview.interview': ApiInterviewInterview;
       'api::lab-single-type.lab-single-type': ApiLabSingleTypeLabSingleType;
       'api::labs-fil-landing-page.labs-fil-landing-page': ApiLabsFilLandingPageLabsFilLandingPage;
+      'api::marketingpage.marketingpage': ApiMarketingpageMarketingpage;
       'api::matter-design-system.matter-design-system': ApiMatterDesignSystemMatterDesignSystem;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::opening.opening': ApiOpeningOpening;
