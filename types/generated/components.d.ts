@@ -113,6 +113,243 @@ export interface AboutSeventhSectionCards extends Struct.ComponentSchema {
   };
 }
 
+export interface AuditCallout extends Struct.ComponentSchema {
+  collectionName: 'components_audit_callouts';
+  info: {
+    displayName: 'Audit Callout';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    heading: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    tone: Schema.Attribute.Enumeration<
+      ['neutral', 'highlight', 'info', 'warning']
+    > &
+      Schema.Attribute.DefaultTo<'neutral'>;
+  };
+}
+
+export interface AuditCard extends Struct.ComponentSchema {
+  collectionName: 'components_audit_cards';
+  info: {
+    displayName: 'Audit Card';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks;
+    eyebrow: Schema.Attribute.String;
+    labelledItems: Schema.Attribute.Component<'audit.labelled-item', true>;
+    link: Schema.Attribute.Component<'elements.link', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface AuditCardGrid extends Struct.ComponentSchema {
+  collectionName: 'components_audit_card_grids';
+  info: {
+    displayName: 'Audit Card Grid';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'audit.card', true> &
+      Schema.Attribute.Required;
+    columns: Schema.Attribute.Enumeration<['auto', 'one', 'two', 'three']> &
+      Schema.Attribute.DefaultTo<'auto'>;
+  };
+}
+
+export interface AuditComparisonCard extends Struct.ComponentSchema {
+  collectionName: 'components_audit_comparison_cards';
+  info: {
+    displayName: 'Audit Comparison Card';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    details: Schema.Attribute.Component<'audit.labelled-item', true>;
+    isRecommended: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    summary: Schema.Attribute.Blocks;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface AuditComparisonCards extends Struct.ComponentSchema {
+  collectionName: 'components_audit_comparison_groups';
+  info: {
+    description: 'Compare options against consistent labelled criteria';
+    displayName: 'Audit Comparison Cards';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'audit.comparison-card', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface AuditContentColumn extends Struct.ComponentSchema {
+  collectionName: 'components_audit_content_columns';
+  info: {
+    displayName: 'Audit Content Column';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks;
+    eyebrow: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    labelledItems: Schema.Attribute.Component<'audit.labelled-item', true>;
+    links: Schema.Attribute.Component<'elements.link', true>;
+  };
+}
+
+export interface AuditHero extends Struct.ComponentSchema {
+  collectionName: 'components_audit_heroes';
+  info: {
+    description: 'Audit page introduction, tags and actions';
+    displayName: 'Audit Hero';
+  };
+  attributes: {
+    actions: Schema.Attribute.Component<'elements.buttons', true>;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    eyebrow: Schema.Attribute.String;
+    highlightedText: Schema.Attribute.String;
+    tags: Schema.Attribute.Component<'elements.points', true>;
+  };
+}
+
+export interface AuditLabelledItem extends Struct.ComponentSchema {
+  collectionName: 'components_audit_labelled_items';
+  info: {
+    description: 'Reusable label, title and explanatory content';
+    displayName: 'Audit Labelled Item';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    label: Schema.Attribute.String;
+    link: Schema.Attribute.Component<'elements.link', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface AuditLabelledList extends Struct.ComponentSchema {
+  collectionName: 'components_audit_labelled_lists';
+  info: {
+    displayName: 'Audit Labelled List';
+  };
+  attributes: {
+    displayStyle: Schema.Attribute.Enumeration<
+      ['definitions', 'numbered', 'plain']
+    > &
+      Schema.Attribute.DefaultTo<'definitions'>;
+    items: Schema.Attribute.Component<'audit.labelled-item', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface AuditLinkGroup extends Struct.ComponentSchema {
+  collectionName: 'components_audit_link_groups';
+  info: {
+    displayName: 'Audit Link Group';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    links: Schema.Attribute.Component<'elements.link', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface AuditQuote extends Struct.ComponentSchema {
+  collectionName: 'components_audit_quotes';
+  info: {
+    displayName: 'Audit Quote';
+  };
+  attributes: {
+    attribution: Schema.Attribute.String;
+    quote: Schema.Attribute.Text & Schema.Attribute.Required;
+    role: Schema.Attribute.String;
+    sourceLink: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
+export interface AuditRichText extends Struct.ComponentSchema {
+  collectionName: 'components_audit_rich_texts';
+  info: {
+    description: 'Structured prose, headings below H2, lists and inline links';
+    displayName: 'Audit Rich Text';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks & Schema.Attribute.Required;
+  };
+}
+
+export interface AuditSectionHeading extends Struct.ComponentSchema {
+  collectionName: 'components_audit_section_headings';
+  info: {
+    description: 'Starts a new H2 section and sticky-navigation entry';
+    displayName: 'Audit Section Heading';
+  };
+  attributes: {
+    anchorId: Schema.Attribute.String & Schema.Attribute.Required;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    navigationLabel: Schema.Attribute.String;
+  };
+}
+
+export interface AuditTable extends Struct.ComponentSchema {
+  collectionName: 'components_audit_tables';
+  info: {
+    displayName: 'Audit Table';
+  };
+  attributes: {
+    caption: Schema.Attribute.String;
+    columns: Schema.Attribute.Component<'audit.table-column', true> &
+      Schema.Attribute.Required;
+    rows: Schema.Attribute.Component<'audit.table-row', true> &
+      Schema.Attribute.Required;
+    summary: Schema.Attribute.Text;
+  };
+}
+
+export interface AuditTableCell extends Struct.ComponentSchema {
+  collectionName: 'components_audit_table_cells';
+  info: {
+    displayName: 'Audit Table Cell';
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+  };
+}
+
+export interface AuditTableColumn extends Struct.ComponentSchema {
+  collectionName: 'components_audit_table_columns';
+  info: {
+    displayName: 'Audit Table Column';
+  };
+  attributes: {
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface AuditTableRow extends Struct.ComponentSchema {
+  collectionName: 'components_audit_table_rows';
+  info: {
+    displayName: 'Audit Table Row';
+  };
+  attributes: {
+    cells: Schema.Attribute.Component<'audit.table-cell', true> &
+      Schema.Attribute.Required;
+    rowHeading: Schema.Attribute.String;
+  };
+}
+
+export interface AuditTwoColumnContent extends Struct.ComponentSchema {
+  collectionName: 'components_audit_two_column_contents';
+  info: {
+    displayName: 'Audit Two-column Content';
+  };
+  attributes: {
+    left: Schema.Attribute.Component<'audit.content-column', false> &
+      Schema.Attribute.Required;
+    right: Schema.Attribute.Component<'audit.content-column', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface BlogAndCasestudiesBlogOrCasestudyText
   extends Struct.ComponentSchema {
   collectionName: 'components_blog_and_casestudies_blog_or_casestudy_texts';
@@ -1488,6 +1725,20 @@ export interface SharedCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFaqSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_faq_sections';
+  info: {
+    description: 'Section copy with reusable FAQ collection entries';
+    displayName: 'FAQ Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    eyebrow: Schema.Attribute.String;
+    faqs: Schema.Attribute.Relation<'manyToMany', 'api::faq.faq'>;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedFocusString extends Struct.ComponentSchema {
   collectionName: 'components_shared_focus_strings';
   info: {
@@ -1666,6 +1917,24 @@ declare module '@strapi/strapi' {
       'about.about-seventh-section': AboutAboutSeventhSection;
       'about.about-sixth-section': AboutAboutSixthSection;
       'about.seventh-section-cards': AboutSeventhSectionCards;
+      'audit.callout': AuditCallout;
+      'audit.card': AuditCard;
+      'audit.card-grid': AuditCardGrid;
+      'audit.comparison-card': AuditComparisonCard;
+      'audit.comparison-cards': AuditComparisonCards;
+      'audit.content-column': AuditContentColumn;
+      'audit.hero': AuditHero;
+      'audit.labelled-item': AuditLabelledItem;
+      'audit.labelled-list': AuditLabelledList;
+      'audit.link-group': AuditLinkGroup;
+      'audit.quote': AuditQuote;
+      'audit.rich-text': AuditRichText;
+      'audit.section-heading': AuditSectionHeading;
+      'audit.table': AuditTable;
+      'audit.table-cell': AuditTableCell;
+      'audit.table-column': AuditTableColumn;
+      'audit.table-row': AuditTableRow;
+      'audit.two-column-content': AuditTwoColumnContent;
       'blog-and-casestudies.blog-or-casestudy-text': BlogAndCasestudiesBlogOrCasestudyText;
       'blog-and-casestudies.case-study-positioning': BlogAndCasestudiesCaseStudyPositioning;
       'blog-and-casestudies.code-section': BlogAndCasestudiesCodeSection;
@@ -1767,6 +2036,7 @@ declare module '@strapi/strapi' {
       'service.what-we-design': ServiceWhatWeDesign;
       'service.why-team-hire-us': ServiceWhyTeamHireUs;
       'shared.card': SharedCard;
+      'shared.faq-section': SharedFaqSection;
       'shared.focus-string': SharedFocusString;
       'shared.hero-section': SharedHeroSection;
       'shared.media': SharedMedia;

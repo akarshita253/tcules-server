@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_audit_comparison_cards",
+  "info": {
+    "displayName": "Audit Comparison Card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "summary": {
+      "type": "blocks"
+    },
+    "details": {
+      "type": "component",
+      "component": "audit.labelled-item",
+      "repeatable": true
+    },
+    "badge": {
+      "type": "string"
+    },
+    "isRecommended": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "config": {}
+}

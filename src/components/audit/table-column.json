@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_audit_table_columns",
+  "info": {
+    "displayName": "Audit Table Column"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

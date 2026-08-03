@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_audit_card_grids",
+  "info": {
+    "displayName": "Audit Card Grid"
+  },
+  "options": {},
+  "attributes": {
+    "columns": {
+      "type": "enumeration",
+      "enum": [
+        "auto",
+        "one",
+        "two",
+        "three"
+      ],
+      "default": "auto"
+    },
+    "cards": {
+      "type": "component",
+      "component": "audit.card",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

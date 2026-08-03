@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_audit_comparison_groups",
+  "info": {
+    "displayName": "Audit Comparison Cards",
+    "description": "Compare options against consistent labelled criteria"
+  },
+  "options": {},
+  "attributes": {
+    "cards": {
+      "type": "component",
+      "component": "audit.comparison-card",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

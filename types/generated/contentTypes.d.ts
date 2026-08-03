@@ -485,6 +485,56 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiAuditAudit extends Struct.CollectionTypeSchema {
+  collectionName: 'audits';
+  info: {
+    description: 'Flexible audit and assessment pages';
+    displayName: 'Audit';
+    pluralName: 'audits';
+    singularName: 'audit';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    capabilitiesCta: Schema.Attribute.Component<'service.hero-section', false> &
+      Schema.Attribute.Required;
+    content: Schema.Attribute.DynamicZone<
+      [
+        'audit.section-heading',
+        'audit.rich-text',
+        'audit.card-grid',
+        'audit.comparison-cards',
+        'audit.table',
+        'audit.quote',
+        'audit.callout',
+        'audit.labelled-list',
+        'audit.two-column-content',
+        'audit.link-group',
+        'shared.media',
+      ]
+    > &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faqSection: Schema.Attribute.Component<'shared.faq-section', false>;
+    hero: Schema.Attribute.Component<'audit.hero', false> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::audit.audit'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
@@ -2346,6 +2396,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
+      'api::audit.audit': ApiAuditAudit;
       'api::author.author': ApiAuthorAuthor;
       'api::blog.blog': ApiBlogBlog;
       'api::capablities-sub-page.capablities-sub-page': ApiCapablitiesSubPageCapablitiesSubPage;

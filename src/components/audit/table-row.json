@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_audit_table_rows",
+  "info": {
+    "displayName": "Audit Table Row"
+  },
+  "options": {},
+  "attributes": {
+    "rowHeading": {
+      "type": "string"
+    },
+    "cells": {
+      "type": "component",
+      "component": "audit.table-cell",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_audit_tables",
+  "info": {
+    "displayName": "Audit Table"
+  },
+  "options": {},
+  "attributes": {
+    "caption": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "text"
+    },
+    "columns": {
+      "type": "component",
+      "component": "audit.table-column",
+      "repeatable": true,
+      "required": true
+    },
+    "rows": {
+      "type": "component",
+      "component": "audit.table-row",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

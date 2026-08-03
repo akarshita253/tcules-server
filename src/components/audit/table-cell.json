@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_audit_table_cells",
+  "info": {
+    "displayName": "Audit Table Cell"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "blocks",
+      "required": true
+    }
+  },
+  "config": {}
+}
