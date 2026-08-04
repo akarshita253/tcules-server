@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_service_content_columns",
+  "info": {
+    "displayName": "Service Content Column"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "labelledItems": {
+      "type": "component",
+      "component": "service.labelled-item",
+      "repeatable": true
+    },
+    "links": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_expertise_content_columns",
+  "info": {
+    "displayName": "Expertise Content Column"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "labelledItems": {
+      "type": "component",
+      "component": "expertise.labelled-item",
+      "repeatable": true
+    },
+    "links": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

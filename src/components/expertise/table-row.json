@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_expertise_table_rows",
+  "info": {
+    "displayName": "Expertise Table Row"
+  },
+  "options": {},
+  "attributes": {
+    "rowHeading": {
+      "type": "string"
+    },
+    "cells": {
+      "type": "component",
+      "component": "expertise.table-cell",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

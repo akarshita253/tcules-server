@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_service_quotes",
+  "info": {
+    "displayName": "Service Quote"
+  },
+  "options": {},
+  "attributes": {
+    "quote": {
+      "type": "text",
+      "required": true
+    },
+    "attribution": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "sourceLink": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

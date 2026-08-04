@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_service_labelled_lists",
+  "info": {
+    "displayName": "Service Labelled List"
+  },
+  "options": {},
+  "attributes": {
+    "displayStyle": {
+      "type": "enumeration",
+      "enum": [
+        "definitions",
+        "numbered",
+        "plain"
+      ],
+      "default": "definitions"
+    },
+    "items": {
+      "type": "component",
+      "component": "service.labelled-item",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

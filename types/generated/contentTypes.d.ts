@@ -1006,6 +1006,59 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiExpertiseExpertise extends Struct.CollectionTypeSchema {
+  collectionName: 'expertises';
+  info: {
+    description: 'Flexible expertise pages';
+    displayName: 'Expertise';
+    pluralName: 'expertises';
+    singularName: 'expertise';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    capabilitiesCta: Schema.Attribute.Component<'service.hero-section', false> &
+      Schema.Attribute.Required;
+    content: Schema.Attribute.DynamicZone<
+      [
+        'expertise.section-heading',
+        'expertise.rich-text',
+        'expertise.card-grid',
+        'expertise.comparison-cards',
+        'expertise.table',
+        'expertise.quote',
+        'expertise.callout',
+        'expertise.labelled-list',
+        'expertise.two-column-content',
+        'expertise.link-group',
+        'shared.media',
+      ]
+    > &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faqSection: Schema.Attribute.Component<'shared.faq-section', false>;
+    hero: Schema.Attribute.Component<'expertise.hero', false> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::expertise.expertise'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   collectionName: 'faqs';
   info: {
@@ -1703,9 +1756,10 @@ export interface ApiResourceResource extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiServiceService extends Struct.SingleTypeSchema {
+export interface ApiServiceService extends Struct.CollectionTypeSchema {
   collectionName: 'services';
   info: {
+    description: 'Flexible service pages';
     displayName: 'Service';
     pluralName: 'services';
     singularName: 'service';
@@ -1714,38 +1768,44 @@ export interface ApiServiceService extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    capabilitiesCta: Schema.Attribute.Component<'service.hero-section', false> &
+      Schema.Attribute.Required;
+    content: Schema.Attribute.DynamicZone<
+      [
+        'service.section-heading',
+        'service.rich-text',
+        'service.card-grid',
+        'service.comparison-cards',
+        'service.table',
+        'service.quote',
+        'service.callout',
+        'service.labelled-list',
+        'service.two-column-content',
+        'service.link-group',
+        'shared.media',
+      ]
+    > &
+      Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    hero: Schema.Attribute.Component<'service.hero-section', false>;
-    howWeWorkSection: Schema.Attribute.Component<'service.how-we-work', false>;
+    faqSection: Schema.Attribute.Component<'shared.faq-section', false>;
+    hero: Schema.Attribute.Component<'service.hero', false> &
+      Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::service.service'
     > &
       Schema.Attribute.Private;
-    miscSection: Schema.Attribute.Component<'service.service-misc', false>;
-    operatingPhilosophySection: Schema.Attribute.Component<
-      'service.our-operating-philosophy',
-      false
-    >;
     publishedAt: Schema.Attribute.DateTime;
-    recentWorkSection: Schema.Attribute.Component<
-      'service.explore-recent-work',
-      false
-    >;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    whatWeDesignSection: Schema.Attribute.Component<
-      'service.what-we-design',
-      false
-    >;
-    whyTeamHireSection: Schema.Attribute.Component<
-      'service.why-team-hire-us',
-      false
-    >;
   };
 }
 
@@ -2408,6 +2468,7 @@ declare module '@strapi/strapi' {
       'api::client-contact.client-contact': ApiClientContactClientContact;
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::event.event': ApiEventEvent;
+      'api::expertise.expertise': ApiExpertiseExpertise;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;

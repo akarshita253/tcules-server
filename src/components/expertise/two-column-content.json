@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_expertise_two_column_contents",
+  "info": {
+    "displayName": "Expertise Two-column Content"
+  },
+  "options": {},
+  "attributes": {
+    "left": {
+      "type": "component",
+      "component": "expertise.content-column",
+      "repeatable": false,
+      "required": true
+    },
+    "right": {
+      "type": "component",
+      "component": "expertise.content-column",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

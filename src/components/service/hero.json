@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_service_heroes",
+  "info": {
+    "displayName": "Service Hero",
+    "description": "Service page introduction, tags and actions"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "highlightedText": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "tags": {
+      "type": "component",
+      "component": "elements.points",
+      "repeatable": true
+    },
+    "actions": {
+      "type": "component",
+      "component": "elements.buttons",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

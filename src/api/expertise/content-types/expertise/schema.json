@@ -1,11 +1,11 @@
 {
   "kind": "collectionType",
-  "collectionName": "services",
+  "collectionName": "expertises",
   "info": {
-    "singularName": "service",
-    "pluralName": "services",
-    "displayName": "Service",
-    "description": "Flexible service pages"
+    "singularName": "expertise",
+    "pluralName": "expertises",
+    "displayName": "Expertise",
+    "description": "Flexible expertise pages"
   },
   "options": {
     "draftAndPublish": true
@@ -23,7 +23,7 @@
     },
     "hero": {
       "type": "component",
-      "component": "service.hero",
+      "component": "expertise.hero",
       "repeatable": false,
       "required": true
     },
@@ -31,16 +31,16 @@
       "type": "dynamiczone",
       "required": true,
       "components": [
-        "service.section-heading",
-        "service.rich-text",
-        "service.card-grid",
-        "service.comparison-cards",
-        "service.table",
-        "service.quote",
-        "service.callout",
-        "service.labelled-list",
-        "service.two-column-content",
-        "service.link-group",
+        "expertise.section-heading",
+        "expertise.rich-text",
+        "expertise.card-grid",
+        "expertise.comparison-cards",
+        "expertise.table",
+        "expertise.quote",
+        "expertise.callout",
+        "expertise.labelled-list",
+        "expertise.two-column-content",
+        "expertise.link-group",
         "shared.media"
       ]
     },

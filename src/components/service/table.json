@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_service_tables",
+  "info": {
+    "displayName": "Service Table"
+  },
+  "options": {},
+  "attributes": {
+    "caption": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "text"
+    },
+    "columns": {
+      "type": "component",
+      "component": "service.table-column",
+      "repeatable": true,
+      "required": true
+    },
+    "rows": {
+      "type": "component",
+      "component": "service.table-row",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

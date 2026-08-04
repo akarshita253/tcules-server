@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_expertise_rich_texts",
+  "info": {
+    "displayName": "Expertise Rich Text",
+    "description": "Structured prose, headings below H2, lists and inline links"
+  },
+  "options": {},
+  "attributes": {
+    "body": {
+      "type": "blocks",
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_expertise_labelled_lists",
+  "info": {
+    "displayName": "Expertise Labelled List"
+  },
+  "options": {},
+  "attributes": {
+    "displayStyle": {
+      "type": "enumeration",
+      "enum": [
+        "definitions",
+        "numbered",
+        "plain"
+      ],
+      "default": "definitions"
+    },
+    "items": {
+      "type": "component",
+      "component": "expertise.labelled-item",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

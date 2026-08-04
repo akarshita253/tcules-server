@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_service_two_column_contents",
+  "info": {
+    "displayName": "Service Two-column Content"
+  },
+  "options": {},
+  "attributes": {
+    "left": {
+      "type": "component",
+      "component": "service.content-column",
+      "repeatable": false,
+      "required": true
+    },
+    "right": {
+      "type": "component",
+      "component": "service.content-column",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

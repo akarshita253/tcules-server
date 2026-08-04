@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_expertise_comparison_cards",
+  "info": {
+    "displayName": "Expertise Comparison Card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "summary": {
+      "type": "blocks"
+    },
+    "details": {
+      "type": "component",
+      "component": "expertise.labelled-item",
+      "repeatable": true
+    },
+    "badge": {
+      "type": "string"
+    },
+    "isRecommended": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_expertise_tables",
+  "info": {
+    "displayName": "Expertise Table"
+  },
+  "options": {},
+  "attributes": {
+    "caption": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "text"
+    },
+    "columns": {
+      "type": "component",
+      "component": "expertise.table-column",
+      "repeatable": true,
+      "required": true
+    },
+    "rows": {
+      "type": "component",
+      "component": "expertise.table-row",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

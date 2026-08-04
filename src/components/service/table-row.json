@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_service_table_rows",
+  "info": {
+    "displayName": "Service Table Row"
+  },
+  "options": {},
+  "attributes": {
+    "rowHeading": {
+      "type": "string"
+    },
+    "cells": {
+      "type": "component",
+      "component": "service.table-cell",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

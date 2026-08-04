@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_expertise_card_grids",
+  "info": {
+    "displayName": "Expertise Card Grid"
+  },
+  "options": {},
+  "attributes": {
+    "columns": {
+      "type": "enumeration",
+      "enum": [
+        "auto",
+        "one",
+        "two",
+        "three"
+      ],
+      "default": "auto"
+    },
+    "cards": {
+      "type": "component",
+      "component": "expertise.card",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

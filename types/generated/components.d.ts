@@ -734,6 +734,243 @@ export interface EventsEventDetails extends Struct.ComponentSchema {
   };
 }
 
+export interface ExpertiseCallout extends Struct.ComponentSchema {
+  collectionName: 'components_expertise_callouts';
+  info: {
+    displayName: 'Expertise Callout';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    heading: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    tone: Schema.Attribute.Enumeration<
+      ['neutral', 'highlight', 'info', 'warning']
+    > &
+      Schema.Attribute.DefaultTo<'neutral'>;
+  };
+}
+
+export interface ExpertiseCard extends Struct.ComponentSchema {
+  collectionName: 'components_expertise_cards';
+  info: {
+    displayName: 'Expertise Card';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks;
+    eyebrow: Schema.Attribute.String;
+    labelledItems: Schema.Attribute.Component<'expertise.labelled-item', true>;
+    link: Schema.Attribute.Component<'elements.link', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ExpertiseCardGrid extends Struct.ComponentSchema {
+  collectionName: 'components_expertise_card_grids';
+  info: {
+    displayName: 'Expertise Card Grid';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'expertise.card', true> &
+      Schema.Attribute.Required;
+    columns: Schema.Attribute.Enumeration<['auto', 'one', 'two', 'three']> &
+      Schema.Attribute.DefaultTo<'auto'>;
+  };
+}
+
+export interface ExpertiseComparisonCard extends Struct.ComponentSchema {
+  collectionName: 'components_expertise_comparison_cards';
+  info: {
+    displayName: 'Expertise Comparison Card';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    details: Schema.Attribute.Component<'expertise.labelled-item', true>;
+    isRecommended: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    summary: Schema.Attribute.Blocks;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ExpertiseComparisonCards extends Struct.ComponentSchema {
+  collectionName: 'components_expertise_comparison_groups';
+  info: {
+    description: 'Compare options against consistent labelled criteria';
+    displayName: 'Expertise Comparison Cards';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'expertise.comparison-card', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface ExpertiseContentColumn extends Struct.ComponentSchema {
+  collectionName: 'components_expertise_content_columns';
+  info: {
+    displayName: 'Expertise Content Column';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks;
+    eyebrow: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    labelledItems: Schema.Attribute.Component<'expertise.labelled-item', true>;
+    links: Schema.Attribute.Component<'elements.link', true>;
+  };
+}
+
+export interface ExpertiseHero extends Struct.ComponentSchema {
+  collectionName: 'components_expertise_heroes';
+  info: {
+    description: 'Expertise page introduction, tags and actions';
+    displayName: 'Expertise Hero';
+  };
+  attributes: {
+    actions: Schema.Attribute.Component<'elements.buttons', true>;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    eyebrow: Schema.Attribute.String;
+    highlightedText: Schema.Attribute.String;
+    tags: Schema.Attribute.Component<'elements.points', true>;
+  };
+}
+
+export interface ExpertiseLabelledItem extends Struct.ComponentSchema {
+  collectionName: 'components_expertise_labelled_items';
+  info: {
+    description: 'Reusable label, title and explanatory content';
+    displayName: 'Expertise Labelled Item';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    label: Schema.Attribute.String;
+    link: Schema.Attribute.Component<'elements.link', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ExpertiseLabelledList extends Struct.ComponentSchema {
+  collectionName: 'components_expertise_labelled_lists';
+  info: {
+    displayName: 'Expertise Labelled List';
+  };
+  attributes: {
+    displayStyle: Schema.Attribute.Enumeration<
+      ['definitions', 'numbered', 'plain']
+    > &
+      Schema.Attribute.DefaultTo<'definitions'>;
+    items: Schema.Attribute.Component<'expertise.labelled-item', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface ExpertiseLinkGroup extends Struct.ComponentSchema {
+  collectionName: 'components_expertise_link_groups';
+  info: {
+    displayName: 'Expertise Link Group';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    links: Schema.Attribute.Component<'elements.link', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface ExpertiseQuote extends Struct.ComponentSchema {
+  collectionName: 'components_expertise_quotes';
+  info: {
+    displayName: 'Expertise Quote';
+  };
+  attributes: {
+    attribution: Schema.Attribute.String;
+    quote: Schema.Attribute.Text & Schema.Attribute.Required;
+    role: Schema.Attribute.String;
+    sourceLink: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
+export interface ExpertiseRichText extends Struct.ComponentSchema {
+  collectionName: 'components_expertise_rich_texts';
+  info: {
+    description: 'Structured prose, headings below H2, lists and inline links';
+    displayName: 'Expertise Rich Text';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks & Schema.Attribute.Required;
+  };
+}
+
+export interface ExpertiseSectionHeading extends Struct.ComponentSchema {
+  collectionName: 'components_expertise_section_headings';
+  info: {
+    description: 'Starts a new H2 section and sticky-navigation entry';
+    displayName: 'Expertise Section Heading';
+  };
+  attributes: {
+    anchorId: Schema.Attribute.String & Schema.Attribute.Required;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    navigationLabel: Schema.Attribute.String;
+  };
+}
+
+export interface ExpertiseTable extends Struct.ComponentSchema {
+  collectionName: 'components_expertise_tables';
+  info: {
+    displayName: 'Expertise Table';
+  };
+  attributes: {
+    caption: Schema.Attribute.String;
+    columns: Schema.Attribute.Component<'expertise.table-column', true> &
+      Schema.Attribute.Required;
+    rows: Schema.Attribute.Component<'expertise.table-row', true> &
+      Schema.Attribute.Required;
+    summary: Schema.Attribute.Text;
+  };
+}
+
+export interface ExpertiseTableCell extends Struct.ComponentSchema {
+  collectionName: 'components_expertise_table_cells';
+  info: {
+    displayName: 'Expertise Table Cell';
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+  };
+}
+
+export interface ExpertiseTableColumn extends Struct.ComponentSchema {
+  collectionName: 'components_expertise_table_columns';
+  info: {
+    displayName: 'Expertise Table Column';
+  };
+  attributes: {
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ExpertiseTableRow extends Struct.ComponentSchema {
+  collectionName: 'components_expertise_table_rows';
+  info: {
+    displayName: 'Expertise Table Row';
+  };
+  attributes: {
+    cells: Schema.Attribute.Component<'expertise.table-cell', true> &
+      Schema.Attribute.Required;
+    rowHeading: Schema.Attribute.String;
+  };
+}
+
+export interface ExpertiseTwoColumnContent extends Struct.ComponentSchema {
+  collectionName: 'components_expertise_two_column_contents';
+  info: {
+    displayName: 'Expertise Two-column Content';
+  };
+  attributes: {
+    left: Schema.Attribute.Component<'expertise.content-column', false> &
+      Schema.Attribute.Required;
+    right: Schema.Attribute.Component<'expertise.content-column', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface FooterFooterLegalSection extends Struct.ComponentSchema {
   collectionName: 'components_footer_footer_legal_sections';
   info: {
@@ -1621,6 +1858,89 @@ export interface ResourcesSecondSection extends Struct.ComponentSchema {
   };
 }
 
+export interface ServiceCallout extends Struct.ComponentSchema {
+  collectionName: 'components_service_callouts';
+  info: {
+    displayName: 'Service Callout';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    heading: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    tone: Schema.Attribute.Enumeration<
+      ['neutral', 'highlight', 'info', 'warning']
+    > &
+      Schema.Attribute.DefaultTo<'neutral'>;
+  };
+}
+
+export interface ServiceCard extends Struct.ComponentSchema {
+  collectionName: 'components_service_cards';
+  info: {
+    displayName: 'Service Card';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks;
+    eyebrow: Schema.Attribute.String;
+    labelledItems: Schema.Attribute.Component<'service.labelled-item', true>;
+    link: Schema.Attribute.Component<'elements.link', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ServiceCardGrid extends Struct.ComponentSchema {
+  collectionName: 'components_service_card_grids';
+  info: {
+    displayName: 'Service Card Grid';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'service.card', true> &
+      Schema.Attribute.Required;
+    columns: Schema.Attribute.Enumeration<['auto', 'one', 'two', 'three']> &
+      Schema.Attribute.DefaultTo<'auto'>;
+  };
+}
+
+export interface ServiceComparisonCard extends Struct.ComponentSchema {
+  collectionName: 'components_service_comparison_cards';
+  info: {
+    displayName: 'Service Comparison Card';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    details: Schema.Attribute.Component<'service.labelled-item', true>;
+    isRecommended: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    summary: Schema.Attribute.Blocks;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ServiceComparisonCards extends Struct.ComponentSchema {
+  collectionName: 'components_service_comparison_groups';
+  info: {
+    description: 'Compare options against consistent labelled criteria';
+    displayName: 'Service Comparison Cards';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'service.comparison-card', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface ServiceContentColumn extends Struct.ComponentSchema {
+  collectionName: 'components_service_content_columns';
+  info: {
+    displayName: 'Service Content Column';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks;
+    eyebrow: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    labelledItems: Schema.Attribute.Component<'service.labelled-item', true>;
+    links: Schema.Attribute.Component<'elements.link', true>;
+  };
+}
+
 export interface ServiceExploreRecentWork extends Struct.ComponentSchema {
   collectionName: 'components_service_explore_recent_works';
   info: {
@@ -1630,6 +1950,21 @@ export interface ServiceExploreRecentWork extends Struct.ComponentSchema {
     exploreCards: Schema.Attribute.Component<'shared.card', true>;
     exploreLink: Schema.Attribute.Component<'elements.link', false>;
     heading: Schema.Attribute.String;
+  };
+}
+
+export interface ServiceHero extends Struct.ComponentSchema {
+  collectionName: 'components_service_heroes';
+  info: {
+    description: 'Service page introduction, tags and actions';
+    displayName: 'Service Hero';
+  };
+  attributes: {
+    actions: Schema.Attribute.Component<'elements.buttons', true>;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    eyebrow: Schema.Attribute.String;
+    highlightedText: Schema.Attribute.String;
+    tags: Schema.Attribute.Component<'elements.points', true>;
   };
 }
 
@@ -1660,6 +1995,48 @@ export interface ServiceHowWeWork extends Struct.ComponentSchema {
   };
 }
 
+export interface ServiceLabelledItem extends Struct.ComponentSchema {
+  collectionName: 'components_service_labelled_items';
+  info: {
+    description: 'Reusable label, title and explanatory content';
+    displayName: 'Service Labelled Item';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    label: Schema.Attribute.String;
+    link: Schema.Attribute.Component<'elements.link', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ServiceLabelledList extends Struct.ComponentSchema {
+  collectionName: 'components_service_labelled_lists';
+  info: {
+    displayName: 'Service Labelled List';
+  };
+  attributes: {
+    displayStyle: Schema.Attribute.Enumeration<
+      ['definitions', 'numbered', 'plain']
+    > &
+      Schema.Attribute.DefaultTo<'definitions'>;
+    items: Schema.Attribute.Component<'service.labelled-item', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface ServiceLinkGroup extends Struct.ComponentSchema {
+  collectionName: 'components_service_link_groups';
+  info: {
+    displayName: 'Service Link Group';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    links: Schema.Attribute.Component<'elements.link', true> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface ServiceOurOperatingPhilosophy extends Struct.ComponentSchema {
   collectionName: 'components_service_our_operating_philosophies';
   info: {
@@ -1668,6 +2045,43 @@ export interface ServiceOurOperatingPhilosophy extends Struct.ComponentSchema {
   attributes: {
     heading: Schema.Attribute.String;
     operatingPhilosophyCards: Schema.Attribute.Component<'shared.card', true>;
+  };
+}
+
+export interface ServiceQuote extends Struct.ComponentSchema {
+  collectionName: 'components_service_quotes';
+  info: {
+    displayName: 'Service Quote';
+  };
+  attributes: {
+    attribution: Schema.Attribute.String;
+    quote: Schema.Attribute.Text & Schema.Attribute.Required;
+    role: Schema.Attribute.String;
+    sourceLink: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
+export interface ServiceRichText extends Struct.ComponentSchema {
+  collectionName: 'components_service_rich_texts';
+  info: {
+    description: 'Structured prose, headings below H2, lists and inline links';
+    displayName: 'Service Rich Text';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks & Schema.Attribute.Required;
+  };
+}
+
+export interface ServiceSectionHeading extends Struct.ComponentSchema {
+  collectionName: 'components_service_section_headings';
+  info: {
+    description: 'Starts a new H2 section and sticky-navigation entry';
+    displayName: 'Service Section Heading';
+  };
+  attributes: {
+    anchorId: Schema.Attribute.String & Schema.Attribute.Required;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    navigationLabel: Schema.Attribute.String;
   };
 }
 
@@ -1681,6 +2095,66 @@ export interface ServiceServiceMisc extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.String;
     label: Schema.Attribute.String;
+  };
+}
+
+export interface ServiceTable extends Struct.ComponentSchema {
+  collectionName: 'components_service_tables';
+  info: {
+    displayName: 'Service Table';
+  };
+  attributes: {
+    caption: Schema.Attribute.String;
+    columns: Schema.Attribute.Component<'service.table-column', true> &
+      Schema.Attribute.Required;
+    rows: Schema.Attribute.Component<'service.table-row', true> &
+      Schema.Attribute.Required;
+    summary: Schema.Attribute.Text;
+  };
+}
+
+export interface ServiceTableCell extends Struct.ComponentSchema {
+  collectionName: 'components_service_table_cells';
+  info: {
+    displayName: 'Service Table Cell';
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+  };
+}
+
+export interface ServiceTableColumn extends Struct.ComponentSchema {
+  collectionName: 'components_service_table_columns';
+  info: {
+    displayName: 'Service Table Column';
+  };
+  attributes: {
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ServiceTableRow extends Struct.ComponentSchema {
+  collectionName: 'components_service_table_rows';
+  info: {
+    displayName: 'Service Table Row';
+  };
+  attributes: {
+    cells: Schema.Attribute.Component<'service.table-cell', true> &
+      Schema.Attribute.Required;
+    rowHeading: Schema.Attribute.String;
+  };
+}
+
+export interface ServiceTwoColumnContent extends Struct.ComponentSchema {
+  collectionName: 'components_service_two_column_contents';
+  info: {
+    displayName: 'Service Two-column Content';
+  };
+  attributes: {
+    left: Schema.Attribute.Component<'service.content-column', false> &
+      Schema.Attribute.Required;
+    right: Schema.Attribute.Component<'service.content-column', false> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -1964,6 +2438,24 @@ declare module '@strapi/strapi' {
       'elements.link': ElementsLink;
       'elements.points': ElementsPoints;
       'events.event-details': EventsEventDetails;
+      'expertise.callout': ExpertiseCallout;
+      'expertise.card': ExpertiseCard;
+      'expertise.card-grid': ExpertiseCardGrid;
+      'expertise.comparison-card': ExpertiseComparisonCard;
+      'expertise.comparison-cards': ExpertiseComparisonCards;
+      'expertise.content-column': ExpertiseContentColumn;
+      'expertise.hero': ExpertiseHero;
+      'expertise.labelled-item': ExpertiseLabelledItem;
+      'expertise.labelled-list': ExpertiseLabelledList;
+      'expertise.link-group': ExpertiseLinkGroup;
+      'expertise.quote': ExpertiseQuote;
+      'expertise.rich-text': ExpertiseRichText;
+      'expertise.section-heading': ExpertiseSectionHeading;
+      'expertise.table': ExpertiseTable;
+      'expertise.table-cell': ExpertiseTableCell;
+      'expertise.table-column': ExpertiseTableColumn;
+      'expertise.table-row': ExpertiseTableRow;
+      'expertise.two-column-content': ExpertiseTwoColumnContent;
       'footer.footer-legal-section': FooterFooterLegalSection;
       'footer.footer-links': FooterFooterLinks;
       'footer.footer-social-media-links': FooterFooterSocialMediaLinks;
@@ -2028,11 +2520,29 @@ declare module '@strapi/strapi' {
       'resources.resource-fourth-section': ResourcesResourceFourthSection;
       'resources.resource-third-section': ResourcesResourceThirdSection;
       'resources.second-section': ResourcesSecondSection;
+      'service.callout': ServiceCallout;
+      'service.card': ServiceCard;
+      'service.card-grid': ServiceCardGrid;
+      'service.comparison-card': ServiceComparisonCard;
+      'service.comparison-cards': ServiceComparisonCards;
+      'service.content-column': ServiceContentColumn;
       'service.explore-recent-work': ServiceExploreRecentWork;
+      'service.hero': ServiceHero;
       'service.hero-section': ServiceHeroSection;
       'service.how-we-work': ServiceHowWeWork;
+      'service.labelled-item': ServiceLabelledItem;
+      'service.labelled-list': ServiceLabelledList;
+      'service.link-group': ServiceLinkGroup;
       'service.our-operating-philosophy': ServiceOurOperatingPhilosophy;
+      'service.quote': ServiceQuote;
+      'service.rich-text': ServiceRichText;
+      'service.section-heading': ServiceSectionHeading;
       'service.service-misc': ServiceServiceMisc;
+      'service.table': ServiceTable;
+      'service.table-cell': ServiceTableCell;
+      'service.table-column': ServiceTableColumn;
+      'service.table-row': ServiceTableRow;
+      'service.two-column-content': ServiceTwoColumnContent;
       'service.what-we-design': ServiceWhatWeDesign;
       'service.why-team-hire-us': ServiceWhyTeamHireUs;
       'shared.card': SharedCard;

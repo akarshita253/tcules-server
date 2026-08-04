@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_service_card_grids",
+  "info": {
+    "displayName": "Service Card Grid"
+  },
+  "options": {},
+  "attributes": {
+    "columns": {
+      "type": "enumeration",
+      "enum": [
+        "auto",
+        "one",
+        "two",
+        "three"
+      ],
+      "default": "auto"
+    },
+    "cards": {
+      "type": "component",
+      "component": "service.card",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

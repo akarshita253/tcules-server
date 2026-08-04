@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_service_table_cells",
+  "info": {
+    "displayName": "Service Table Cell"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "blocks",
+      "required": true
+    }
+  },
+  "config": {}
+}

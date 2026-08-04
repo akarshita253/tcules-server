@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_expertise_table_columns",
+  "info": {
+    "displayName": "Expertise Table Column"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}
