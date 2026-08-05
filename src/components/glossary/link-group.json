@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_glossary_link_groups",
+  "info": {
+    "displayName": "Glossary Link Group"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "links": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

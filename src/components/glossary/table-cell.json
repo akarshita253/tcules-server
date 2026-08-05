@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_glossary_table_cells",
+  "info": {
+    "displayName": "Glossary Table Cell"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "blocks",
+      "required": true
+    }
+  },
+  "config": {}
+}

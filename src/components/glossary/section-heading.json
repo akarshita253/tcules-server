@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_glossary_section_headings",
+  "info": {
+    "displayName": "Glossary Section Heading",
+    "description": "Starts a new H2 section and sticky-navigation entry"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "anchorId": {
+      "type": "string",
+      "required": true,
+      "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "navigationLabel": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

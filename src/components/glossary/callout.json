@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_glossary_callouts",
+  "info": {
+    "displayName": "Glossary Callout"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "body": {
+      "type": "blocks",
+      "required": true
+    },
+    "tone": {
+      "type": "enumeration",
+      "enum": [
+        "neutral",
+        "highlight",
+        "info",
+        "warning"
+      ],
+      "default": "neutral"
+    }
+  },
+  "config": {}
+}

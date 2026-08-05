@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_glossary_labelled_lists",
+  "info": {
+    "displayName": "Glossary Labelled List"
+  },
+  "options": {},
+  "attributes": {
+    "displayStyle": {
+      "type": "enumeration",
+      "enum": [
+        "definitions",
+        "numbered",
+        "plain"
+      ],
+      "default": "definitions"
+    },
+    "items": {
+      "type": "component",
+      "component": "glossary.labelled-item",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

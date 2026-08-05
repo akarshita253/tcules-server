@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_glossary_quotes",
+  "info": {
+    "displayName": "Glossary Quote"
+  },
+  "options": {},
+  "attributes": {
+    "quote": {
+      "type": "text",
+      "required": true
+    },
+    "attribution": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "sourceLink": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

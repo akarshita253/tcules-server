@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_glossary_comparison_groups",
+  "info": {
+    "displayName": "Glossary Comparison Cards",
+    "description": "Compare options against consistent labelled criteria"
+  },
+  "options": {},
+  "attributes": {
+    "cards": {
+      "type": "component",
+      "component": "glossary.comparison-card",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

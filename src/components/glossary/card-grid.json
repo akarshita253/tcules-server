@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_glossary_card_grids",
+  "info": {
+    "displayName": "Glossary Card Grid"
+  },
+  "options": {},
+  "attributes": {
+    "columns": {
+      "type": "enumeration",
+      "enum": [
+        "auto",
+        "one",
+        "two",
+        "three"
+      ],
+      "default": "auto"
+    },
+    "cards": {
+      "type": "component",
+      "component": "glossary.card",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

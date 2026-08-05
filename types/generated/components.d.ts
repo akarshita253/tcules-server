@@ -1033,6 +1033,243 @@ export interface FooterPagesLinks extends Struct.ComponentSchema {
   };
 }
 
+export interface GlossaryCallout extends Struct.ComponentSchema {
+  collectionName: 'components_glossary_callouts';
+  info: {
+    displayName: 'Glossary Callout';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    heading: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    tone: Schema.Attribute.Enumeration<
+      ['neutral', 'highlight', 'info', 'warning']
+    > &
+      Schema.Attribute.DefaultTo<'neutral'>;
+  };
+}
+
+export interface GlossaryCard extends Struct.ComponentSchema {
+  collectionName: 'components_glossary_cards';
+  info: {
+    displayName: 'Glossary Card';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks;
+    eyebrow: Schema.Attribute.String;
+    labelledItems: Schema.Attribute.Component<'glossary.labelled-item', true>;
+    link: Schema.Attribute.Component<'elements.link', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface GlossaryCardGrid extends Struct.ComponentSchema {
+  collectionName: 'components_glossary_card_grids';
+  info: {
+    displayName: 'Glossary Card Grid';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'glossary.card', true> &
+      Schema.Attribute.Required;
+    columns: Schema.Attribute.Enumeration<['auto', 'one', 'two', 'three']> &
+      Schema.Attribute.DefaultTo<'auto'>;
+  };
+}
+
+export interface GlossaryComparisonCard extends Struct.ComponentSchema {
+  collectionName: 'components_glossary_comparison_cards';
+  info: {
+    displayName: 'Glossary Comparison Card';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    details: Schema.Attribute.Component<'glossary.labelled-item', true>;
+    isRecommended: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    summary: Schema.Attribute.Blocks;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface GlossaryComparisonCards extends Struct.ComponentSchema {
+  collectionName: 'components_glossary_comparison_groups';
+  info: {
+    description: 'Compare options against consistent labelled criteria';
+    displayName: 'Glossary Comparison Cards';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'glossary.comparison-card', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface GlossaryContentColumn extends Struct.ComponentSchema {
+  collectionName: 'components_glossary_content_columns';
+  info: {
+    displayName: 'Glossary Content Column';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks;
+    eyebrow: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    labelledItems: Schema.Attribute.Component<'glossary.labelled-item', true>;
+    links: Schema.Attribute.Component<'elements.link', true>;
+  };
+}
+
+export interface GlossaryHero extends Struct.ComponentSchema {
+  collectionName: 'components_glossary_heroes';
+  info: {
+    description: 'Glossary page introduction, tags and actions';
+    displayName: 'Glossary Hero';
+  };
+  attributes: {
+    actions: Schema.Attribute.Component<'elements.buttons', true>;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    eyebrow: Schema.Attribute.String;
+    highlightedText: Schema.Attribute.String;
+    tags: Schema.Attribute.Component<'elements.points', true>;
+  };
+}
+
+export interface GlossaryLabelledItem extends Struct.ComponentSchema {
+  collectionName: 'components_glossary_labelled_items';
+  info: {
+    description: 'Reusable label, title and explanatory content';
+    displayName: 'Glossary Labelled Item';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    label: Schema.Attribute.String;
+    link: Schema.Attribute.Component<'elements.link', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface GlossaryLabelledList extends Struct.ComponentSchema {
+  collectionName: 'components_glossary_labelled_lists';
+  info: {
+    displayName: 'Glossary Labelled List';
+  };
+  attributes: {
+    displayStyle: Schema.Attribute.Enumeration<
+      ['definitions', 'numbered', 'plain']
+    > &
+      Schema.Attribute.DefaultTo<'definitions'>;
+    items: Schema.Attribute.Component<'glossary.labelled-item', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface GlossaryLinkGroup extends Struct.ComponentSchema {
+  collectionName: 'components_glossary_link_groups';
+  info: {
+    displayName: 'Glossary Link Group';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    links: Schema.Attribute.Component<'elements.link', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface GlossaryQuote extends Struct.ComponentSchema {
+  collectionName: 'components_glossary_quotes';
+  info: {
+    displayName: 'Glossary Quote';
+  };
+  attributes: {
+    attribution: Schema.Attribute.String;
+    quote: Schema.Attribute.Text & Schema.Attribute.Required;
+    role: Schema.Attribute.String;
+    sourceLink: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
+export interface GlossaryRichText extends Struct.ComponentSchema {
+  collectionName: 'components_glossary_rich_texts';
+  info: {
+    description: 'Structured prose, headings below H2, lists and inline links';
+    displayName: 'Glossary Rich Text';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks & Schema.Attribute.Required;
+  };
+}
+
+export interface GlossarySectionHeading extends Struct.ComponentSchema {
+  collectionName: 'components_glossary_section_headings';
+  info: {
+    description: 'Starts a new H2 section and sticky-navigation entry';
+    displayName: 'Glossary Section Heading';
+  };
+  attributes: {
+    anchorId: Schema.Attribute.String & Schema.Attribute.Required;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    navigationLabel: Schema.Attribute.String;
+  };
+}
+
+export interface GlossaryTable extends Struct.ComponentSchema {
+  collectionName: 'components_glossary_tables';
+  info: {
+    displayName: 'Glossary Table';
+  };
+  attributes: {
+    caption: Schema.Attribute.String;
+    columns: Schema.Attribute.Component<'glossary.table-column', true> &
+      Schema.Attribute.Required;
+    rows: Schema.Attribute.Component<'glossary.table-row', true> &
+      Schema.Attribute.Required;
+    summary: Schema.Attribute.Text;
+  };
+}
+
+export interface GlossaryTableCell extends Struct.ComponentSchema {
+  collectionName: 'components_glossary_table_cells';
+  info: {
+    displayName: 'Glossary Table Cell';
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+  };
+}
+
+export interface GlossaryTableColumn extends Struct.ComponentSchema {
+  collectionName: 'components_glossary_table_columns';
+  info: {
+    displayName: 'Glossary Table Column';
+  };
+  attributes: {
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface GlossaryTableRow extends Struct.ComponentSchema {
+  collectionName: 'components_glossary_table_rows';
+  info: {
+    displayName: 'Glossary Table Row';
+  };
+  attributes: {
+    cells: Schema.Attribute.Component<'glossary.table-cell', true> &
+      Schema.Attribute.Required;
+    rowHeading: Schema.Attribute.String;
+  };
+}
+
+export interface GlossaryTwoColumnContent extends Struct.ComponentSchema {
+  collectionName: 'components_glossary_two_column_contents';
+  info: {
+    displayName: 'Glossary Two-column Content';
+  };
+  attributes: {
+    left: Schema.Attribute.Component<'glossary.content-column', false> &
+      Schema.Attribute.Required;
+    right: Schema.Attribute.Component<'glossary.content-column', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface HomepageBranchCards extends Struct.ComponentSchema {
   collectionName: 'components_homepage_branch_cards';
   info: {
@@ -2461,6 +2698,24 @@ declare module '@strapi/strapi' {
       'footer.footer-social-media-links': FooterFooterSocialMediaLinks;
       'footer.footer-social-media-right-section': FooterFooterSocialMediaRightSection;
       'footer.pages-links': FooterPagesLinks;
+      'glossary.callout': GlossaryCallout;
+      'glossary.card': GlossaryCard;
+      'glossary.card-grid': GlossaryCardGrid;
+      'glossary.comparison-card': GlossaryComparisonCard;
+      'glossary.comparison-cards': GlossaryComparisonCards;
+      'glossary.content-column': GlossaryContentColumn;
+      'glossary.hero': GlossaryHero;
+      'glossary.labelled-item': GlossaryLabelledItem;
+      'glossary.labelled-list': GlossaryLabelledList;
+      'glossary.link-group': GlossaryLinkGroup;
+      'glossary.quote': GlossaryQuote;
+      'glossary.rich-text': GlossaryRichText;
+      'glossary.section-heading': GlossarySectionHeading;
+      'glossary.table': GlossaryTable;
+      'glossary.table-cell': GlossaryTableCell;
+      'glossary.table-column': GlossaryTableColumn;
+      'glossary.table-row': GlossaryTableRow;
+      'glossary.two-column-content': GlossaryTwoColumnContent;
       'homepage.branch-cards': HomepageBranchCards;
       'homepage.fourth-section-cards': HomepageFourthSectionCards;
       'homepage.homepage-contact-and-testimonials': HomepageHomepageContactAndTestimonials;

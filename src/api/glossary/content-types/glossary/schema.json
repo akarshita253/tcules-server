@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "glossaries",
+  "info": {
+    "singularName": "glossary",
+    "pluralName": "glossaries",
+    "displayName": "Glossary",
+    "description": "Flexible glossary and knowledge pages"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*(?:/[a-z0-9]+(?:-[a-z0-9]+)*)*$"
+    },
+    "hero": {
+      "type": "component",
+      "component": "glossary.hero",
+      "repeatable": false,
+      "required": true
+    },
+    "content": {
+      "type": "dynamiczone",
+      "required": true,
+      "components": [
+        "glossary.section-heading",
+        "glossary.rich-text",
+        "glossary.card-grid",
+        "glossary.comparison-cards",
+        "glossary.table",
+        "glossary.quote",
+        "glossary.callout",
+        "glossary.labelled-list",
+        "glossary.two-column-content",
+        "glossary.link-group",
+        "shared.media"
+      ]
+    },
+    "faqSection": {
+      "type": "component",
+      "component": "shared.faq-section",
+      "repeatable": false
+    },
+    "capabilitiesCta": {
+      "type": "component",
+      "component": "service.hero-section",
+      "repeatable": false,
+      "required": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false,
+      "required": true
+    }
+  }
+}

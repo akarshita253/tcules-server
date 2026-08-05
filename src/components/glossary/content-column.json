@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_glossary_content_columns",
+  "info": {
+    "displayName": "Glossary Content Column"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "labelledItems": {
+      "type": "component",
+      "component": "glossary.labelled-item",
+      "repeatable": true
+    },
+    "links": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

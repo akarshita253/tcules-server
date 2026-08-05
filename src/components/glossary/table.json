@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_glossary_tables",
+  "info": {
+    "displayName": "Glossary Table"
+  },
+  "options": {},
+  "attributes": {
+    "caption": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "text"
+    },
+    "columns": {
+      "type": "component",
+      "component": "glossary.table-column",
+      "repeatable": true,
+      "required": true
+    },
+    "rows": {
+      "type": "component",
+      "component": "glossary.table-row",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

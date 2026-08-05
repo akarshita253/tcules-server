@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_glossary_table_rows",
+  "info": {
+    "displayName": "Glossary Table Row"
+  },
+  "options": {},
+  "attributes": {
+    "rowHeading": {
+      "type": "string"
+    },
+    "cells": {
+      "type": "component",
+      "component": "glossary.table-cell",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_glossary_rich_texts",
+  "info": {
+    "displayName": "Glossary Rich Text",
+    "description": "Structured prose, headings below H2, lists and inline links"
+  },
+  "options": {},
+  "attributes": {
+    "body": {
+      "type": "blocks",
+      "required": true
+    }
+  },
+  "config": {}
+}
