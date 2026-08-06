@@ -1609,6 +1609,94 @@ export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiNewCapabilitiesNewCapabilities
+  extends Struct.SingleTypeSchema {
+  collectionName: 'new_capabilities';
+  info: {
+    description: 'Independent Capabilities page using the existing Capabilities architecture';
+    displayName: 'New Capabilities';
+    pluralName: 'new-capabilities-pages';
+    singularName: 'new-capabilities';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    capablitiesSingleType: Schema.Attribute.DynamicZone<
+      ['service.hero-section', 'capablities.capablities-card-section']
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::new-capabilities.new-capabilities'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNewHowWeWorkNewHowWeWork extends Struct.SingleTypeSchema {
+  collectionName: 'new_how_we_works';
+  info: {
+    description: 'Flexible How We Work page using the Audit content architecture';
+    displayName: 'How We Work (New)';
+    pluralName: 'new-how-we-works';
+    singularName: 'new-how-we-work';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    capabilitiesCta: Schema.Attribute.Component<'service.hero-section', false> &
+      Schema.Attribute.Required;
+    content: Schema.Attribute.DynamicZone<
+      [
+        'audit.section-heading',
+        'audit.rich-text',
+        'audit.card-grid',
+        'audit.comparison-cards',
+        'audit.table',
+        'audit.quote',
+        'audit.callout',
+        'audit.labelled-list',
+        'audit.two-column-content',
+        'audit.link-group',
+        'shared.media',
+      ]
+    > &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faqSection: Schema.Attribute.Component<'shared.faq-section', false>;
+    hero: Schema.Attribute.Component<'audit.hero', false> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::new-how-we-work.new-how-we-work'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.Required;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiOpeningOpening extends Struct.CollectionTypeSchema {
   collectionName: 'openings';
   info: {
@@ -2540,6 +2628,8 @@ declare module '@strapi/strapi' {
       'api::marketingpage.marketingpage': ApiMarketingpageMarketingpage;
       'api::matter-design-system.matter-design-system': ApiMatterDesignSystemMatterDesignSystem;
       'api::navbar.navbar': ApiNavbarNavbar;
+      'api::new-capabilities.new-capabilities': ApiNewCapabilitiesNewCapabilities;
+      'api::new-how-we-work.new-how-we-work': ApiNewHowWeWorkNewHowWeWork;
       'api::opening.opening': ApiOpeningOpening;
       'api::podcast.podcast': ApiPodcastPodcast;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
