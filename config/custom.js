@@ -1,7 +1,6 @@
 const DEFAULT_CONTACT_NOTIFICATION_RECIPIENTS = [
   "jatin@tcules.com",
   "rakesh@tcules.com",
-  "mihir@tcules.com",
 ];
 
 module.exports = ({ env }) => {

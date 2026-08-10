@@ -10,7 +10,6 @@ const lifecycles = require(
 const notificationRecipients = [
   "jatin@tcules.com",
   "rakesh@tcules.com",
-  "mihir@tcules.com",
 ];
 
 const contact = {
