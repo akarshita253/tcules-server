@@ -71,7 +71,7 @@ test("sends a base64url MIME message as the configured Workspace user", async ()
 
   const result = await email.send({
     from: "ignored@example.com",
-    to: ["jatin@tcules.com", "rakesh@tcules.com"],
+    to: ["jatin@tcules.com", "rakesh@tcules.com", "dhrumil@tcules.com", "hello@tcules.com"],
     replyTo: "customer@example.com",
     subject: "New contact",
     html: "<p>Hello</p>",
@@ -86,6 +86,8 @@ test("sends a base64url MIME message as the configured Workspace user", async ()
   assert.deepEqual(mimeOptions.to, [
     "jatin@tcules.com",
     "rakesh@tcules.com",
+    "dhrumil@tcules.com",
+    "hello@tcules.com",
   ]);
   assert.equal(mimeOptions.replyTo, "customer@example.com");
   assert.equal(
