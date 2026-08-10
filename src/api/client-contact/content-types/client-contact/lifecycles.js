@@ -1,6 +1,16 @@
+"use strict";
+
 const lifecycles = {
   async afterCreate(event) {
     const { result } = event;
+
+    // Strapi creates both a draft row and a published row when a Draft &
+    // Publish content type is created through the core REST API. Database
+    // lifecycles run for both rows, so only the published row should notify.
+    if (!result?.publishedAt) {
+      return;
+    }
+
     const notificationRecipients = strapi.config.get(
       "custom.contactNotificationRecipients"
     );
@@ -35,4 +45,4 @@ const lifecycles = {
   },
 };
 
-export default lifecycles;
+module.exports = lifecycles;

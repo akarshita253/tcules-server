@@ -12,6 +12,7 @@
     "seed:example": "node ./scripts/seed.js",
     "start": "strapi start",
     "strapi": "strapi",
+    "test:client-contact-email": "node --test test/client-contact-email-lifecycle.test.js",
     "test:gmail-provider": "node --test providers/strapi-provider-email-gmail-api/test/*.test.js",
     "upgrade": "npx @strapi/upgrade latest",
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
