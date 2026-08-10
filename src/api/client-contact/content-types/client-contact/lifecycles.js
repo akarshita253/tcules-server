@@ -1,10 +1,13 @@
 const lifecycles = {
   async afterCreate(event) {
     const { result } = event;
+    const notificationRecipients = strapi.config.get(
+      "custom.contactNotificationRecipients"
+    );
 
     try {
       await strapi.plugin("email").service("email").send({
-        to: "hello@tcules.com",
+        to: notificationRecipients,
         replyTo: result.clientEmail,
         subject: `New Client Query from ${result.clientName}`,
         html: `
