@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_tool_comparison_groups",
+  "info": {
+    "displayName": "Tool Comparison Cards",
+    "description": "Compare options against consistent labelled criteria"
+  },
+  "options": {},
+  "attributes": {
+    "cards": {
+      "type": "component",
+      "component": "tool.comparison-card",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

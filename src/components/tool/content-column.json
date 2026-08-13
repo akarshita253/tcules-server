@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_tool_content_columns",
+  "info": {
+    "displayName": "Tool Content Column"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "labelledItems": {
+      "type": "component",
+      "component": "tool.labelled-item",
+      "repeatable": true
+    },
+    "links": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -2617,6 +2617,243 @@ export interface SingleTypeCaseStudyPageMiscellaneous
   };
 }
 
+export interface ToolCallout extends Struct.ComponentSchema {
+  collectionName: 'components_tool_callouts';
+  info: {
+    displayName: 'Tool Callout';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    heading: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    tone: Schema.Attribute.Enumeration<
+      ['neutral', 'highlight', 'info', 'warning']
+    > &
+      Schema.Attribute.DefaultTo<'neutral'>;
+  };
+}
+
+export interface ToolCard extends Struct.ComponentSchema {
+  collectionName: 'components_tool_cards';
+  info: {
+    displayName: 'Tool Card';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks;
+    eyebrow: Schema.Attribute.String;
+    labelledItems: Schema.Attribute.Component<'tool.labelled-item', true>;
+    link: Schema.Attribute.Component<'elements.link', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ToolCardGrid extends Struct.ComponentSchema {
+  collectionName: 'components_tool_card_grids';
+  info: {
+    displayName: 'Tool Card Grid';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'tool.card', true> &
+      Schema.Attribute.Required;
+    columns: Schema.Attribute.Enumeration<['auto', 'one', 'two', 'three']> &
+      Schema.Attribute.DefaultTo<'auto'>;
+  };
+}
+
+export interface ToolComparisonCard extends Struct.ComponentSchema {
+  collectionName: 'components_tool_comparison_cards';
+  info: {
+    displayName: 'Tool Comparison Card';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    details: Schema.Attribute.Component<'tool.labelled-item', true>;
+    isRecommended: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    summary: Schema.Attribute.Blocks;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ToolComparisonCards extends Struct.ComponentSchema {
+  collectionName: 'components_tool_comparison_groups';
+  info: {
+    description: 'Compare options against consistent labelled criteria';
+    displayName: 'Tool Comparison Cards';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'tool.comparison-card', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface ToolContentColumn extends Struct.ComponentSchema {
+  collectionName: 'components_tool_content_columns';
+  info: {
+    displayName: 'Tool Content Column';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks;
+    eyebrow: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    labelledItems: Schema.Attribute.Component<'tool.labelled-item', true>;
+    links: Schema.Attribute.Component<'elements.link', true>;
+  };
+}
+
+export interface ToolHero extends Struct.ComponentSchema {
+  collectionName: 'components_tool_heroes';
+  info: {
+    description: 'Tool page introduction, tags and actions';
+    displayName: 'Tool Hero';
+  };
+  attributes: {
+    actions: Schema.Attribute.Component<'elements.buttons', true>;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    eyebrow: Schema.Attribute.String;
+    highlightedText: Schema.Attribute.String;
+    tags: Schema.Attribute.Component<'elements.points', true>;
+  };
+}
+
+export interface ToolLabelledItem extends Struct.ComponentSchema {
+  collectionName: 'components_tool_labelled_items';
+  info: {
+    description: 'Reusable label, title and explanatory content';
+    displayName: 'Tool Labelled Item';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    label: Schema.Attribute.String;
+    link: Schema.Attribute.Component<'elements.link', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ToolLabelledList extends Struct.ComponentSchema {
+  collectionName: 'components_tool_labelled_lists';
+  info: {
+    displayName: 'Tool Labelled List';
+  };
+  attributes: {
+    displayStyle: Schema.Attribute.Enumeration<
+      ['definitions', 'numbered', 'plain']
+    > &
+      Schema.Attribute.DefaultTo<'definitions'>;
+    items: Schema.Attribute.Component<'tool.labelled-item', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface ToolLinkGroup extends Struct.ComponentSchema {
+  collectionName: 'components_tool_link_groups';
+  info: {
+    displayName: 'Tool Link Group';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    links: Schema.Attribute.Component<'elements.link', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface ToolQuote extends Struct.ComponentSchema {
+  collectionName: 'components_tool_quotes';
+  info: {
+    displayName: 'Tool Quote';
+  };
+  attributes: {
+    attribution: Schema.Attribute.String;
+    quote: Schema.Attribute.Text & Schema.Attribute.Required;
+    role: Schema.Attribute.String;
+    sourceLink: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
+export interface ToolRichText extends Struct.ComponentSchema {
+  collectionName: 'components_tool_rich_texts';
+  info: {
+    description: 'Structured prose, headings below H2, lists and inline links';
+    displayName: 'Tool Rich Text';
+  };
+  attributes: {
+    body: Schema.Attribute.Blocks & Schema.Attribute.Required;
+  };
+}
+
+export interface ToolSectionHeading extends Struct.ComponentSchema {
+  collectionName: 'components_tool_section_headings';
+  info: {
+    description: 'Starts a new H2 section and sticky-navigation entry';
+    displayName: 'Tool Section Heading';
+  };
+  attributes: {
+    anchorId: Schema.Attribute.String & Schema.Attribute.Required;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    navigationLabel: Schema.Attribute.String;
+  };
+}
+
+export interface ToolTable extends Struct.ComponentSchema {
+  collectionName: 'components_tool_tables';
+  info: {
+    displayName: 'Tool Table';
+  };
+  attributes: {
+    caption: Schema.Attribute.String;
+    columns: Schema.Attribute.Component<'tool.table-column', true> &
+      Schema.Attribute.Required;
+    rows: Schema.Attribute.Component<'tool.table-row', true> &
+      Schema.Attribute.Required;
+    summary: Schema.Attribute.Text;
+  };
+}
+
+export interface ToolTableCell extends Struct.ComponentSchema {
+  collectionName: 'components_tool_table_cells';
+  info: {
+    displayName: 'Tool Table Cell';
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+  };
+}
+
+export interface ToolTableColumn extends Struct.ComponentSchema {
+  collectionName: 'components_tool_table_columns';
+  info: {
+    displayName: 'Tool Table Column';
+  };
+  attributes: {
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ToolTableRow extends Struct.ComponentSchema {
+  collectionName: 'components_tool_table_rows';
+  info: {
+    displayName: 'Tool Table Row';
+  };
+  attributes: {
+    cells: Schema.Attribute.Component<'tool.table-cell', true> &
+      Schema.Attribute.Required;
+    rowHeading: Schema.Attribute.String;
+  };
+}
+
+export interface ToolTwoColumnContent extends Struct.ComponentSchema {
+  collectionName: 'components_tool_two_column_contents';
+  info: {
+    displayName: 'Tool Two-column Content';
+  };
+  attributes: {
+    left: Schema.Attribute.Component<'tool.content-column', false> &
+      Schema.Attribute.Required;
+    right: Schema.Attribute.Component<'tool.content-column', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -2815,6 +3052,24 @@ declare module '@strapi/strapi' {
       'shared.tiles': SharedTiles;
       'single-type-case-study-page.hero-section': SingleTypeCaseStudyPageHeroSection;
       'single-type-case-study-page.miscellaneous': SingleTypeCaseStudyPageMiscellaneous;
+      'tool.callout': ToolCallout;
+      'tool.card': ToolCard;
+      'tool.card-grid': ToolCardGrid;
+      'tool.comparison-card': ToolComparisonCard;
+      'tool.comparison-cards': ToolComparisonCards;
+      'tool.content-column': ToolContentColumn;
+      'tool.hero': ToolHero;
+      'tool.labelled-item': ToolLabelledItem;
+      'tool.labelled-list': ToolLabelledList;
+      'tool.link-group': ToolLinkGroup;
+      'tool.quote': ToolQuote;
+      'tool.rich-text': ToolRichText;
+      'tool.section-heading': ToolSectionHeading;
+      'tool.table': ToolTable;
+      'tool.table-cell': ToolTableCell;
+      'tool.table-column': ToolTableColumn;
+      'tool.table-row': ToolTableRow;
+      'tool.two-column-content': ToolTwoColumnContent;
     }
   }
 }

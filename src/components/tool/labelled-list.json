@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_tool_labelled_lists",
+  "info": {
+    "displayName": "Tool Labelled List"
+  },
+  "options": {},
+  "attributes": {
+    "displayStyle": {
+      "type": "enumeration",
+      "enum": [
+        "definitions",
+        "numbered",
+        "plain"
+      ],
+      "default": "definitions"
+    },
+    "items": {
+      "type": "component",
+      "component": "tool.labelled-item",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

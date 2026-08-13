@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_tool_table_columns",
+  "info": {
+    "displayName": "Tool Table Column"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

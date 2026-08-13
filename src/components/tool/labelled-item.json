@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_tool_labelled_items",
+  "info": {
+    "displayName": "Tool Labelled Item",
+    "description": "Reusable label, title and explanatory content"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "blocks",
+      "required": true
+    },
+    "link": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_tool_tables",
+  "info": {
+    "displayName": "Tool Table"
+  },
+  "options": {},
+  "attributes": {
+    "caption": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "text"
+    },
+    "columns": {
+      "type": "component",
+      "component": "tool.table-column",
+      "repeatable": true,
+      "required": true
+    },
+    "rows": {
+      "type": "component",
+      "component": "tool.table-row",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

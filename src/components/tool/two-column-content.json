@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_tool_two_column_contents",
+  "info": {
+    "displayName": "Tool Two-column Content"
+  },
+  "options": {},
+  "attributes": {
+    "left": {
+      "type": "component",
+      "component": "tool.content-column",
+      "repeatable": false,
+      "required": true
+    },
+    "right": {
+      "type": "component",
+      "component": "tool.content-column",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

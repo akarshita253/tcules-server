@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tools",
+  "info": {
+    "singularName": "tool",
+    "pluralName": "tools",
+    "displayName": "Tool",
+    "description": "Flexible tool pages"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*(?:/[a-z0-9]+(?:-[a-z0-9]+)*)*$"
+    },
+    "hero": {
+      "type": "component",
+      "component": "tool.hero",
+      "repeatable": false,
+      "required": true
+    },
+    "content": {
+      "type": "dynamiczone",
+      "required": true,
+      "components": [
+        "tool.section-heading",
+        "tool.rich-text",
+        "tool.card-grid",
+        "tool.comparison-cards",
+        "tool.table",
+        "tool.quote",
+        "tool.callout",
+        "tool.labelled-list",
+        "tool.two-column-content",
+        "tool.link-group",
+        "shared.media"
+      ]
+    },
+    "faqSection": {
+      "type": "component",
+      "component": "shared.faq-section",
+      "repeatable": false
+    },
+    "capabilitiesCta": {
+      "type": "component",
+      "component": "service.hero-section",
+      "repeatable": false,
+      "required": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false,
+      "required": true
+    }
+  }
+}

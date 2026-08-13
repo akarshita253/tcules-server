@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_tool_table_rows",
+  "info": {
+    "displayName": "Tool Table Row"
+  },
+  "options": {},
+  "attributes": {
+    "rowHeading": {
+      "type": "string"
+    },
+    "cells": {
+      "type": "component",
+      "component": "tool.table-cell",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

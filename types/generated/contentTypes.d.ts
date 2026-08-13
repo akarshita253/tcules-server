@@ -2092,6 +2092,58 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiToolTool extends Struct.CollectionTypeSchema {
+  collectionName: 'tools';
+  info: {
+    description: 'Flexible tool pages';
+    displayName: 'Tool';
+    pluralName: 'tools';
+    singularName: 'tool';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    capabilitiesCta: Schema.Attribute.Component<'service.hero-section', false> &
+      Schema.Attribute.Required;
+    content: Schema.Attribute.DynamicZone<
+      [
+        'tool.section-heading',
+        'tool.rich-text',
+        'tool.card-grid',
+        'tool.comparison-cards',
+        'tool.table',
+        'tool.quote',
+        'tool.callout',
+        'tool.labelled-list',
+        'tool.two-column-content',
+        'tool.link-group',
+        'shared.media',
+      ]
+    > &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faqSection: Schema.Attribute.Component<'shared.faq-section', false>;
+    hero: Schema.Attribute.Component<'tool.hero', false> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::tool.tool'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.Required;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -2640,6 +2692,7 @@ declare module '@strapi/strapi' {
       'api::tag.tag': ApiTagTag;
       'api::terms-of-use.terms-of-use': ApiTermsOfUseTermsOfUse;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
+      'api::tool.tool': ApiToolTool;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
