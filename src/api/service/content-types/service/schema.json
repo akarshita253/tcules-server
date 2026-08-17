@@ -56,6 +56,11 @@
       "repeatable": false,
       "required": true
     },
+    "cta": {
+      "type": "component",
+      "component": "shared.cta",
+      "repeatable": false
+    },
     "seo": {
       "type": "component",
       "component": "shared.seo",

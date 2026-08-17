@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_ctas",
+  "info": {
+    "displayName": "CTA",
+    "description": "Page-specific call-to-action content"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "richtext"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "disclaimer": {
+      "type": "richtext"
+    }
+  },
+  "config": {}
+}

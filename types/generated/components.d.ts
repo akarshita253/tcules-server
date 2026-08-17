@@ -2436,6 +2436,19 @@ export interface SharedCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCta extends Struct.ComponentSchema {
+  collectionName: 'components_shared_ctas';
+  info: {
+    description: 'Page-specific call-to-action content';
+    displayName: 'CTA';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    disclaimer: Schema.Attribute.RichText;
+    heading: Schema.Attribute.RichText;
+  };
+}
+
 export interface SharedFaqSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_faq_sections';
   info: {
@@ -3038,6 +3051,7 @@ declare module '@strapi/strapi' {
       'service.what-we-design': ServiceWhatWeDesign;
       'service.why-team-hire-us': ServiceWhyTeamHireUs;
       'shared.card': SharedCard;
+      'shared.cta': SharedCta;
       'shared.faq-section': SharedFaqSection;
       'shared.focus-string': SharedFocusString;
       'shared.hero-section': SharedHeroSection;

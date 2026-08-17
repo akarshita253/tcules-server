@@ -518,6 +518,7 @@ export interface ApiAuditAudit extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    cta: Schema.Attribute.Component<'shared.cta', false>;
     faqSection: Schema.Attribute.Component<'shared.faq-section', false>;
     hero: Schema.Attribute.Component<'audit.hero', false> &
       Schema.Attribute.Required;
@@ -1041,6 +1042,7 @@ export interface ApiExpertiseExpertise extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    cta: Schema.Attribute.Component<'shared.cta', false>;
     faqSection: Schema.Attribute.Component<'shared.faq-section', false>;
     hero: Schema.Attribute.Component<'expertise.hero', false> &
       Schema.Attribute.Required;
@@ -1934,6 +1936,7 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    cta: Schema.Attribute.Component<'shared.cta', false>;
     faqSection: Schema.Attribute.Component<'shared.faq-section', false>;
     hero: Schema.Attribute.Component<'service.hero', false> &
       Schema.Attribute.Required;
