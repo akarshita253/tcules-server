@@ -2549,6 +2549,7 @@ export interface SharedSeo extends Struct.ComponentSchema {
     graphCode: Schema.Attribute.RichText;
     metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    og_image: Schema.Attribute.Media<'images'>;
     robot: Schema.Attribute.String;
     slug: Schema.Attribute.Text;
     structuredData: Schema.Attribute.Blocks;

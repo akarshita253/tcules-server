@@ -16,6 +16,13 @@
       "type": "text",
       "required": true
     },
+    "og_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "slug": {
       "type": "text"
     },
