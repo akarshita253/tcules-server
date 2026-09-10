@@ -657,6 +657,17 @@ export interface CareerThirdRightSection extends Struct.ComponentSchema {
   };
 }
 
+export interface CaseStudyContentCustomHtml extends Struct.ComponentSchema {
+  collectionName: 'components_case_study_content_custom_htmls';
+  info: {
+    description: 'Custom HTML markup rendered within case study content';
+    displayName: 'Custom HTML';
+  };
+  attributes: {
+    html: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
 export interface ContactUsContactUsBottomCards extends Struct.ComponentSchema {
   collectionName: 'components_contact_us_contact_us_bottom_cards';
   info: {
@@ -2919,6 +2930,7 @@ declare module '@strapi/strapi' {
       'career.career-second-section': CareerCareerSecondSection;
       'career.career-third-section': CareerCareerThirdSection;
       'career.third-right-section': CareerThirdRightSection;
+      'case-study-content.custom-html': CaseStudyContentCustomHtml;
       'contact-us.contact-us-bottom-cards': ContactUsContactUsBottomCards;
       'contact-us.social-media-links': ContactUsSocialMediaLinks;
       'elements.buttons': ElementsButtons;

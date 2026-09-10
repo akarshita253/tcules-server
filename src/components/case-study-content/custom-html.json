@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_case_study_content_custom_htmls",
+  "info": {
+    "displayName": "Custom HTML",
+    "description": "Custom HTML markup rendered within case study content"
+  },
+  "options": {},
+  "attributes": {
+    "html": {
+      "type": "text",
+      "required": true
+    }
+  },
+  "config": {}
+}

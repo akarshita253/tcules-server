@@ -804,6 +804,7 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
         'blog-and-casestudies.iframe',
         'blog-and-casestudies.section-image',
         'blog-and-casestudies.video',
+        'case-study-content.custom-html',
         'elements.link',
         'shared.seo',
         'shared.quote',
