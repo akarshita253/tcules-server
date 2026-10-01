@@ -398,18 +398,6 @@ export interface BlogAndCasestudiesCompanyProfile
   };
 }
 
-export interface BlogAndCasestudiesCta extends Struct.ComponentSchema {
-  collectionName: 'components_blog_and_casestudies_ctas';
-  info: {
-    displayName: 'CTA';
-  };
-  attributes: {
-    ctaButton: Schema.Attribute.Component<'elements.buttons', false>;
-    description: Schema.Attribute.Text;
-    heading: Schema.Attribute.String;
-  };
-}
-
 export interface BlogAndCasestudiesCtoSection extends Struct.ComponentSchema {
   collectionName: 'components_blog_and_casestudies_cto_sections';
   info: {
@@ -2939,7 +2927,6 @@ declare module '@strapi/strapi' {
       'blog-and-casestudies.case-study-positioning': BlogAndCasestudiesCaseStudyPositioning;
       'blog-and-casestudies.code-section': BlogAndCasestudiesCodeSection;
       'blog-and-casestudies.company-profile': BlogAndCasestudiesCompanyProfile;
-      'blog-and-casestudies.cta': BlogAndCasestudiesCta;
       'blog-and-casestudies.cto-section': BlogAndCasestudiesCtoSection;
       'blog-and-casestudies.explore-resources': BlogAndCasestudiesExploreResources;
       'blog-and-casestudies.iframe': BlogAndCasestudiesIframe;

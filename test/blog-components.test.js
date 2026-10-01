@@ -15,7 +15,6 @@ const { createStrapi } = require('@strapi/strapi');
 const BLOG_UID = 'api::blog.blog';
 const populate = {
   exploreResources: { populate: ['events', 'blogs', 'podcasts'] },
-  cta: { populate: ['ctaButton'] },
 };
 const exceedsLimit = (error) => {
   assert.equal(error.name, 'ValidationError');
@@ -73,14 +72,13 @@ test('Blog components enforce the combined resource limit in Strapi', async (t) 
   const selection = (field, count) => resources[field].slice(0, count).map(({ documentId }) => documentId);
   const read = (documentId) => blogs.findOne({ documentId, populate });
 
-  await t.test('existing blogs can still omit the new components', async () => {
+  await t.test('existing blogs can still omit Explore Resources', async () => {
     const blog = await blogs.create({ data: { title: 'Plain blog', slug: 'plain-blog' } });
     const saved = await read(blog.documentId);
     assert.equal(saved.exploreResources, null);
-    assert.equal(saved.cta, null);
   });
 
-  await t.test('saves one of each resource and the CTA button', async () => {
+  await t.test('saves one of each resource', async () => {
     const blog = await blogs.create({
       data: {
         title: 'Mixed resources',
@@ -91,21 +89,12 @@ test('Blog components enforce the combined resource limit in Strapi', async (t) 
           blogs: selection('blogs', 1),
           podcasts: selection('podcasts', 1),
         },
-        cta: {
-          heading: 'Get in touch',
-          description: 'Discuss your next project.',
-          ctaButton: { name: 'Contact us', href: '/contact', isExternal: false },
-        },
       },
     });
     const saved = await read(blog.documentId);
     for (const field of ['events', 'blogs', 'podcasts']) {
       assert.equal(new Set(saved.exploreResources[field].map(({ documentId }) => documentId)).size, 1);
     }
-    assert.equal(saved.cta.heading, 'Get in touch');
-    assert.equal(saved.cta.description, 'Discuss your next project.');
-    assert.equal(saved.cta.ctaButton.name, 'Contact us');
-    assert.equal(saved.cta.ctaButton.href, '/contact');
   });
 
   await t.test('allows three of the same type, counting draft/published rows once', async () => {

@@ -83,11 +83,6 @@
       "type": "component",
       "component": "blog-and-casestudies.explore-resources",
       "repeatable": false
-    },
-    "cta": {
-      "type": "component",
-      "component": "blog-and-casestudies.cta",
-      "repeatable": false
     }
   }
 }
