@@ -398,6 +398,18 @@ export interface BlogAndCasestudiesCompanyProfile
   };
 }
 
+export interface BlogAndCasestudiesCta extends Struct.ComponentSchema {
+  collectionName: 'components_blog_and_casestudies_ctas';
+  info: {
+    displayName: 'CTA';
+  };
+  attributes: {
+    ctaButton: Schema.Attribute.Component<'elements.buttons', false>;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+  };
+}
+
 export interface BlogAndCasestudiesCtoSection extends Struct.ComponentSchema {
   collectionName: 'components_blog_and_casestudies_cto_sections';
   info: {
@@ -407,6 +419,21 @@ export interface BlogAndCasestudiesCtoSection extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.String;
     link: Schema.Attribute.Component<'elements.link', false>;
+  };
+}
+
+export interface BlogAndCasestudiesExploreResources
+  extends Struct.ComponentSchema {
+  collectionName: 'components_blog_and_casestudies_explore_resources';
+  info: {
+    description: 'Select up to 3 resources in total across Events, Blogs, and Podcasts.';
+    displayName: 'Explore Resources';
+  };
+  attributes: {
+    blogs: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'>;
+    events: Schema.Attribute.Relation<'oneToMany', 'api::event.event'>;
+    heading: Schema.Attribute.String;
+    podcasts: Schema.Attribute.Relation<'oneToMany', 'api::podcast.podcast'>;
   };
 }
 
@@ -2912,7 +2939,9 @@ declare module '@strapi/strapi' {
       'blog-and-casestudies.case-study-positioning': BlogAndCasestudiesCaseStudyPositioning;
       'blog-and-casestudies.code-section': BlogAndCasestudiesCodeSection;
       'blog-and-casestudies.company-profile': BlogAndCasestudiesCompanyProfile;
+      'blog-and-casestudies.cta': BlogAndCasestudiesCta;
       'blog-and-casestudies.cto-section': BlogAndCasestudiesCtoSection;
+      'blog-and-casestudies.explore-resources': BlogAndCasestudiesExploreResources;
       'blog-and-casestudies.iframe': BlogAndCasestudiesIframe;
       'blog-and-casestudies.problem-and-solution': BlogAndCasestudiesProblemAndSolution;
       'blog-and-casestudies.section-image': BlogAndCasestudiesSectionImage;

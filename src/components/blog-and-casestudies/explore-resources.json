@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_blog_and_casestudies_explore_resources",
+  "info": {
+    "displayName": "Explore Resources",
+    "description": "Select up to 3 resources in total across Events, Blogs, and Podcasts."
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::event.event"
+    },
+    "blogs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog.blog"
+    },
+    "podcasts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::podcast.podcast"
+    }
+  },
+  "config": {}
+}

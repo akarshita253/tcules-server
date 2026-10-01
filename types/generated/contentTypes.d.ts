@@ -590,8 +590,13 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    cta: Schema.Attribute.Component<'blog-and-casestudies.cta', false>;
     ctoSection: Schema.Attribute.Component<
       'blog-and-casestudies.cto-section',
+      false
+    >;
+    exploreResources: Schema.Attribute.Component<
+      'blog-and-casestudies.explore-resources',
       false
     >;
     featureImage: Schema.Attribute.Media<
