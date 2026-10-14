@@ -583,6 +583,9 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
   attributes: {
     blogProfileSection: Schema.Attribute.Component<'shared.profile', true>;
+    blogType: Schema.Attribute.Enumeration<
+      ['Articles', 'Guides', 'Videos', 'Research']
+    >;
     categories: Schema.Attribute.Relation<
       'manyToMany',
       'api::category.category'
@@ -617,6 +620,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
         'blog-and-casestudies.code-section',
       ]
     >;
+    profile: Schema.Attribute.Relation<'manyToOne', 'api::profile.profile'>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
@@ -1817,6 +1821,38 @@ export interface ApiPrivacyPolicyPrivacyPolicy extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiProfileProfile extends Struct.CollectionTypeSchema {
+  collectionName: 'profiles';
+  info: {
+    displayName: 'Profile';
+    pluralName: 'profiles';
+    singularName: 'profile';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
+    designation: Schema.Attribute.String;
+    linkedInProfile: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::profile.profile'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    profilePicture: Schema.Attribute.Media<'images'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProgrammaticSeoPageProgrammaticSeoPage
   extends Struct.CollectionTypeSchema {
   collectionName: 'programmatic_seo_pages';
@@ -2693,6 +2729,7 @@ declare module '@strapi/strapi' {
       'api::opening.opening': ApiOpeningOpening;
       'api::podcast.podcast': ApiPodcastPodcast;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
+      'api::profile.profile': ApiProfileProfile;
       'api::programmatic-seo-page.programmatic-seo-page': ApiProgrammaticSeoPageProgrammaticSeoPage;
       'api::resource.resource': ApiResourceResource;
       'api::service.service': ApiServiceService;

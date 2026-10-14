@@ -11,6 +11,15 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "blogType": {
+      "type": "enumeration",
+      "enum": [
+        "Articles",
+        "Guides",
+        "Videos",
+        "Research"
+      ]
+    },
     "title": {
       "type": "string"
     },
@@ -56,6 +65,11 @@
       "type": "component",
       "component": "shared.profile",
       "repeatable": true
+    },
+    "profile": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::profile.profile"
     },
     "tags": {
       "type": "relation",

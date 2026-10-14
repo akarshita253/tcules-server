@@ -40,6 +40,27 @@ Strapi gives you many possible deployment options for your project including [St
 yarn strapi deploy
 ```
 
+## Blog types and profiles
+
+Blogs include an optional `blogType` dropdown with `Articles`, `Guides`, `Videos`, and `Research`.
+The optional `profile` relation selects one independently managed Profile; the same Profile can be reused by multiple blogs.
+The existing repeatable `blogProfileSection` component remains available and keeps its data.
+
+Manage Profiles in Content Manager → Profile. Each Profile has a single image (`profilePicture`),
+`name`, `designation`, rich-text `description`, and an optional HTTP(S) URL (`linkedInProfile`).
+Profiles are available immediately after saving, without a separate publishing step.
+The Profile API uses the standard `/api/profiles` routes and existing Strapi role/API-token permissions.
+To include a blog's selected profile and its image in a REST response, use
+`/api/blogs?populate[profile][populate][0]=profilePicture`.
+
+Deploy the code, rebuild the admin panel (`npm run build`), and restart Strapi.
+Startup adds the schema fields and applies a one-time Content Manager layout update:
+Blog Type appears above Title and Slug, and Profile appears directly after Blog Profile.
+Other saved layout rows and settings are preserved, and later editor customizations survive restarts.
+Existing blogs can continue to omit both new fields.
+
+Run `npm run test:blog-profiles` for database-backed checks of the new fields, relations, and editor layout update.
+
 ## 📚 Learn more
 
 - [Resource center](https://strapi.io/resource-center) - Strapi resource center.
